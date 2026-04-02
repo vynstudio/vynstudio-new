@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Vyn Studio — Digital Marketing & Creative Agency based in Orlando, Florida. We build brands, run ads, and grow businesses." />
+  <title>Vyn Studio — Digital Marketing & Creative Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous" defer></script>
+  <style>
+    :root {
+      --ink: #FAFAF8;
+      --off: #F2F0EB;
+      --card: #FFFFFF;
+      --border: #E0DDD6;
+      --muted: #999690;
+      --light: #666360;
+      --paper: #1A1A1A;
+      --accent: #1A1A1A;
+      --accent2: #D94F3D;
+      --white: #1A1A1A;
+      --ff-display: 'Bebas Neue', sans-serif;
+      --ff-body: 'DM Sans', sans-serif;
+      --ff-italic: 'Playfair Display', serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--white);
+      font-family: var(--ff-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--off); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); }
+
+    /* ── NAV ── */
+    #mainNav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: all 0.4s ease;
+      border-bottom: 1px solid transparent;
+    }
+    #mainNav.scrolled {
+      background: rgba(250,250,248,0.96);
+      backdrop-filter: blur(12px);
+      padding: 12px 0;
+      border-bottom-color: var(--border);
+    }
+    .navbar-brand-text {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .navbar-brand-text span { color: var(--muted); }
+    .nav-link-item {
+      font-family: var(--ff-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--light) !important;
+      padding: 6px 14px !important;
+      transition: color 0.2s;
+    }
+    .nav-link-item:hover { color: var(--accent) !important; }
+    .nav-cta {
+      background: var(--accent);
+      color: var(--ink) !important;
+      border-radius: 2px;
+      padding: 8px 20px !important;
+      font-weight: 600;
+    }
+    .nav-cta:hover { background: var(--light); color: var(--ink) !important; }
+    .navbar-toggler {
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      color: var(--accent);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+      padding-top: 80px;
+    }
+    /* Oversized letterform */
+    .hero-letter {
+      position: absolute;
+      font-family: var(--ff-display);
+      font-size: clamp(340px, 52vw, 680px);
+      line-height: 1;
+      color: rgba(26,26,26,0.055);
+      top: 50%;
+      right: -4%;
+      transform: translateY(-50%);
+      letter-spacing: -0.04em;
+      user-select: none;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    /* Dot grid — fades in from right */
+    .hero-grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(26,26,26,0.13) 1.5px, transparent 1.5px);
+      background-size: 22px 22px;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 30%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.9) 100%);
+      mask-image: linear-gradient(to right, transparent 0%, transparent 30%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.9) 100%);
+      pointer-events: none;
+    }
+    /* Thin top accent bar */
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+      z-index: 2;
+    }
+    .hero-glow { display: none; }
+    .hero-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.2s forwards;
+    }
+    .hero-label::before {
+      content: '';
+      display: block;
+      width: 32px; height: 1px;
+      background: var(--accent);
+    }
+    .hero-headline {
+      font-family: var(--ff-display);
+      font-size: clamp(5rem, 12vw, 11rem);
+      line-height: 0.9;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 0;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.4s forwards;
+    }
+    .hero-headline .accent-word { color: var(--accent); }
+    .hero-headline .italic-word {
+      font-family: var(--ff-italic);
+      font-style: italic;
+      font-size: 0.85em;
+      color: var(--muted);
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--light);
+      max-width: 440px;
+      margin-top: 36px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+    .hero-actions {
+      margin-top: 44px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
+    .btn-primary-vyn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: var(--ink);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+    .btn-primary-vyn:hover {
+      background: var(--white);
+      color: var(--ink);
+      transform: translateY(-2px);
+    }
+    .btn-ghost-vyn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      color: var(--light);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+    .btn-ghost-vyn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 72px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      opacity: 0;
+      animation: fadeUp 0.8s 1s forwards;
+    }
+    .stat-num {
+      font-family: var(--ff-display);
+      font-size: 2.8rem;
+      line-height: 1;
+      color: var(--accent);
+    }
+    .stat-num span { color: var(--muted); }
+    .stat-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .hero-right-deco {
+      position: absolute;
+      right: 6%;
+      bottom: 10%;
+      writing-mode: vertical-rl;
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      opacity: 0;
+      animation: fadeIn 1s 1.2s forwards;
+    }
+    .hero-right-deco::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 60px;
+      background: var(--border);
+    }
+
+    /* ── SECTION BASE ── */
+    .section { padding: 120px 0; }
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px; height: 1px;
+      background: var(--accent);
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 0.95;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 480px;
+      line-height: 1.7;
+      margin-top: 18px;
+    }
+
+    /* ── TICKER ── */
+    .ticker-wrap {
+      background: var(--accent);
+      overflow: hidden;
+      padding: 14px 0;
+    }
+    .ticker-track {
+      display: flex;
+      white-space: nowrap;
+      animation: ticker 22s linear infinite;
+    }
+    .ticker-item {
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      color: var(--ink);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    .ticker-dot { width: 6px; height: 6px; background: var(--off); border-radius: 50%; }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--off); position: relative; overflow: hidden; }
+    #services::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(26,26,26,0.07) 1.5px, transparent 1.5px);
+      background-size: 22px 22px;
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 60%);
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    #services .container { position: relative; z-index: 1; }
+    .service-card {
+      border: 1px solid var(--border);
+      padding: 44px 36px;
+      background: var(--card);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+      height: 100%;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--accent);
+      transition: width 0.4s;
+    }
+    .service-card:hover { border-color: var(--border); transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0,0,0,0.08); }
+    .service-card:hover::before { width: 100%; }
+    .service-num {
+      font-family: var(--ff-display);
+      font-size: 3.5rem;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 20px;
+      transition: color 0.3s;
+    }
+    .service-card:hover .service-num { color: var(--accent); }
+    .service-icon {
+      width: 48px; height: 48px;
+      background: var(--off);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      color: var(--accent);
+      font-size: 1.2rem;
+      transition: background 0.3s;
+    }
+    .service-card:hover .service-icon { background: var(--accent); color: var(--ink); }
+    .service-name {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .service-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .service-arrow {
+      position: absolute;
+      bottom: 32px; right: 32px;
+      color: var(--border);
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+    .service-card:hover .service-arrow { color: var(--accent); transform: translate(3px, -3px); }
+
+    /* ── PORTFOLIO ── */
+    #portfolio { background: var(--off); }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .portfolio-item {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--card);
+    }
+    .portfolio-item-inner {
+      width: 100%; height: 100%;
+      background: var(--card);
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
+      position: relative;
+      transition: all 0.4s;
+    }
+    .portfolio-bg-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ff-display);
+      font-size: 6rem;
+      color: var(--border);
+      letter-spacing: -0.05em;
+      transition: all 0.4s;
+    }
+    .portfolio-item:hover .portfolio-bg-placeholder {
+      color: rgba(26,26,26,0.05);
+      font-size: 10rem;
+    }
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(26,26,26,0.88);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+    .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+    .portfolio-caption {
+      position: relative;
+      z-index: 1;
+      transition: all 0.4s;
+    }
+    .portfolio-item:hover .portfolio-caption { opacity: 0; }
+    .p-cap-title {
+      font-family: var(--ff-display);
+      font-size: 1.3rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+    .p-cap-cat {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .p-hover-title {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .p-hover-cat {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--accent);
+    }
+    .p-hover-icon {
+      width: 52px; height: 52px;
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    /* ── ABOUT / TIMELINE ── */
+    #about { background: var(--ink); position: relative; overflow: hidden; }
+    #about::before {
+      content: 'STORY';
+      position: absolute;
+      font-family: var(--ff-display);
+      font-size: clamp(120px, 18vw, 240px);
+      color: rgba(26,26,26,0.045);
+      top: 60px;
+      right: -20px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    #about .container { position: relative; z-index: 1; }
+    .timeline {
+      list-style: none;
+      padding: 0;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: var(--border);
+      transform: translateX(-50%);
+    }
+    .timeline li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    .timeline li:nth-child(odd) { flex-direction: row; }
+    .timeline li:nth-child(even) { flex-direction: row-reverse; }
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px; height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      z-index: 2;
+    }
+    .timeline-panel {
+      width: calc(50% - 60px);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 32px 36px;
+      transition: border-color 0.3s;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+    }
+    .timeline-panel:hover { border-color: var(--accent); }
+    .timeline li:nth-child(odd) .timeline-panel { margin-right: auto; }
+    .timeline li:nth-child(even) .timeline-panel { margin-left: auto; }
+    .timeline-year {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .timeline-heading {
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      color: var(--accent);
+      letter-spacing: 0.03em;
+      margin-bottom: 14px;
+    }
+    .timeline-body {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .timeline-end-block {
+      width: calc(50% - 60px);
+      margin: 0 auto;
+      background: var(--accent);
+      border-radius: 4px;
+      padding: 36px;
+      text-align: center;
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      color: var(--ink);
+      line-height: 1.2;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── TEAM ── */
+    #team { background: var(--off); }
+    .team-card {
+      text-align: center;
+      padding: 40px 24px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: all 0.3s;
+      height: 100%;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+    }
+    .team-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .team-avatar {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: var(--off);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      color: var(--accent);
+      border: 2px solid var(--border);
+      transition: border-color 0.3s;
+      overflow: hidden;
+    }
+    .team-card:hover .team-avatar { border-color: var(--accent); }
+    .team-name {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+    .team-role {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .team-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+      font-weight: 300;
+      margin-bottom: 24px;
+    }
+    .social-btn {
+      width: 36px; height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: all 0.2s;
+      margin: 0 3px;
+    }
+    .social-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── CLIENTS ── */
+    #clients {
+      background: var(--ink);
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .clients-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .client-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 32px;
+      opacity: 0.3;
+      filter: grayscale(1);
+      transition: all 0.3s;
+    }
+    .client-logo:hover { opacity: 0.9; filter: grayscale(0); }
+    .client-logo img { max-width: 120px; max-height: 40px; }
+    .client-name-text {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      transition: color 0.3s;
+    }
+    .client-logo:hover .client-name-text { color: var(--accent); }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--off); }
+    .contact-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .contact-info-block { margin-bottom: 36px; }
+    .contact-info-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .contact-info-value {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+    .form-input {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--accent);
+      font-family: var(--ff-body);
+      font-size: 0.9rem;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+      outline: none;
+      transition: border-color 0.25s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .form-input:focus { border-color: var(--accent); }
+    .form-input::placeholder { color: var(--muted); }
+    textarea.form-input { min-height: 140px; resize: vertical; }
+    .btn-submit-vyn {
+      background: var(--accent);
+      color: var(--ink);
+      font-family: var(--ff-body);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.25s;
+      width: 100%;
+    }
+    .btn-submit-vyn:hover { background: var(--light); color: var(--ink); transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid var(--border);
+      padding: 60px 0 40px;
+    }
+    .footer-logo {
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .footer-logo span { color: var(--muted); }
+    .footer-desc {
+      font-size: 0.83rem;
+      color: var(--muted);
+      max-width: 280px;
+      line-height: 1.6;
+    }
+    .footer-nav-title {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 20px;
+    }
+    .footer-link {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .footer-link:hover { color: var(--accent); }
+    .footer-bottom {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .footer-legal { display: flex; gap: 24px; }
+    .footer-legal a { font-size: 0.75rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-legal a:hover { color: var(--accent); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ── PORTFOLIO MODAL ── */
+    .portfolio-modal .modal-content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+    }
+    .portfolio-modal .modal-header {
+      border-bottom: 1px solid var(--border);
+      padding: 28px 36px;
+    }
+    .portfolio-modal .modal-title {
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+    .portfolio-modal .btn-close { filter: none; }
+    .portfolio-modal .modal-body { padding: 36px; }
+    .modal-cat-pill {
+      display: inline-block;
+      background: var(--off);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 20px;
+    }
+    .modal-project-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+    .modal-meta { display: flex; gap: 32px; }
+    .modal-meta-item label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); display: block; }
+    .modal-meta-item span { font-size: 0.9rem; color: var(--accent); font-weight: 500; }
+    .modal-close-btn {
+      background: var(--accent);
+      color: var(--ink);
+      border: none;
+      font-family: var(--ff-body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 2px;
+      cursor: pointer;
+      margin-top: 28px;
+      transition: background 0.2s;
+    }
+    .modal-close-btn:hover { background: var(--light); color: var(--ink); }
+    .modal-img-placeholder {
+      width: 100%; height: 260px;
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ff-display);
+      font-size: 5rem;
+      color: var(--border);
+      margin-bottom: 24px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 992px) {
+      .contact-split { grid-template-columns: 1fr; gap: 48px; }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .timeline::before { display: none; }
+      .timeline li { flex-direction: column !important; align-items: flex-start; padding-left: 28px; border-left: 1px solid var(--border); margin-left: 0; }
+      .timeline-dot { left: -7px; top: 20px; }
+      .timeline-panel { width: 100%; margin: 0 !important; }
+      .timeline-end-block { width: 100%; }
+      .hero-stats { gap: 28px; flex-wrap: wrap; }
+    }
+    @media (max-width: 576px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .hero-headline { font-size: 4.5rem; }
+      .hero-right-deco { display: none; }
+    }
+  </style>
+</head>
+<body id="page-top">
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a class="navbar-brand-text" href="#page-top">VYN<span>.</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="fas fa-bars" style="color:var(--white)"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-center gap-1">
+        <li class="nav-item"><a class="nav-link-item" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link-item" href="#portfolio">Work</a></li>
+        <li class="nav-item"><a class="nav-link-item" href="#about">Story</a></li>
+        <li class="nav-item"><a class="nav-link-item" href="#team">Team</a></li>
+        <li class="nav-item ms-2"><a class="nav-link-item nav-cta" href="#contact">Start a Project</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-letter" aria-hidden="true">VYN</div>
+  <div class="container position-relative">
+    <div class="hero-label">Orlando, FL · Est. 2022</div>
+    <h1 class="hero-headline">
+      WE BUILD<br>
+      <span class="accent-word">BRANDS</span><br>
+      THAT <span class="italic-word">win.</span>
+    </h1>
+    <p class="hero-sub">Digital marketing, ad creative, and web development for businesses that want to grow. No fluff — just results.</p>
+    <div class="hero-actions">
+      <a class="btn-primary-vyn" href="#portfolio">See Our Work <i class="fas fa-arrow-right"></i></a>
+      <a class="btn-ghost-vyn" href="#contact">Let's Talk</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">45<span>K</span></div>
+        <div class="stat-label">Social Reach</div>
+      </div>
+      <div>
+        <div class="stat-num">6<span>+</span></div>
+        <div class="stat-label">Active Clients</div>
+      </div>
+      <div>
+        <div class="stat-num">3<span>+</span></div>
+        <div class="stat-label">Countries Served</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right-deco">
+    vynstudio.com
+    <i class="fas fa-arrow-down" style="writing-mode:horizontal-tb;font-size:0.7rem;color:var(--muted)"></i>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <div class="ticker-item">META ADS <span class="ticker-dot"></span></div>
+    <div class="ticker-item">GOOGLE ADS <span class="ticker-dot"></span></div>
+    <div class="ticker-item">WEB DEVELOPMENT <span class="ticker-dot"></span></div>
+    <div class="ticker-item">BRAND DESIGN <span class="ticker-dot"></span></div>
+    <div class="ticker-item">SEO <span class="ticker-dot"></span></div>
+    <div class="ticker-item">CRM AUTOMATION <span class="ticker-dot"></span></div>
+    <div class="ticker-item">AD CREATIVE <span class="ticker-dot"></span></div>
+    <div class="ticker-item">META ADS <span class="ticker-dot"></span></div>
+    <div class="ticker-item">GOOGLE ADS <span class="ticker-dot"></span></div>
+    <div class="ticker-item">WEB DEVELOPMENT <span class="ticker-dot"></span></div>
+    <div class="ticker-item">BRAND DESIGN <span class="ticker-dot"></span></div>
+    <div class="ticker-item">SEO <span class="ticker-dot"></span></div>
+    <div class="ticker-item">CRM AUTOMATION <span class="ticker-dot"></span></div>
+    <div class="ticker-item">AD CREATIVE <span class="ticker-dot"></span></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="row mb-64 mb-5">
+      <div class="col-lg-6">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">FULL-SERVICE<br>GROWTH ENGINE</h2>
+      </div>
+      <div class="col-lg-5 offset-lg-1 d-flex align-items-end">
+        <p class="section-sub">From your first Meta ad to a complete brand system — we handle the strategy, the creative, and the execution.</p>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-num">01</div>
+          <div class="service-icon"><i class="fas fa-bullseye"></i></div>
+          <div class="service-name">Paid Advertising</div>
+          <p class="service-desc">Meta and Google Ads campaigns built to convert. From creative to targeting to continuous optimization — we manage every dollar.</p>
+          <div class="service-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-num">02</div>
+          <div class="service-icon"><i class="fas fa-palette"></i></div>
+          <div class="service-name">Ad Creative</div>
+          <p class="service-desc">Thumb-stopping visuals engineered to perform. Photo ads, carousels, video concepts, and editorial formats for any platform.</p>
+          <div class="service-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-num">03</div>
+          <div class="service-icon"><i class="fas fa-code"></i></div>
+          <div class="service-name">Web Development</div>
+          <p class="service-desc">Fast, conversion-focused landing pages and full websites. Built clean, deployed to Netlify, and integrated with your marketing stack.</p>
+          <div class="service-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-num">04</div>
+          <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+          <div class="service-name">Brand Design</div>
+          <p class="service-desc">Identity systems that hold up everywhere — from ads to signage. Colors, typography, and tone locked in with a full brand guide.</p>
+          <div class="service-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-num">05</div>
+          <div class="service-icon"><i class="fas fa-search"></i></div>
+          <div class="service-name">SEO</div>
+          <p class="service-desc">On-page optimization, schema markup, and content strategy. We build organic presence that compounds over time.</p>
+          <div class="service-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-num">06</div>
+          <div class="service-icon"><i class="fas fa-robot"></i></div>
+          <div class="service-name">CRM & Automation</div>
+          <p class="service-desc">GHL pipelines, SMS lead capture, webhook flows, and automated follow-up sequences. Your leads never go cold again.</p>
+          <div class="service-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <div class="section-label">Selected Work</div>
+        <h2 class="section-title">OUR<br>PROJECTS</h2>
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-grid">
+    <!-- Item 1 -->
+    <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#pModal1">
+      <div class="portfolio-item-inner">
+        <div class="portfolio-bg-placeholder">SA</div>
+        <div class="portfolio-overlay">
+          <div class="p-hover-icon"><i class="fas fa-plus"></i></div>
+          <div class="p-hover-title">Soligo Air</div>
+          <div class="p-hover-cat">Full Brand + Meta Ads</div>
+        </div>
+        <div class="portfolio-caption">
+          <div class="p-cap-title">Soligo Air</div>
+          <div class="p-cap-cat">HVAC · Orlando, FL</div>
+        </div>
+      </div>
+    </div>
+    <!-- Item 2 -->
+    <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#pModal2">
+      <div class="portfolio-item-inner">
+        <div class="portfolio-bg-placeholder">TM</div>
+        <div class="portfolio-overlay">
+          <div class="p-hover-icon"><i class="fas fa-plus"></i></div>
+          <div class="p-hover-title">Toro Movers</div>
+          <div class="p-hover-cat">Branding + Paid Ads</div>
+        </div>
+        <div class="portfolio-caption">
+          <div class="p-cap-title">Toro Movers</div>
+          <div class="p-cap-cat">Moving Co. · Central FL</div>
+        </div>
+      </div>
+    </div>
+    <!-- Item 3 -->
+    <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#pModal3">
+      <div class="portfolio-item-inner">
+        <div class="portfolio-bg-placeholder">SF</div>
+        <div class="portfolio-overlay">
+          <div class="p-hover-icon"><i class="fas fa-plus"></i></div>
+          <div class="p-hover-title">Stael Fogarty</div>
+          <div class="p-hover-cat">Web + Instagram Ads</div>
+        </div>
+        <div class="portfolio-caption">
+          <div class="p-cap-title">Stael Fogarty</div>
+          <div class="p-cap-cat">Interpreter · Bilingual</div>
+        </div>
+      </div>
+    </div>
+    <!-- Item 4 -->
+    <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#pModal4">
+      <div class="portfolio-item-inner">
+        <div class="portfolio-bg-placeholder">DC</div>
+        <div class="portfolio-overlay">
+          <div class="p-hover-icon"><i class="fas fa-plus"></i></div>
+          <div class="p-hover-title">De Cero a Cliente</div>
+          <div class="p-hover-cat">Digital Course</div>
+        </div>
+        <div class="portfolio-caption">
+          <div class="p-cap-title">De Cero a Cliente</div>
+          <div class="p-cap-cat">Course · Spanish Market</div>
+        </div>
+      </div>
+    </div>
+    <!-- Item 5 -->
+    <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#pModal5">
+      <div class="portfolio-item-inner">
+        <div class="portfolio-bg-placeholder">IA</div>
+        <div class="portfolio-overlay">
+          <div class="p-hover-icon"><i class="fas fa-plus"></i></div>
+          <div class="p-hover-title">Immigration Law</div>
+          <div class="p-hover-cat">Web + SEO</div>
+        </div>
+        <div class="portfolio-caption">
+          <div class="p-cap-title">Immigration Law</div>
+          <div class="p-cap-cat">Legal · USA</div>
+        </div>
+      </div>
+    </div>
+    <!-- Item 6 -->
+    <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#pModal6">
+      <div class="portfolio-item-inner">
+        <div class="portfolio-bg-placeholder">RE</div>
+        <div class="portfolio-overlay">
+          <div class="p-hover-icon"><i class="fas fa-plus"></i></div>
+          <div class="p-hover-title">Restaurant Group</div>
+          <div class="p-hover-cat">Social + Creative</div>
+        </div>
+        <div class="portfolio-caption">
+          <div class="p-cap-title">Restaurant Group</div>
+          <div class="p-cap-cat">F&B · Spain</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-5">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">THE<br>TIMELINE</h2>
+      </div>
+      <div class="col-lg-6 offset-lg-1 d-flex align-items-end">
+        <p class="section-sub">Built from scratch in Orlando. Driven by results. Rooted in a deep understanding of what makes brands grow in the digital age.</p>
+      </div>
+    </div>
+    <ul class="timeline mt-5">
+      <li>
+        <div class="timeline-dot"></div>
+        <div class="timeline-panel">
+          <div class="timeline-year">2022 — The Beginning</div>
+          <div class="timeline-heading">Vyn Studio Founded</div>
+          <p class="timeline-body">Started as a freelance creative operation in Orlando, FL — running Meta ads and building landing pages for local service businesses. Zero team, maximum hustle.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-dot"></div>
+        <div class="timeline-panel">
+          <div class="timeline-year">2023 — Growth</div>
+          <div class="timeline-heading">First Multi-Client Roster</div>
+          <p class="timeline-body">Expanded to six active clients spanning HVAC, moving, legal, and food service. Built repeatable systems for ad creative, web development, and campaign management.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-dot"></div>
+        <div class="timeline-panel">
+          <div class="timeline-year">2024 — Scale</div>
+          <div class="timeline-heading">Full-Stack Agency Operations</div>
+          <p class="timeline-body">Launched full brand systems, CRM automation via GHL, and bilingual campaigns for the US Hispanic market. Built DesignAI — a proprietary tool for autonomous creative production.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-dot"></div>
+        <div class="timeline-panel">
+          <div class="timeline-year">2025 — Now</div>
+          <div class="timeline-heading">International Reach</div>
+          <p class="timeline-body">Serving clients across USA, Spain, and Honduras. 45K+ social following. Building systems that let small businesses compete at the highest level.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-dot"></div>
+        <div class="timeline-end-block">
+          Be Part<br>Of Our<br>Story.
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section" id="team">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <div class="section-label">The People</div>
+        <h2 class="section-title">THE<br>TEAM</h2>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card">
+          <div class="team-avatar">D</div>
+          <div class="team-name">Diler</div>
+          <div class="team-role">Founder & Creative Director</div>
+          <p class="team-desc">Runs strategy, ad creative, and client relationships. Obsessed with brand systems and high-converting campaigns.</p>
+          <div>
+            <a class="social-btn" href="#"><i class="fab fa-instagram"></i></a>
+            <a class="social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card">
+          <div class="team-avatar">V</div>
+          <div class="team-name">Vyn Studio</div>
+          <div class="team-role">Web & Development Lead</div>
+          <p class="team-desc">Responsible for all web builds, landing pages, and technical integrations — from Netlify deploys to GHL webhooks.</p>
+          <div>
+            <a class="social-btn" href="#"><i class="fab fa-github"></i></a>
+            <a class="social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card">
+          <div class="team-avatar">P</div>
+          <div class="team-name">Partners</div>
+          <div class="team-role">Media Buying & Analytics</div>
+          <p class="team-desc">Our network of specialists who handle campaign scaling, GA4 analytics, and performance reporting across all accounts.</p>
+          <div>
+            <a class="social-btn" href="#"><i class="fab fa-facebook-f"></i></a>
+            <a class="social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="container">
+    <div class="clients-label">Trusted By</div>
+    <div class="row align-items-center justify-content-center">
+      <div class="col-6 col-md-3">
+        <div class="client-logo">
+          <span class="client-name-text">Soligo Air</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="client-logo">
+          <span class="client-name-text">Toro Movers</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="client-logo">
+          <span class="client-name-text">Stael Fogarty</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="client-logo">
+          <span class="client-name-text">+ More</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">START A<br>PROJECT</h2>
+      </div>
+    </div>
+    <div class="contact-split">
+      <div>
+        <div class="contact-info-block">
+          <div class="contact-info-label">Location</div>
+          <div class="contact-info-value">Orlando, Florida</div>
+        </div>
+        <div class="contact-info-block">
+          <div class="contact-info-label">Email</div>
+          <div class="contact-info-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2d45484141426d5b54435e5958494442034e4240">[email&#160;protected]</a></div>
+        </div>
+        <div class="contact-info-block">
+          <div class="contact-info-label">Services</div>
+          <div class="contact-info-value" style="font-size:1rem;color:var(--muted);font-family:var(--ff-body);font-weight:300;line-height:1.7">
+            Meta & Google Ads · Web Dev<br>
+            Brand Design · SEO · CRM
+          </div>
+        </div>
+        <div style="margin-top:40px;padding:28px;background:var(--card);border:1px solid var(--border);border-radius:4px;box-shadow:0 2px 16px rgba(0,0,0,0.05);">
+          <div style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Response Time</div>
+          <div style="font-family:var(--ff-display);font-size:1.8rem;color:var(--accent);">Under 24 Hours</div>
+          <div style="font-size:0.83rem;color:var(--muted);margin-top:6px;">We review every inquiry personally.</div>
+        </div>
+      </div>
+      <div>
+        <input class="form-input" type="text" placeholder="Your Name *" />
+        <input class="form-input" type="email" placeholder="Your Email *" />
+        <input class="form-input" type="tel" placeholder="Your Phone" />
+        <textarea class="form-input" placeholder="Tell us about your project *"></textarea>
+        <button class="btn-submit-vyn" type="button">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-logo">VYN<span>.</span></div>
+        <p class="footer-desc">Digital marketing & creative agency based in Orlando. We build brands that win in the attention economy.</p>
+      </div>
+      <div class="col-lg-2 offset-lg-2">
+        <div class="footer-nav-title">Navigate</div>
+        <a class="footer-link" href="#services">Services</a>
+        <a class="footer-link" href="#portfolio">Work</a>
+        <a class="footer-link" href="#about">Story</a>
+        <a class="footer-link" href="#team">Team</a>
+        <a class="footer-link" href="#contact">Contact</a>
+      </div>
+      <div class="col-lg-2">
+        <div class="footer-nav-title">Services</div>
+        <a class="footer-link" href="#">Meta Ads</a>
+        <a class="footer-link" href="#">Google Ads</a>
+        <a class="footer-link" href="#">Web Dev</a>
+        <a class="footer-link" href="#">Brand Design</a>
+        <a class="footer-link" href="#">CRM / GHL</a>
+      </div>
+      <div class="col-lg-2">
+        <div class="footer-nav-title">Social</div>
+        <a class="footer-link" href="#">Instagram</a>
+        <a class="footer-link" href="#">LinkedIn</a>
+        <a class="footer-link" href="#">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Vyn Studio · Orlando, FL · All rights reserved</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- PORTFOLIO MODALS -->
+<div class="modal fade portfolio-modal" id="pModal1" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title">Soligo Air</span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-placeholder">SA</div>
+        <span class="modal-cat-pill">Full Brand + Meta Ads</span>
+        <p class="modal-project-desc">Complete brand system build for a Central Florida HVAC company — including brand identity, six SMS lead capture pages, Meta ad creative library, and Google Ads management. Imperial Blue, Blaze Orange, and Poppins locked as the brand system.</p>
+        <div class="modal-meta">
+          <div class="modal-meta-item"><label>Client</label><span>Soligo Air</span></div>
+          <div class="modal-meta-item"><label>Category</label><span>HVAC · Orlando, FL</span></div>
+          <div class="modal-meta-item"><label>Services</label><span>Brand · Web · Paid Ads</span></div>
+        </div>
+        <button class="modal-close-btn" data-bs-dismiss="modal">Close Project</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade portfolio-modal" id="pModal2" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title">Toro Movers</span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-placeholder">TM</div>
+        <span class="modal-cat-pill">Branding + Meta Ads</span>
+        <p class="modal-project-desc">Full brand identity for a family-owned hourly moving company in Central Florida. Developed the "Framed Minimal" ad creative system and launched Meta lead generation campaigns at $10/day.</p>
+        <div class="modal-meta">
+          <div class="modal-meta-item"><label>Client</label><span>Toro Movers</span></div>
+          <div class="modal-meta-item"><label>Category</label><span>Moving Company</span></div>
+          <div class="modal-meta-item"><label>Services</label><span>Brand · Meta Ads</span></div>
+        </div>
+        <button class="modal-close-btn" data-bs-dismiss="modal">Close Project</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade portfolio-modal" id="pModal3" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title">Stael Fogarty</span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-placeholder">SF</div>
+        <span class="modal-cat-pill">Web + Instagram Ads</span>
+        <p class="modal-project-desc">Full website build with Google Calendar integration for a professional interpreter and language coach. Eight Instagram ad creatives produced in Portuguese for the bilingual market.</p>
+        <div class="modal-meta">
+          <div class="modal-meta-item"><label>Client</label><span>Stael Fogarty</span></div>
+          <div class="modal-meta-item"><label>Category</label><span>Language Services</span></div>
+          <div class="modal-meta-item"><label>Services</label><span>Web · Instagram Ads</span></div>
+        </div>
+        <button class="modal-close-btn" data-bs-dismiss="modal">Close Project</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade portfolio-modal" id="pModal4" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title">De Cero a Cliente</span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-placeholder">DC</div>
+        <span class="modal-cat-pill">Digital Course · $37</span>
+        <p class="modal-project-desc">Spanish-language mini course for Hispanic entrepreneurs targeting Diler's 45K social audience. Five lessons covering personal brand, profile optimization, content strategy, DM scripts, and a 7-day action plan.</p>
+        <div class="modal-meta">
+          <div class="modal-meta-item"><label>Client</label><span>Vyn Studio</span></div>
+          <div class="modal-meta-item"><label>Category</label><span>Education · Course</span></div>
+          <div class="modal-meta-item"><label>Services</label><span>Content · Strategy</span></div>
+        </div>
+        <button class="modal-close-btn" data-bs-dismiss="modal">Close Project</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade portfolio-modal" id="pModal5" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title">Immigration Law</span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-placeholder">IA</div>
+        <span class="modal-cat-pill">Web + SEO</span>
+        <p class="modal-project-desc">Website and SEO strategy for an immigration law firm. Built with lead capture, multilingual consideration, and organic search optimization to drive qualified inquiries.</p>
+        <div class="modal-meta">
+          <div class="modal-meta-item"><label>Client</label><span>Law Firm</span></div>
+          <div class="modal-meta-item"><label>Category</label><span>Legal Services</span></div>
+          <div class="modal-meta-item"><label>Services</label><span>Web · SEO</span></div>
+        </div>
+        <button class="modal-close-btn" data-bs-dismiss="modal">Close Project</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade portfolio-modal" id="pModal6" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title">Restaurant Group</span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-placeholder">RE</div>
+        <span class="modal-cat-pill">Social + Creative</span>
+        <p class="modal-project-desc">Social media management and ad creative for restaurant clients based in Spain. Culturally nuanced content strategy and visual production for the European F&B market.</p>
+        <div class="modal-meta">
+          <div class="modal-meta-item"><label>Client</label><span>Restaurant Group</span></div>
+          <div class="modal-meta-item"><label>Category</label><span>Food & Beverage</span></div>
+          <div class="modal-meta-item"><label>Services</label><span>Social · Creative</span></div>
+        </div>
+        <button class="modal-close-btn" data-bs-dismiss="modal">Close Project</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Nav scroll behavior
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Active nav highlight
+  const sections = document.querySelectorAll('section[id], div[id="clients"]');
+  const navLinks = document.querySelectorAll('.nav-link-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.style.color = '';
+          if (link.getAtt
