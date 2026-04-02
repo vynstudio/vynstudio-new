@@ -1,767 +1,1704 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Metas -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- SEO -->
+  <!-- ── Primary SEO ── -->
   <title>Vyn Studio — Digital Marketing & Creative Agency | Orlando, FL</title>
-  <meta name="description" content="Vyn Studio is a digital marketing and creative agency based in Orlando, Florida. We run Meta & Google Ads, build high-converting websites, design brands, and automate lead generation." />
-  <meta name="keywords" content="digital marketing agency Orlando, Meta ads Orlando, Google ads Florida, brand design Orlando, web development, CRM automation, Vyn Studio" />
+  <meta name="description" content="Vyn Studio is a digital marketing and creative agency based in Orlando, Florida. We run Meta & Google Ads, build high-converting websites, design brands, and automate lead generation for growing businesses." />
+  <meta name="keywords" content="digital marketing agency Orlando, Meta ads Orlando, Google ads agency Florida, brand design Orlando, web development Orlando, CRM automation, lead generation, Vyn Studio" />
   <meta name="author" content="Vyn Studio" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://vynstudio.com/" />
 
-  <!-- Open Graph -->
+  <!-- ── Open Graph (Facebook, Instagram, WhatsApp, LinkedIn) ── -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vynstudio.com/" />
   <meta property="og:title" content="Vyn Studio — Digital Marketing & Creative Agency" />
-  <meta property="og:description" content="We build brands that win. Meta & Google Ads, web development, brand design, and CRM automation for growing businesses." />
+  <meta property="og:description" content="We build brands that win. Meta & Google Ads, web development, brand design, and CRM automation for businesses in Orlando and beyond." />
   <meta property="og:image" content="https://vynstudio.com/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Vyn Studio" />
+  <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter -->
+  <!-- ── Twitter / X Card ── -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://vynstudio.com/" />
   <meta name="twitter:title" content="Vyn Studio — Digital Marketing & Creative Agency" />
-  <meta name="twitter:description" content="We build brands that win. Meta & Google Ads, web development, brand design, and CRM automation." />
+  <meta name="twitter:description" content="We build brands that win. Meta & Google Ads, web development, brand design, and CRM automation for businesses in Orlando and beyond." />
   <meta name="twitter:image" content="https://vynstudio.com/og-image.jpg" />
 
-  <!-- Schema -->
+  <!-- ── Favicon ── -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231A1A1A'/><text y='78' x='8' font-size='72' font-family='serif' font-weight='900' fill='%23FAFAF8'>V</text></svg>" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231A1A1A'/><text y='78' x='8' font-size='72' font-family='serif' font-weight='900' fill='%23FAFAF8'>V</text></svg>" />
+
+  <!-- ── Theme color (browser chrome on mobile) ── -->
+  <meta name="theme-color" content="#FAFAF8" />
+
+  <!-- ── LocalBusiness Schema ── -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"MarketingAgency","name":"Vyn Studio","url":"https://vynstudio.com","description":"Digital marketing and creative agency in Orlando, FL.","address":{"@type":"PostalAddress","addressLocality":"Orlando","addressRegion":"FL","addressCountry":"US"},"foundingDate":"2022","serviceType":["Meta Advertising","Google Ads","Web Development","Brand Design","SEO","CRM Automation"]}
+  {
+    "@context": "https://schema.org",
+    "@type": "MarketingAgency",
+    "name": "Vyn Studio",
+    "url": "https://vynstudio.com",
+    "logo": "https://vynstudio.com/og-image.jpg",
+    "description": "Digital marketing and creative agency based in Orlando, Florida. We run Meta & Google Ads, build websites, design brands, and automate lead generation.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Orlando",
+      "addressRegion": "FL",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Orlando, FL", "Central Florida", "United States", "Spain", "Honduras"],
+    "serviceType": ["Meta Advertising", "Google Ads", "Web Development", "Brand Design", "SEO", "CRM Automation"],
+    "sameAs": [
+      "https://instagram.com/vynstudio",
+      "https://linkedin.com/company/vynstudio",
+      "https://facebook.com/vynstudio"
+    ],
+    "foundingDate": "2022",
+    "numberOfEmployees": "1-10"
+  }
   </script>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231A1A1A'/><text y='78' x='8' font-size='72' font-family='serif' font-weight='900' fill='%23FAFAF8'>V</text></svg>" />
-  <meta name="theme-color" content="#0f0f0f" />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
-
-  <!-- Plugins CSS -->
-  <link rel="stylesheet" href="css/plugins.css" />
-  <!-- Core Style -->
-  <link rel="stylesheet" href="css/style.css" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous" defer></script>
   <style>
-    /* ── Vyn Studio Brand Overrides — Monochrome ── */
     :root {
-      --vyn-black: #0f0f0f;
-      --vyn-white: #f5f3ee;
-      --vyn-accent: #ffffff;
-      --vyn-gray: #9a9a9a;
-      --vyn-border: #333;
+      --ink: #FAFAF8;
+      --off: #F2F0EB;
+      --card: #FFFFFF;
+      --border: #E0DDD6;
+      --muted: #999690;
+      --light: #666360;
+      --paper: #1A1A1A;
+      --accent: #1A1A1A;
+      --accent2: #D94F3D;
+      --white: #1A1A1A;
+      --ff-display: 'Bebas Neue', sans-serif;
+      --ff-body: 'DM Sans', sans-serif;
+      --ff-italic: 'Playfair Display', serif;
     }
 
-    /* Navbar brand */
-    .navbar .logo {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 900;
-      letter-spacing: 0.2em;
-      color: #fff !important;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--white);
+      font-family: var(--ff-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-    .navbar .logo span { color: #9a9a9a; }
 
-    /* Active link */
-    .navbar .nav-link.active,
-    .navbar .nav-link:hover { color: #ffffff !important; }
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--off); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); }
 
-    /* Hero headline */
-    .header .cd-headline { font-weight: 800; letter-spacing: 0.04em; }
-    .header .cd-words-wrapper b { color: #ffffff; }
-    .header p.sub { font-size: 13px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 16px; }
-
-    /* Hero CTA buttons */
-    .header-btns { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn-vyn-primary {
-      display: inline-block;
-      background: #ffffff;
-      color: #0f0f0f !important;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 14px 32px;
-      border-radius: 2px;
-      transition: all 0.25s;
-    }
-    .btn-vyn-primary:hover { background: #cccccc; transform: translateY(-2px); }
-    .btn-vyn-ghost {
-      display: inline-block;
-      border: 1px solid rgba(255,255,255,0.35);
-      color: rgba(255,255,255,0.7) !important;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 14px 32px;
-      border-radius: 2px;
-      transition: all 0.25s;
-    }
-    .btn-vyn-ghost:hover { border-color: #fff; color: #fff !important; }
-
-    /* Stats strip */
-    .stats-strip {
-      background: #1a1a1a;
-      border-top: 1px solid #2a2a2a;
-      border-bottom: 1px solid #2a2a2a;
+    /* ── NAV ── */
+    #mainNav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
       padding: 20px 0;
+      transition: all 0.4s ease;
+      border-bottom: 1px solid transparent;
     }
-    .stats-strip .stat { text-align: center; }
-    .stats-strip .stat-num {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #ffffff;
+    #mainNav.scrolled {
+      background: rgba(250,250,248,0.96);
+      backdrop-filter: blur(12px);
+      padding: 12px 0;
+      border-bottom-color: var(--border);
+    }
+    .navbar-brand-text {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .navbar-brand-text span { color: var(--muted); }
+    .nav-link-item {
+      font-family: var(--ff-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--light) !important;
+      padding: 6px 14px !important;
+      transition: color 0.2s;
+    }
+    .nav-link-item:hover { color: var(--accent) !important; }
+    .nav-cta {
+      background: var(--accent);
+      color: var(--ink) !important;
+      border-radius: 2px;
+      padding: 8px 20px !important;
+      font-weight: 600;
+    }
+    .nav-cta:hover { background: var(--light); color: var(--ink) !important; }
+    .navbar-toggler {
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      color: var(--accent);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+      padding-top: 80px;
+    }
+    /* Oversized letterform */
+    .hero-letter {
+      position: absolute;
+      font-family: var(--ff-display);
+      font-size: clamp(340px, 52vw, 680px);
       line-height: 1;
-      letter-spacing: -0.02em;
+      color: rgba(26,26,26,0.055);
+      top: 50%;
+      right: -4%;
+      transform: translateY(-50%);
+      letter-spacing: -0.04em;
+      user-select: none;
+      pointer-events: none;
+      white-space: nowrap;
     }
-    .stats-strip .stat-label {
-      font-size: 10px;
+    /* Dot grid — fades in from right */
+    .hero-grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(26,26,26,0.13) 1.5px, transparent 1.5px);
+      background-size: 22px 22px;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 30%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.9) 100%);
+      mask-image: linear-gradient(to right, transparent 0%, transparent 30%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.9) 100%);
+      pointer-events: none;
+    }
+    /* Thin top accent bar */
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+      z-index: 2;
+    }
+    .hero-glow { display: none; }
+    .hero-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.2s forwards;
+    }
+    .hero-label::before {
+      content: '';
+      display: block;
+      width: 32px; height: 1px;
+      background: var(--accent);
+    }
+    .hero-headline {
+      font-family: var(--ff-display);
+      font-size: clamp(5rem, 12vw, 11rem);
+      line-height: 0.9;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 0;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.4s forwards;
+    }
+    .hero-headline .accent-word { color: var(--accent); }
+    .hero-headline .italic-word {
+      font-family: var(--ff-italic);
+      font-style: italic;
+      font-size: 0.85em;
+      color: var(--muted);
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--light);
+      max-width: 440px;
+      margin-top: 36px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+    .hero-actions {
+      margin-top: 44px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
+    .btn-primary-vyn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: var(--ink);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+    .btn-primary-vyn:hover {
+      background: var(--white);
+      color: var(--ink);
+      transform: translateY(-2px);
+    }
+    .btn-ghost-vyn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      color: var(--light);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+    .btn-ghost-vyn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 72px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      opacity: 0;
+      animation: fadeUp 0.8s 1s forwards;
+    }
+    .stat-num {
+      font-family: var(--ff-display);
+      font-size: 2.8rem;
+      line-height: 1;
+      color: var(--accent);
+    }
+    .stat-num span { color: var(--muted); }
+    .stat-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .hero-right-deco {
+      position: absolute;
+      right: 6%;
+      bottom: 10%;
+      writing-mode: vertical-rl;
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      opacity: 0;
+      animation: fadeIn 1s 1.2s forwards;
+    }
+    .hero-right-deco::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 60px;
+      background: var(--border);
+    }
+
+    /* ── SECTION BASE ── */
+    .section { padding: 120px 0; }
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px; height: 1px;
+      background: var(--accent);
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 0.95;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 480px;
+      line-height: 1.7;
+      margin-top: 18px;
+    }
+
+    /* ── TICKER ── */
+    .ticker-wrap {
+      background: var(--accent);
+      overflow: hidden;
+      padding: 14px 0;
+    }
+    .ticker-track {
+      display: flex;
+      white-space: nowrap;
+      animation: ticker 22s linear infinite;
+    }
+    .ticker-item {
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      color: var(--ink);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    .ticker-dot { width: 6px; height: 6px; background: var(--off); border-radius: 50%; }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--off); position: relative; overflow: hidden; }
+    #services::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(26,26,26,0.07) 1.5px, transparent 1.5px);
+      background-size: 22px 22px;
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 60%);
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    #services .container { position: relative; z-index: 1; }
+    .service-card {
+      border: 1px solid var(--border);
+      padding: 44px 36px;
+      background: var(--card);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+      height: 100%;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--accent);
+      transition: width 0.4s;
+    }
+    .service-card:hover { border-color: var(--border); transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0,0,0,0.08); }
+    .service-card:hover::before { width: 100%; }
+    .service-num {
+      font-family: var(--ff-display);
+      font-size: 3.5rem;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 20px;
+      transition: color 0.3s;
+    }
+    .service-card:hover .service-num { color: var(--accent); }
+    .service-icon {
+      width: 48px; height: 48px;
+      background: var(--off);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      color: var(--accent);
+      font-size: 1.2rem;
+      transition: background 0.3s;
+    }
+    .service-card:hover .service-icon { background: var(--accent); color: var(--ink); }
+    .service-name {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .service-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .service-arrow {
+      position: absolute;
+      bottom: 32px; right: 32px;
+      color: var(--border);
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+    .service-card:hover .service-arrow { color: var(--accent); transform: translate(3px, -3px); }
+
+    /* ── PORTFOLIO ── */
+    #portfolio { background: var(--off); }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .portfolio-item {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--card);
+    }
+    .portfolio-item-inner {
+      width: 100%; height: 100%;
+      background: var(--card);
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
+      position: relative;
+      transition: all 0.4s;
+    }
+    .portfolio-bg-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ff-display);
+      font-size: 6rem;
+      color: var(--border);
+      letter-spacing: -0.05em;
+      transition: all 0.4s;
+    }
+    .portfolio-item:hover .portfolio-bg-placeholder {
+      color: rgba(26,26,26,0.05);
+      font-size: 10rem;
+    }
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(26,26,26,0.88);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+    .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+    .portfolio-caption {
+      position: relative;
+      z-index: 1;
+      transition: all 0.4s;
+    }
+    .portfolio-item:hover .portfolio-caption { opacity: 0; }
+    .p-cap-title {
+      font-family: var(--ff-display);
+      font-size: 1.3rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+    .p-cap-cat {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .p-hover-title {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .p-hover-cat {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--accent);
+    }
+    .p-hover-icon {
+      width: 52px; height: 52px;
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    /* ── ABOUT / TIMELINE ── */
+    #about { background: var(--ink); position: relative; overflow: hidden; }
+    #about::before {
+      content: 'STORY';
+      position: absolute;
+      font-family: var(--ff-display);
+      font-size: clamp(120px, 18vw, 240px);
+      color: rgba(26,26,26,0.045);
+      top: 60px;
+      right: -20px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    #about .container { position: relative; z-index: 1; }
+    .timeline {
+      list-style: none;
+      padding: 0;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: var(--border);
+      transform: translateX(-50%);
+    }
+    .timeline li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    .timeline li:nth-child(odd) { flex-direction: row; }
+    .timeline li:nth-child(even) { flex-direction: row-reverse; }
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px; height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      z-index: 2;
+    }
+    .timeline-panel {
+      width: calc(50% - 60px);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 32px 36px;
+      transition: border-color 0.3s;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+    }
+    .timeline-panel:hover { border-color: var(--accent); }
+    .timeline li:nth-child(odd) .timeline-panel { margin-right: auto; }
+    .timeline li:nth-child(even) .timeline-panel { margin-left: auto; }
+    .timeline-year {
+      font-size: 0.68rem;
       font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #555;
-      margin-top: 4px;
+      color: var(--muted);
+      margin-bottom: 8px;
     }
-
-    /* About section */
-    .about-text h3 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-    .about-text p { font-size: 14px; line-height: 1.8; margin-bottom: 16px; }
-    .about-badge {
-      display: inline-block;
-      background: #1a1a1a;
-      color: #fff;
-      border: 1px solid #333;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 2px;
-      margin-bottom: 20px;
-    }
-    .about-img-wrap { position: relative; }
-    .about-img-wrap img { border-radius: 2px; }
-    .about-img-deco {
-      position: absolute;
-      bottom: -16px; right: -16px;
-      width: 60%; height: 60%;
-      border: 2px solid #333;
-      border-radius: 2px;
-      z-index: -1;
-    }
-
-    /* Skills bar accent */
-    .skills-progress span { background: #1a1a1a !important; }
-
-    /* Services icons accent */
-    .services .item .icon i { color: #1a1a1a !important; }
-    .services .item:hover { border-top-color: #1a1a1a !important; }
-
-    /* Portfolio filter active */
-    .portfolio .filtering span.active { color: #1a1a1a; border-color: #1a1a1a; }
-    .portfolio .filtering span:hover { color: #1a1a1a; }
-
-    /* Testimonials */
-    .testimonials { background: #0f0f0f; padding: 100px 0; }
-    .testimonials .section-head h4 { color: #fff; }
-    .testimonials .section-head h6 { color: #555; }
-    .testimonials .section-head h6:before,
-    .testimonials .section-head h6:after { background-color: #333; }
-    .testi-card {
-      background: #1a1a1a;
-      border: 1px solid #252525;
-      border-radius: 4px;
-      padding: 36px 32px;
-      height: 100%;
-      transition: border-color 0.3s;
-    }
-    .testi-card:hover { border-color: #555; }
-    .testi-stars { display: flex; gap: 4px; margin-bottom: 20px; }
-    .testi-star {
-      width: 12px; height: 12px;
-      background: #ffffff;
-      clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
-    }
-    .testi-quote {
-      font-size: 13px;
-      color: #666;
-      line-height: 1.8;
-      font-style: italic;
-      margin-bottom: 24px;
-      font-weight: 400;
-    }
-    .testi-divider { width: 32px; height: 1px; background: #2a2a2a; margin-bottom: 20px; }
-    .testi-author { display: flex; align-items: center; gap: 12px; }
-    .testi-avatar {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: #222;
-      border: 1px solid #333;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 13px;
-      font-weight: 700;
-      color: #fff;
-      flex-shrink: 0;
-    }
-    .testi-name { font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.05em; }
-    .testi-role { font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: #555; margin-top: 2px; }
-    .testi-placeholder {
-      display: inline-block;
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      background: #222;
-      color: #666;
-      border: 1px solid #333;
-      border-radius: 2px;
-      padding: 2px 7px;
+    .timeline-heading {
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      color: var(--accent);
+      letter-spacing: 0.03em;
       margin-bottom: 14px;
     }
-
-    /* Contact */
-    .contact .form input,
-    .contact .form textarea { border-radius: 2px; font-size: 13px; }
-    .contact .butn.butn-bg {
-      background: #1a1a1a !important;
-      color: #fff !important;
-      border-color: #1a1a1a !important;
+    .timeline-body {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 300;
     }
-    .contact .butn.butn-bg:hover { background: #333 !important; border-color: #333 !important; }
-    .contact-info-item { margin-bottom: 28px; }
-    .contact-info-label { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #aaa; margin-bottom: 4px; }
-    .contact-info-value { font-size: 15px; font-weight: 600; color: #1a1a1a; }
+    .timeline-end-block {
+      width: calc(50% - 60px);
+      margin: 0 auto;
+      background: var(--accent);
+      border-radius: 4px;
+      padding: 36px;
+      text-align: center;
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      color: var(--ink);
+      line-height: 1.2;
+      letter-spacing: 0.05em;
+    }
 
-    /* Form feedback */
-    #form-success { display:none; padding:16px 20px; background:#f5f5f5; border:1px solid #ccc; border-radius:4px; margin-bottom:20px; font-size:13px; color:#1a1a1a; }
-    #form-error   { display:none; padding:16px 20px; background:#fdf2f2; border:1px solid #f0b8b8; border-radius:4px; margin-bottom:20px; font-size:13px; color:#8b2020; }
+    /* ── TEAM ── */
+    #team { background: var(--off); }
+    .team-card {
+      text-align: center;
+      padding: 40px 24px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: all 0.3s;
+      height: 100%;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+    }
+    .team-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .team-avatar {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: var(--off);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      color: var(--accent);
+      border: 2px solid var(--border);
+      transition: border-color 0.3s;
+      overflow: hidden;
+    }
+    .team-card:hover .team-avatar { border-color: var(--accent); }
+    .team-name {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+    .team-role {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .team-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+      font-weight: 300;
+      margin-bottom: 24px;
+    }
+    .social-btn {
+      width: 36px; height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: all 0.2s;
+      margin: 0 3px;
+    }
+    .social-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* Footer */
-    footer .social a:hover { color: #fff !important; }
-    footer .logo { color: #fff !important; font-weight: 900; letter-spacing: 0.2em; }
-    footer .logo span { color: #555; }
+    /* ── CLIENTS ── */
+    #clients {
+      background: var(--ink);
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .clients-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .client-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 32px;
+      opacity: 0.3;
+      filter: grayscale(1);
+      transition: all 0.3s;
+    }
+    .client-logo:hover { opacity: 0.9; filter: grayscale(0); }
+    .client-logo img { max-width: 120px; max-height: 40px; }
+    .client-name-text {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      transition: color 0.3s;
+    }
+    .client-logo:hover .client-name-text { color: var(--accent); }
 
-    /* Ticker */
-    .ticker-wrap { background: #1a1a1a; border-top: 1px solid #2a2a2a; border-bottom: 1px solid #2a2a2a; overflow: hidden; padding: 12px 0; }
-    .ticker-track { display: flex; white-space: nowrap; animation: ticker 22s linear infinite; }
-    .ticker-item { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #555; padding: 0 36px; display: flex; align-items: center; gap: 36px; }
-    .ticker-dot { width: 5px; height: 5px; background: #333; border-radius: 50%; }
-    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    /* ── CONTACT ── */
+    #contact { background: var(--off); }
+    .contact-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .contact-info-block { margin-bottom: 36px; }
+    .contact-info-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .contact-info-value {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+    .form-input {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--accent);
+      font-family: var(--ff-body);
+      font-size: 0.9rem;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+      outline: none;
+      transition: border-color 0.25s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .form-input:focus { border-color: var(--accent); }
+    .form-input::placeholder { color: var(--muted); }
+    textarea.form-input { min-height: 140px; resize: vertical; }
+    .btn-submit-vyn {
+      background: var(--accent);
+      color: var(--ink);
+      font-family: var(--ff-body);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.25s;
+      width: 100%;
+    }
+    .btn-submit-vyn:hover { background: var(--light); color: var(--ink); transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid var(--border);
+      padding: 60px 0 40px;
+    }
+    .footer-logo {
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .footer-logo span { color: var(--muted); }
+    .footer-desc {
+      font-size: 0.83rem;
+      color: var(--muted);
+      max-width: 280px;
+      line-height: 1.6;
+    }
+    .footer-nav-title {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 20px;
+    }
+    .footer-link {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .footer-link:hover { color: var(--accent); }
+    .footer-bottom {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .footer-legal { display: flex; gap: 24px; }
+    .footer-legal a { font-size: 0.75rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-legal a:hover { color: var(--accent); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ── PORTFOLIO MODAL ── */
+    .portfolio-modal .modal-content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+    }
+    .portfolio-modal .modal-header {
+      border-bottom: 1px solid var(--border);
+      padding: 28px 36px;
+    }
+    .portfolio-modal .modal-title {
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+    .portfolio-modal .btn-close { filter: none; }
+    .portfolio-modal .modal-body { padding: 36px; }
+    .modal-cat-pill {
+      display: inline-block;
+      background: var(--off);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 20px;
+    }
+    .modal-project-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+    .modal-meta { display: flex; gap: 32px; }
+    .modal-meta-item label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); display: block; }
+    .modal-meta-item span { font-size: 0.9rem; color: var(--accent); font-weight: 500; }
+    .modal-close-btn {
+      background: var(--accent);
+      color: var(--ink);
+      border: none;
+      font-family: var(--ff-body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 2px;
+      cursor: pointer;
+      margin-top: 28px;
+      transition: background 0.2s;
+    }
+    .modal-close-btn:hover { background: var(--light); color: var(--ink); }
+    .modal-img-placeholder {
+      width: 100%; height: 260px;
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ff-display);
+      font-size: 5rem;
+      color: var(--border);
+      margin-bottom: 24px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 992px) {
+      .contact-split { grid-template-columns: 1fr; gap: 48px; }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .timeline::before { display: none; }
+      .timeline li { flex-direction: column !important; align-items: flex-start; padding-left: 28px; border-left: 1px solid var(--border); margin-left: 0; }
+      .timeline-dot { left: -7px; top: 20px; }
+      .timeline-panel { width: 100%; margin: 0 !important; }
+      .timeline-end-block { width: 100%; }
+      .hero-stats { gap: 28px; flex-wrap: wrap; }
+    }
+    @media (max-width: 576px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .hero-headline { font-size: 4.5rem; }
+      .hero-right-deco { display: none; }
+    }
   </style>
 </head>
+<body id="page-top">
 
-<body>
-
-  <!-- Loading -->
-  <div class="loading">
-    <div class="text-center middle">
-      <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a class="navbar-brand-text" href="#page-top">VYN<span>.</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="fas fa-bars" style="color:var(--white)"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-center gap-1">
+        <li class="nav-item"><a class="nav-link-item" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link-item" href="#portfolio">Work</a></li>
+        <li class="nav-item"><a class="nav-link-item" href="#about">Story</a></li>
+        <li class="nav-item"><a class="nav-link-item" href="#team">Team</a></li>
+        <li class="nav-item ms-2"><a class="nav-link-item nav-cta" href="#contact">Start a Project</a></li>
+      </ul>
     </div>
   </div>
+</nav>
 
-  <!-- ── NAVBAR ── -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="logo" href="#">VYN<span>.</span></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="icon-bar"><i class="fas fa-bars"></i></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link active" href="#" data-scroll-nav="0">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="1">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="2">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="3">Work</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="4">Reviews</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="5">Contact</a></li>
-        </ul>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-letter" aria-hidden="true">VYN</div>
+  <div class="container position-relative">
+    <div class="hero-label">Orlando, FL · Est. 2022</div>
+    <h1 class="hero-headline">
+      WE BUILD<br>
+      <span class="accent-word">BRANDS</span><br>
+      THAT <span class="italic-word">win.</span>
+    </h1>
+    <p class="hero-sub">Digital marketing, ad creative, and web development for businesses that want to grow. No fluff — just results.</p>
+    <div class="hero-actions">
+      <a class="btn-primary-vyn" href="#portfolio">See Our Work <i class="fas fa-arrow-right"></i></a>
+      <a class="btn-ghost-vyn" href="#contact">Let's Talk</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">45<span>K</span></div>
+        <div class="stat-label">Social Reach</div>
       </div>
-    </div>
-  </nav>
-
-  <!-- ── HEADER / HERO ── -->
-  <header class="header valign bg-img" data-scroll-index="0" data-overlay-dark="7" data-background="img/bg.jpg" data-stellar-background-ratio="0.5">
-    <div class="svg">
-      <svg x="0px" y="0px" viewBox="0 186.5 1920 113.5">
-        <polygon points="-30,300 355.167,210.5 1432.5,290 1920,198.5 1920,300"></polygon>
-      </svg>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="full-width text-center caption mt-30">
-          <h1 class="cd-headline clip">
-            <span>We Build </span>
-            <span class="cd-words-wrapper">
-              <b class="is-visible">Brands.</b>
-              <b>Campaigns.</b>
-              <b>Websites.</b>
-              <b>Results.</b>
-            </span>
-          </h1>
-          <p class="sub">Digital Marketing & Creative Agency · Orlando, FL</p>
-          <div class="header-btns">
-            <a class="btn-vyn-primary" href="#" data-scroll-nav="3">See Our Work</a>
-            <a class="btn-vyn-ghost" href="#" data-scroll-nav="5">Start a Project</a>
-          </div>
-        </div>
+      <div>
+        <div class="stat-num">6<span>+</span></div>
+        <div class="stat-label">Active Clients</div>
       </div>
-    </div>
-    <div class="arrow bounce" data-scroll-nav="1">
-      <img src="img/down-chevron.svg" alt="scroll down">
-    </div>
-  </header>
-
-  <!-- ── STATS TICKER ── -->
-  <div class="ticker-wrap">
-    <div class="ticker-track">
-      <div class="ticker-item">META ADS <span class="ticker-dot"></span></div>
-      <div class="ticker-item">GOOGLE ADS <span class="ticker-dot"></span></div>
-      <div class="ticker-item">WEB DEVELOPMENT <span class="ticker-dot"></span></div>
-      <div class="ticker-item">BRAND DESIGN <span class="ticker-dot"></span></div>
-      <div class="ticker-item">SEO <span class="ticker-dot"></span></div>
-      <div class="ticker-item">CRM AUTOMATION <span class="ticker-dot"></span></div>
-      <div class="ticker-item">AD CREATIVE <span class="ticker-dot"></span></div>
-      <div class="ticker-item">META ADS <span class="ticker-dot"></span></div>
-      <div class="ticker-item">GOOGLE ADS <span class="ticker-dot"></span></div>
-      <div class="ticker-item">WEB DEVELOPMENT <span class="ticker-dot"></span></div>
-      <div class="ticker-item">BRAND DESIGN <span class="ticker-dot"></span></div>
-      <div class="ticker-item">SEO <span class="ticker-dot"></span></div>
-      <div class="ticker-item">CRM AUTOMATION <span class="ticker-dot"></span></div>
-      <div class="ticker-item">AD CREATIVE <span class="ticker-dot"></span></div>
-    </div>
-  </div>
-
-  <!-- ── STATS STRIP ── -->
-  <div class="stats-strip">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-4 stat">
-          <div class="stat-num">45K+</div>
-          <div class="stat-label">Social Reach</div>
-        </div>
-        <div class="col-4 stat">
-          <div class="stat-num">6+</div>
-          <div class="stat-label">Active Clients</div>
-        </div>
-        <div class="col-4 stat">
-          <div class="stat-num">3</div>
-          <div class="stat-label">Countries</div>
-        </div>
+      <div>
+        <div class="stat-num">3<span>+</span></div>
+        <div class="stat-label">Countries Served</div>
       </div>
     </div>
   </div>
+  <div class="hero-right-deco">
+    vynstudio.com
+    <i class="fas fa-arrow-down" style="writing-mode:horizontal-tb;font-size:0.7rem;color:var(--muted)"></i>
+  </div>
+</section>
 
-  <!-- ── ABOUT ── -->
-  <section class="hero section-padding" data-scroll-index="1">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-5 mb-5 mb-lg-0">
-          <div class="about-img-wrap">
-            <img src="img/hero.jpg" alt="Vyn Studio" style="border-radius:2px;">
-            <div class="about-img-deco"></div>
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <div class="ticker-item">META ADS <span class="ticker-dot"></span></div>
+    <div class="ticker-item">GOOGLE ADS <span class="ticker-dot"></span></div>
+    <div class="ticker-item">WEB DEVELOPMENT <span class="ticker-dot"></span></div>
+    <div class="ticker-item">BRAND DESIGN <span class="ticker-dot"></span></div>
+    <div class="ticker-item">SEO <span class="ticker-dot"></span></div>
+    <div class="ticker-item">CRM AUTOMATION <span class="ticker-dot"></span></div>
+    <div class="ticker-item">AD CREATIVE <span class="ticker-dot"></span></div>
+    <div class="ticker-item">META ADS <span class="ticker-dot"></span></div>
+    <div class="ticker-item">GOOGLE ADS <span class="ticker-dot"></span></div>
+    <div class="ticker-item">WEB DEVELOPMENT <span class="ticker-dot"></span></div>
+    <div class="ticker-item">BRAND DESIGN <span class="ticker-dot"></span></div>
+    <div class="ticker-item">SEO <span class="ticker-dot"></span></div>
+    <div class="ticker-item">CRM AUTOMATION <span class="ticker-dot"></span></div>
+    <div class="ticker-item">AD CREATIVE <span class="ticker-dot"></span></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="row mb-64 mb-5">
+      <div class="col-lg-6">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">FULL-SERVICE<br>GROWTH ENGINE</h2>
+      </div>
+      <div class="col-lg-5 offset-lg-1 d-flex align-items-end">
+        <p class="section-sub">From your first Meta ad to a complete brand system — we handle the strategy, the creative, and the execution.</p>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-num">01</div>
+          <div class="service-icon"><i class="fas fa-bullseye"></i></div>
+          <div class="service-name">Paid Advertising</div>
+          <p class="service-desc">Meta and Google Ads campaigns built to convert. From creative to targeting to continuous optimization — we manage every dollar.</p>
+          <div class="service-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-num">02</div>
+          <div class="service-icon"><i class="fas fa-palette"></i></div>
+          <div class="service-name">Ad Creative</div>
+          <p class="service-desc">Thumb-stopping visuals engineered to perform. Photo ads, carousels, video concepts, and editorial formats for any platform.</p>
+          <div class="service-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-num">03</div>
+          <div class="service-icon"><i class="fas fa-code"></i></div>
+          <div class="service-name">Web Development</div>
+          <p class="service-desc">Fast, conversion-focused landing pages and full websites. Built clean, deployed to Netlify, and integrated with your marketing stack.</p>
+          <div class="service-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-num">04</div>
+          <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+          <div class="service-name">Brand Design</div>
+          <p class="service-desc">Identity systems that hold up everywhere — from ads to signage. Colors, typography, and tone locked in with a full brand guide.</p>
+          <div class="service-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-num">05</div>
+          <div class="service-icon"><i class="fas fa-search"></i></div>
+          <div class="service-name">SEO</div>
+          <p class="service-desc">On-page optimization, schema markup, and content strategy. We build organic presence that compounds over time.</p>
+          <div class="service-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-num">06</div>
+          <div class="service-icon"><i class="fas fa-robot"></i></div>
+          <div class="service-name">CRM & Automation</div>
+          <p class="service-desc">GHL pipelines, SMS lead capture, webhook flows, and automated follow-up sequences. Your leads never go cold again.</p>
+          <div class="service-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <div class="section-label">Selected Work</div>
+        <h2 class="section-title">OUR<br>PROJECTS</h2>
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-grid">
+    <!-- Item 1 -->
+    <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#pModal1">
+      <div class="portfolio-item-inner">
+        <div class="portfolio-bg-placeholder">SA</div>
+        <div class="portfolio-overlay">
+          <div class="p-hover-icon"><i class="fas fa-plus"></i></div>
+          <div class="p-hover-title">Soligo Air</div>
+          <div class="p-hover-cat">Full Brand + Meta Ads</div>
+        </div>
+        <div class="portfolio-caption">
+          <div class="p-cap-title">Soligo Air</div>
+          <div class="p-cap-cat">HVAC · Orlando, FL</div>
+        </div>
+      </div>
+    </div>
+    <!-- Item 2 -->
+    <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#pModal2">
+      <div class="portfolio-item-inner">
+        <div class="portfolio-bg-placeholder">TM</div>
+        <div class="portfolio-overlay">
+          <div class="p-hover-icon"><i class="fas fa-plus"></i></div>
+          <div class="p-hover-title">Toro Movers</div>
+          <div class="p-hover-cat">Branding + Paid Ads</div>
+        </div>
+        <div class="portfolio-caption">
+          <div class="p-cap-title">Toro Movers</div>
+          <div class="p-cap-cat">Moving Co. · Central FL</div>
+        </div>
+      </div>
+    </div>
+    <!-- Item 3 -->
+    <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#pModal3">
+      <div class="portfolio-item-inner">
+        <div class="portfolio-bg-placeholder">SF</div>
+        <div class="portfolio-overlay">
+          <div class="p-hover-icon"><i class="fas fa-plus"></i></div>
+          <div class="p-hover-title">Stael Fogarty</div>
+          <div class="p-hover-cat">Web + Instagram Ads</div>
+        </div>
+        <div class="portfolio-caption">
+          <div class="p-cap-title">Stael Fogarty</div>
+          <div class="p-cap-cat">Interpreter · Bilingual</div>
+        </div>
+      </div>
+    </div>
+    <!-- Item 4 -->
+    <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#pModal4">
+      <div class="portfolio-item-inner">
+        <div class="portfolio-bg-placeholder">DC</div>
+        <div class="portfolio-overlay">
+          <div class="p-hover-icon"><i class="fas fa-plus"></i></div>
+          <div class="p-hover-title">De Cero a Cliente</div>
+          <div class="p-hover-cat">Digital Course</div>
+        </div>
+        <div class="portfolio-caption">
+          <div class="p-cap-title">De Cero a Cliente</div>
+          <div class="p-cap-cat">Course · Spanish Market</div>
+        </div>
+      </div>
+    </div>
+    <!-- Item 5 -->
+    <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#pModal5">
+      <div class="portfolio-item-inner">
+        <div class="portfolio-bg-placeholder">IA</div>
+        <div class="portfolio-overlay">
+          <div class="p-hover-icon"><i class="fas fa-plus"></i></div>
+          <div class="p-hover-title">Immigration Law</div>
+          <div class="p-hover-cat">Web + SEO</div>
+        </div>
+        <div class="portfolio-caption">
+          <div class="p-cap-title">Immigration Law</div>
+          <div class="p-cap-cat">Legal · USA</div>
+        </div>
+      </div>
+    </div>
+    <!-- Item 6 -->
+    <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#pModal6">
+      <div class="portfolio-item-inner">
+        <div class="portfolio-bg-placeholder">RE</div>
+        <div class="portfolio-overlay">
+          <div class="p-hover-icon"><i class="fas fa-plus"></i></div>
+          <div class="p-hover-title">Restaurant Group</div>
+          <div class="p-hover-cat">Social + Creative</div>
+        </div>
+        <div class="portfolio-caption">
+          <div class="p-cap-title">Restaurant Group</div>
+          <div class="p-cap-cat">F&B · Spain</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-5">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">THE<br>TIMELINE</h2>
+      </div>
+      <div class="col-lg-6 offset-lg-1 d-flex align-items-end">
+        <p class="section-sub">Built from scratch in Orlando. Driven by results. Rooted in a deep understanding of what makes brands grow in the digital age.</p>
+      </div>
+    </div>
+    <ul class="timeline mt-5">
+      <li>
+        <div class="timeline-dot"></div>
+        <div class="timeline-panel">
+          <div class="timeline-year">2022 — The Beginning</div>
+          <div class="timeline-heading">Vyn Studio Founded</div>
+          <p class="timeline-body">Started as a freelance creative operation in Orlando, FL — running Meta ads and building landing pages for local service businesses. Zero team, maximum hustle.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-dot"></div>
+        <div class="timeline-panel">
+          <div class="timeline-year">2023 — Growth</div>
+          <div class="timeline-heading">First Multi-Client Roster</div>
+          <p class="timeline-body">Expanded to six active clients spanning HVAC, moving, legal, and food service. Built repeatable systems for ad creative, web development, and campaign management.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-dot"></div>
+        <div class="timeline-panel">
+          <div class="timeline-year">2024 — Scale</div>
+          <div class="timeline-heading">Full-Stack Agency Operations</div>
+          <p class="timeline-body">Launched full brand systems, CRM automation via GHL, and bilingual campaigns for the US Hispanic market. Built DesignAI — a proprietary tool for autonomous creative production.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-dot"></div>
+        <div class="timeline-panel">
+          <div class="timeline-year">2025 — Now</div>
+          <div class="timeline-heading">International Reach</div>
+          <p class="timeline-body">Serving clients across USA, Spain, and Honduras. 45K+ social following. Building systems that let small businesses compete at the highest level.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-dot"></div>
+        <div class="timeline-end-block">
+          Be Part<br>Of Our<br>Story.
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section" id="team">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <div class="section-label">The People</div>
+        <h2 class="section-title">THE<br>TEAM</h2>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card">
+          <div class="team-avatar">D</div>
+          <div class="team-name">Diler</div>
+          <div class="team-role">Founder & Creative Director</div>
+          <p class="team-desc">Runs strategy, ad creative, and client relationships. Obsessed with brand systems and high-converting campaigns.</p>
+          <div>
+            <a class="social-btn" href="#"><i class="fab fa-instagram"></i></a>
+            <a class="social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
-        <div class="col-lg-6 offset-lg-1 about-text">
-          <span class="about-badge">Orlando, FL · Est. 2022</span>
-          <h3>We build brands<br>that <em style="font-family:'Playfair Display',serif;font-style:italic;color:#9a9a9a;">win.</em></h3>
-          <p>Vyn Studio is a full-service digital marketing and creative agency. We handle everything from Meta & Google ad campaigns to brand identity, web development, and CRM automation — so your business can grow without the guesswork.</p>
-          <p>We've built brands and campaigns for HVAC companies, moving companies, interpreters, law firms, and restaurants across the USA, Spain, and Honduras.</p>
-
-          <div class="skills mt-50">
-            <div class="skill-item">
-              <h6>Paid Advertising <span>95%</span></h6>
-              <div class="skills-progress"><span data-value="95%"></span></div>
-            </div>
-            <div class="skill-item">
-              <h6>Brand Design <span>90%</span></h6>
-              <div class="skills-progress"><span data-value="90%"></span></div>
-            </div>
-            <div class="skill-item">
-              <h6>Web Development <span>85%</span></h6>
-              <div class="skills-progress"><span data-value="85%"></span></div>
-            </div>
-            <div class="skill-item">
-              <h6>CRM & Automation <span>88%</span></h6>
-              <div class="skills-progress"><span data-value="88%"></span></div>
-            </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card">
+          <div class="team-avatar">V</div>
+          <div class="team-name">Vyn Studio</div>
+          <div class="team-role">Web & Development Lead</div>
+          <p class="team-desc">Responsible for all web builds, landing pages, and technical integrations — from Netlify deploys to GHL webhooks.</p>
+          <div>
+            <a class="social-btn" href="#"><i class="fab fa-github"></i></a>
+            <a class="social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card">
+          <div class="team-avatar">P</div>
+          <div class="team-name">Partners</div>
+          <div class="team-role">Media Buying & Analytics</div>
+          <p class="team-desc">Our network of specialists who handle campaign scaling, GA4 analytics, and performance reporting across all accounts.</p>
+          <div>
+            <a class="social-btn" href="#"><i class="fab fa-facebook-f"></i></a>
+            <a class="social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
       </div>
     </div>
-    <div class="se-tring se-tring-gray">
-      <span class="left"></span>
-      <span class="right"></span>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ── SERVICES ── -->
-  <section class="services section-padding bg-gray" data-scroll-index="2">
-    <div class="container">
-      <div class="row">
-        <div class="section-head text-center col-sm-12">
-          <h4>Our Services</h4>
-          <h6>What We Do</h6>
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="container">
+    <div class="clients-label">Trusted By</div>
+    <div class="row align-items-center justify-content-center">
+      <div class="col-6 col-md-3">
+        <div class="client-logo">
+          <span class="client-name-text">Soligo Air</span>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <span class="icon"><i class="icon-megaphone"></i></span>
-            <h6>Paid Advertising</h6>
-            <p>Meta and Google Ads built to convert. From creative to targeting to continuous optimization — every dollar accounted for.</p>
-          </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="client-logo">
+          <span class="client-name-text">Toro Movers</span>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <span class="icon"><i class="icon-layers"></i></span>
-            <h6>Ad Creative</h6>
-            <p>Thumb-stopping visuals engineered to perform. Photo ads, carousels, and editorial formats for any platform.</p>
-          </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="client-logo">
+          <span class="client-name-text">Stael Fogarty</span>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <span class="icon"><i class="icon-laptop"></i></span>
-            <h6>Web Development</h6>
-            <p>Fast, conversion-focused landing pages and full websites. Built clean, deployed to Netlify, integrated with your stack.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <span class="icon"><i class="icon-circle-compass"></i></span>
-            <h6>Brand Design</h6>
-            <p>Identity systems that hold up everywhere — from ads to signage. Colors, typography, and tone locked in with a full guide.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <span class="icon"><i class="icon-briefcase"></i></span>
-            <h6>SEO</h6>
-            <p>On-page optimization, schema markup, and content strategy. Organic presence that compounds over time.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <span class="icon"><i class="icon-mobile"></i></span>
-            <h6>CRM & Automation</h6>
-            <p>GHL pipelines, SMS lead capture, webhook flows, and automated follow-up sequences. Your leads never go cold again.</p>
-          </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="client-logo">
+          <span class="client-name-text">+ More</span>
         </div>
       </div>
     </div>
-    <div class="se-tring se-tring-rev">
-      <span class="left"></span>
-      <span class="right"></span>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ── PORTFOLIO ── -->
-  <section class="portfolio section-padding" data-scroll-index="3">
-    <div class="container">
-      <div class="row">
-        <div class="section-head text-center col-sm-12">
-          <h4>Our Work</h4>
-          <h6>Selected Projects</h6>
-        </div>
-        <div class="filtering text-center mb-30 col-sm-12">
-          <span data-filter='*' class="active">All</span>
-          <span data-filter='.ads'>Paid Ads</span>
-          <span data-filter='.brand'>Brand</span>
-          <span data-filter='.web'>Web</span>
-        </div>
-        <div class="clearfix"></div>
-        <div class="gallery text-center full-width">
-          <div class="col-md-6 col-lg-4 items ads brand web">
-            <div class="item-img">
-              <img src="img/portfolio/1.jpg" alt="Soligo Air">
-              <div class="item-img-overlay valign">
-                <div class="overlay-info full-width vertical-center">
-                  <h6>Soligo Air</h6>
-                  <p>Full Brand · Meta Ads · Web</p>
-                </div>
-                <a href="img/portfolio/1.jpg" class="popimg"><i class="fas fa-images"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 items ads brand">
-            <div class="item-img">
-              <img src="img/portfolio/2.jpg" alt="Toro Movers">
-              <div class="item-img-overlay valign">
-                <div class="overlay-info full-width vertical-center">
-                  <h6>Toro Movers</h6>
-                  <p>Brand Design · Meta Ads</p>
-                </div>
-                <a href="img/portfolio/2.jpg" class="popimg"><i class="fas fa-images"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 items web ads">
-            <div class="item-img">
-              <img src="img/portfolio/3.jpg" alt="Stael Fogarty">
-              <div class="item-img-overlay valign">
-                <div class="overlay-info full-width vertical-center">
-                  <h6>Stael Fogarty</h6>
-                  <p>Web · Instagram Ads</p>
-                </div>
-                <a href="img/portfolio/3.jpg" class="popimg"><i class="fas fa-images"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 items brand">
-            <div class="item-img">
-              <img src="img/portfolio/4.jpg" alt="De Cero a Cliente">
-              <div class="item-img-overlay valign">
-                <div class="overlay-info full-width vertical-center">
-                  <h6>De Cero a Cliente</h6>
-                  <p>Digital Course · $37</p>
-                </div>
-                <a href="img/portfolio/4.jpg" class="popimg"><i class="fas fa-images"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 items web">
-            <div class="item-img">
-              <img src="img/portfolio/5.jpg" alt="Immigration Law">
-              <div class="item-img-overlay valign">
-                <div class="overlay-info full-width vertical-center">
-                  <h6>Immigration Law</h6>
-                  <p>Web · SEO</p>
-                </div>
-                <a href="img/portfolio/5.jpg" class="popimg"><i class="fas fa-images"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 items ads">
-            <div class="item-img">
-              <img src="img/portfolio/6.jpg" alt="Restaurant Group">
-              <div class="item-img-overlay valign">
-                <div class="overlay-info full-width vertical-center">
-                  <h6>Restaurant Group</h6>
-                  <p>Social · Creative · Spain</p>
-                </div>
-                <a href="img/portfolio/6.jpg" class="popimg"><i class="fas fa-images"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="clear-fix"></div>
-        </div>
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">START A<br>PROJECT</h2>
       </div>
     </div>
-    <div class="se-tring se-tring-gray">
-      <span class="left"></span>
-      <span class="right"></span>
-    </div>
-  </section>
-
-  <!-- ── TESTIMONIALS ── -->
-  <section class="testimonials" data-scroll-index="4">
-    <div class="container">
-      <div class="row">
-        <div class="section-head text-center col-sm-12">
-          <h4>Client Reviews</h4>
-          <h6>What They Say</h6>
+    <div class="contact-split">
+      <div>
+        <div class="contact-info-block">
+          <div class="contact-info-label">Location</div>
+          <div class="contact-info-value">Orlando, Florida</div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="testi-card">
-            <span class="testi-placeholder">Placeholder — swap with real quote</span>
-            <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
-            <p class="testi-quote">"Vyn Studio completely transformed how we generate leads. Our phones started ringing within the first week of the Meta campaign — we had to hire another technician to keep up."</p>
-            <div class="testi-divider"></div>
-            <div class="testi-author">
-              <div class="testi-avatar">SA</div>
-              <div>
-                <div class="testi-name">Soligo Air</div>
-                <div class="testi-role">HVAC · Orlando, FL</div>
-              </div>
-            </div>
+        <div class="contact-info-block">
+          <div class="contact-info-label">Email</div>
+          <div class="contact-info-value">hello@vynstudio.com</div>
+        </div>
+        <div class="contact-info-block">
+          <div class="contact-info-label">Services</div>
+          <div class="contact-info-value" style="font-size:1rem;color:var(--muted);font-family:var(--ff-body);font-weight:300;line-height:1.7">
+            Meta & Google Ads · Web Dev<br>
+            Brand Design · SEO · CRM
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="testi-card">
-            <span class="testi-placeholder">Placeholder — swap with real quote</span>
-            <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
-            <p class="testi-quote">"The branding they built for Toro Movers is exactly what we needed — professional, clean, and different from every other moving company out there. Consistent leads every week."</p>
-            <div class="testi-divider"></div>
-            <div class="testi-author">
-              <div class="testi-avatar">TM</div>
-              <div>
-                <div class="testi-name">Toro Movers</div>
-                <div class="testi-role">Moving Co. · Central FL</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="testi-card">
-            <span class="testi-placeholder">Placeholder — swap with real quote</span>
-            <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
-            <p class="testi-quote">"My website and Instagram went from zero to fully professional fast. Clients find me online and book directly — the calendar integration alone saves me hours every week."</p>
-            <div class="testi-divider"></div>
-            <div class="testi-author">
-              <div class="testi-avatar">SF</div>
-              <div>
-                <div class="testi-name">Stael Fogarty</div>
-                <div class="testi-role">Interpreter · Language Coach</div>
-              </div>
-            </div>
-          </div>
+        <div style="margin-top:40px;padding:28px;background:var(--card);border:1px solid var(--border);border-radius:4px;box-shadow:0 2px 16px rgba(0,0,0,0.05);">
+          <div style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Response Time</div>
+          <div style="font-family:var(--ff-display);font-size:1.8rem;color:var(--accent);">Under 24 Hours</div>
+          <div style="font-size:0.83rem;color:var(--muted);margin-top:6px;">We review every inquiry personally.</div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ── CONTACT ── -->
-  <section class="contact section-padding" data-scroll-index="5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head text-center col-sm-12">
-          <h4>Contact Us</h4>
-          <h6>Start a Project</h6>
+      <div>
+        <!-- Success / Error messages -->
+        <div id="form-success" style="display:none;padding:20px 24px;background:#f0faf4;border:1px solid #b6e4c8;border-radius:4px;margin-bottom:20px;">
+          <div style="font-family:var(--ff-display);font-size:1.2rem;color:#1a6b3a;letter-spacing:0.05em;margin-bottom:4px;">Message Sent!</div>
+          <div style="font-size:0.85rem;color:#3a7a52;">We'll be in touch within 24 hours.</div>
+        </div>
+        <div id="form-error" style="display:none;padding:20px 24px;background:#fdf2f2;border:1px solid #f0b8b8;border-radius:4px;margin-bottom:20px;">
+          <div style="font-family:var(--ff-display);font-size:1.2rem;color:#8b2020;letter-spacing:0.05em;margin-bottom:4px;">Something went wrong.</div>
+          <div style="font-size:0.85rem;color:#a03030;">Please email us directly at hello@vynstudio.com</div>
         </div>
 
-        <!-- Info -->
-        <div class="col-lg-4 mb-5 mb-lg-0">
-          <div class="contact-info-item">
-            <div class="contact-info-label">Location</div>
-            <div class="contact-info-value">Orlando, Florida</div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-label">Email</div>
-            <div class="contact-info-value">hello@vynstudio.com</div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-label">Services</div>
-            <div class="contact-info-value" style="font-size:13px;font-weight:400;color:#9a9a9a;line-height:1.7">Meta & Google Ads · Web Dev<br>Brand Design · SEO · CRM</div>
-          </div>
-          <div class="contact-info-item" style="margin-top:32px;padding:20px;background:#f7f7f7;border-radius:2px;">
-            <div class="contact-info-label">Response Time</div>
-            <div class="contact-info-value">Under 24 Hours</div>
-            <div style="font-size:12px;color:#aaa;margin-top:4px;">We review every inquiry personally.</div>
-          </div>
-        </div>
-
-        <!-- Form -->
-        <div class="col-lg-8">
-          <div id="form-success">Message sent! We'll be in touch within 24 hours.</div>
-          <div id="form-error">Something went wrong. Please email hello@vynstudio.com directly.</div>
-          <div class="form">
-            <div class="controls">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input id="f-name" type="text" placeholder="Your Name *">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input id="f-email" type="email" placeholder="Your Email *">
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <input id="f-phone" type="tel" placeholder="Your Phone">
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <textarea id="f-message" placeholder="Tell us about your project *" rows="5"></textarea>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <button id="f-submit" type="button" class="butn butn-bg" onclick="submitForm()"><span>Send Message</span></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <input class="form-input" id="f-name" type="text" placeholder="Your Name *" />
+        <input class="form-input" id="f-email" type="email" placeholder="Your Email *" />
+        <input class="form-input" id="f-phone" type="tel" placeholder="Your Phone" />
+        <textarea class="form-input" id="f-message" placeholder="Tell us about your project *"></textarea>
+        <button class="btn-submit-vyn" id="f-submit" type="button" onclick="submitForm()">Send Message →</button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ── FOOTER ── -->
-  <footer class="text-center">
-    <div class="container">
-      <a class="logo" href="#">VYN<span>.</span></a>
-      <div class="social">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-logo">VYN<span>.</span></div>
+        <p class="footer-desc">Digital marketing & creative agency based in Orlando. We build brands that win in the attention economy.</p>
       </div>
-      <p>&copy; 2025 Vyn Studio · Orlando, FL · All Rights Reserved.</p>
+      <div class="col-lg-2 offset-lg-2">
+        <div class="footer-nav-title">Navigate</div>
+        <a class="footer-link" href="#services">Services</a>
+        <a class="footer-link" href="#portfolio">Work</a>
+        <a class="footer-link" href="#about">Story</a>
+        <a class="footer-link" href="#team">Team</a>
+        <a class="footer-link" href="#contact">Contact</a>
+      </div>
+      <div class="col-lg-2">
+        <div class="footer-nav-title">Services</div>
+        <a class="footer-link" href="#">Meta Ads</a>
+        <a class="footer-link" href="#">Google Ads</a>
+        <a class="footer-link" href="#">Web Dev</a>
+        <a class="footer-link" href="#">Brand Design</a>
+        <a class="footer-link" href="#">CRM / GHL</a>
+      </div>
+      <div class="col-lg-2">
+        <div class="footer-nav-title">Social</div>
+        <a class="footer-link" href="#">Instagram</a>
+        <a class="footer-link" href="#">LinkedIn</a>
+        <a class="footer-link" href="#">Facebook</a>
+      </div>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Vyn Studio · Orlando, FL · All rights reserved</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
-  <!-- jQuery -->
-  <script src="js/jquery-3.0.0.min.js"></script>
-  <script src="js/jquery-migrate-3.0.0.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/scrollIt.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/isotope.pkgd.min.js"></script>
-  <script src="js/animated.headline.js"></script>
-  <script src="js/scripts.js"></script>
+<!-- PORTFOLIO MODALS -->
+<div class="modal fade portfolio-modal" id="pModal1" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title">Soligo Air</span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-placeholder">SA</div>
+        <span class="modal-cat-pill">Full Brand + Meta Ads</span>
+        <p class="modal-project-desc">Complete brand system build for a Central Florida HVAC company — including brand identity, six SMS lead capture pages, Meta ad creative library, and Google Ads management. Imperial Blue, Blaze Orange, and Poppins locked as the brand system.</p>
+        <div class="modal-meta">
+          <div class="modal-meta-item"><label>Client</label><span>Soligo Air</span></div>
+          <div class="modal-meta-item"><label>Category</label><span>HVAC · Orlando, FL</span></div>
+          <div class="modal-meta-item"><label>Services</label><span>Brand · Web · Paid Ads</span></div>
+        </div>
+        <button class="modal-close-btn" data-bs-dismiss="modal">Close Project</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <script>
-    /* ── GHL Webhook — swap URL when ready ── */
-    const GHL_WEBHOOK = 'https://hooks.gohighlevel.com/hooks/YOUR_WEBHOOK_ID_HERE';
+<div class="modal fade portfolio-modal" id="pModal2" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title">Toro Movers</span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-placeholder">TM</div>
+        <span class="modal-cat-pill">Branding + Meta Ads</span>
+        <p class="modal-project-desc">Full brand identity for a family-owned hourly moving company in Central Florida. Developed the "Framed Minimal" ad creative system and launched Meta lead generation campaigns at $10/day.</p>
+        <div class="modal-meta">
+          <div class="modal-meta-item"><label>Client</label><span>Toro Movers</span></div>
+          <div class="modal-meta-item"><label>Category</label><span>Moving Company</span></div>
+          <div class="modal-meta-item"><label>Services</label><span>Brand · Meta Ads</span></div>
+        </div>
+        <button class="modal-close-btn" data-bs-dismiss="modal">Close Project</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-    async function submitForm() {
-      const name    = document.getElementById('f-name').value.trim();
-      const email   = document.getElementById('f-email').value.trim();
-      const phone   = document.getElementById('f-phone').value.trim();
-      const message = document.getElementById('f-message').value.trim();
-      const success = document.getElementById('form-success');
-      const error   = document.getElementById('form-error');
-      const btn     = document.getElementById('f-submit');
+<div class="modal fade portfolio-modal" id="pModal3" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title">Stael Fogarty</span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-placeholder">SF</div>
+        <span class="modal-cat-pill">Web + Instagram Ads</span>
+        <p class="modal-project-desc">Full website build with Google Calendar integration for a professional interpreter and language coach. Eight Instagram ad creatives produced in Portuguese for the bilingual market.</p>
+        <div class="modal-meta">
+          <div class="modal-meta-item"><label>Client</label><span>Stael Fogarty</span></div>
+          <div class="modal-meta-item"><label>Category</label><span>Language Services</span></div>
+          <div class="modal-meta-item"><label>Services</label><span>Web · Instagram Ads</span></div>
+        </div>
+        <button class="modal-close-btn" data-bs-dismiss="modal">Close Project</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-      success.style.display = 'none';
-      error.style.display   = 'none';
+<div class="modal fade portfolio-modal" id="pModal4" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title">De Cero a Cliente</span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-placeholder">DC</div>
+        <span class="modal-cat-pill">Digital Course · $37</span>
+        <p class="modal-project-desc">Spanish-language mini course for Hispanic entrepreneurs targeting Diler's 45K social audience. Five lessons covering personal brand, profile optimization, content strategy, DM scripts, and a 7-day action plan.</p>
+        <div class="modal-meta">
+          <div class="modal-meta-item"><label>Client</label><span>Vyn Studio</span></div>
+          <div class="modal-meta-item"><label>Category</label><span>Education · Course</span></div>
+          <div class="modal-meta-item"><label>Services</label><span>Content · Strategy</span></div>
+        </div>
+        <button class="modal-close-btn" data-bs-dismiss="modal">Close Project</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-      if (!name || !email || !message) {
-        ['f-name','f-email','f-message'].forEach(id => {
-          const el = document.getElementById(id);
-          if (!el.value.trim()) el.style.borderColor = '#e24b4a';
-        });
-        return;
-      }
+<div class="modal fade portfolio-modal" id="pModal5" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title">Immigration Law</span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-placeholder">IA</div>
+        <span class="modal-cat-pill">Web + SEO</span>
+        <p class="modal-project-desc">Website and SEO strategy for an immigration law firm. Built with lead capture, multilingual consideration, and organic search optimization to drive qualified inquiries.</p>
+        <div class="modal-meta">
+          <div class="modal-meta-item"><label>Client</label><span>Law Firm</span></div>
+          <div class="modal-meta-item"><label>Category</label><span>Legal Services</span></div>
+          <div class="modal-meta-item"><label>Services</label><span>Web · SEO</span></div>
+        </div>
+        <button class="modal-close-btn" data-bs-dismiss="modal">Close Project</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-      btn.querySelector('span').textContent = 'Sending...';
-      btn.disabled = true;
+<div class="modal fade portfolio-modal" id="pModal6" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title">Restaurant Group</span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-placeholder">RE</div>
+        <span class="modal-cat-pill">Social + Creative</span>
+        <p class="modal-project-desc">Social media management and ad creative for restaurant clients based in Spain. Culturally nuanced content strategy and visual production for the European F&B market.</p>
+        <div class="modal-meta">
+          <div class="modal-meta-item"><label>Client</label><span>Restaurant Group</span></div>
+          <div class="modal-meta-item"><label>Category</label><span>Food & Beverage</span></div>
+          <div class="modal-meta-item"><label>Services</label><span>Social · Creative</span></div>
+        </div>
+        <button class="modal-close-btn" data-bs-dismiss="modal">Close Project</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-      try {
-        const res = await fetch(GHL_WEBHOOK, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, email, phone, message, source: 'vynstudio.com', timestamp: new Date().toISOString() })
-        });
-        if (res.ok) {
-          success.style.display = 'block';
-          ['f-name','f-email','f-phone','f-message'].forEach(id => document.getElementById(id).value = '');
-          btn.querySelector('span').textContent = 'Sent ✓';
-        } else { throw new Error(); }
-      } catch(e) {
-        error.style.display = 'block';
-        btn.querySelector('span').textContent = 'Send Message';
-        btn.disabled = false;
-      }
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Nav scroll behavior
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Active nav highlight
+  const sections = document.querySelectorAll('section[id], div[id="clients"]');
+  const navLinks = document.querySelectorAll('.nav-link-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.style.color = '';
+          if (link.getAtt<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  /* ── GHL WEBHOOK — swap URL when ready ── */
+  const GHL_WEBHOOK = 'https://hooks.gohighlevel.com/hooks/YOUR_WEBHOOK_ID_HERE';
+
+  async function submitForm() {
+    const name    = document.getElementById('f-name').value.trim();
+    const email   = document.getElementById('f-email').value.trim();
+    const phone   = document.getElementById('f-phone').value.trim();
+    const message = document.getElementById('f-message').value.trim();
+
+    const success = document.getElementById('form-success');
+    const error   = document.getElementById('form-error');
+    const btn     = document.getElementById('f-submit');
+
+    success.style.display = 'none';
+    error.style.display   = 'none';
+
+    if (!name || !email || !message) {
+      const inputs = ['f-name','f-email','f-message'];
+      inputs.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el.value.trim()) el.style.borderColor = '#e24b4a';
+        else el.style.borderColor = '';
+      });
+      return;
     }
 
-    /* Clear red border on focus */
-    ['f-name','f-email','f-message'].forEach(id => {
-      document.getElementById(id).addEventListener('focus', function(){ this.style.borderColor = ''; });
-    });
-  </script>
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
 
+    try {
+      const res = await fetch(GHL_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, message,
+          source: 'vynstudio.com contact form',
+          timestamp: new Date().toISOString()
+        })
+      });
+
+      if (res.ok) {
+        success.style.display = 'block';
+        ['f-name','f-email','f-phone','f-message'].forEach(id => {
+          document.getElementById(id).value = '';
+        });
+        btn.textContent = 'Sent ✓';
+      } else {
+        throw new Error('Non-200 response');
+      }
+    } catch (e) {
+      error.style.display = 'block';
+      btn.textContent = 'Send Message →';
+      btn.disabled = false;
+    }
+  }
+
+  /* ── Clear red border on input focus ── */
+  ['f-name','f-email','f-message'].forEach(id => {
+    document.getElementById(id).addEventListener('focus', function() {
+      this.style.borderColor = '';
+    });
+  });
+
+  /* ── Nav scroll behavior ── */
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  /* ── Mobile nav: close on link click ── */
+  document.querySelectorAll('.nav-link-item').forEach(link => {
+    link.addEventListener('click', () => {
+      const collapse = document.getElementById('navMenu');
+      const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+      if (bsCollapse) bsCollapse.hide();
+    });
+  });
+
+  /* ── Scroll offset for fixed nav ── */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = 80;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ── Active nav link highlight ── */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.style.color = '';
+          if (link.getAttribute('href') === '#' + entry.target.id) {
+            link.style.color = 'var(--accent)';
+          }
+        });
+      }
+    });
+  }, { threshold: 0.35 });
+  sections.forEach(s => observer.observe(s));
+</script>
 </body>
 </html>
