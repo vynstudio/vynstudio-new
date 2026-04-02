@@ -1,0 +1,19 @@
+# ── Vyn Studio · Netlify Redirects ──
+
+# Short URLs → page sections
+/work           /#portfolio     301
+/services       /#services      301
+/about          /#about         301
+/contact        /#contact       301
+/reviews        /#testimonials  301
+/story          /#about         301
+
+# Campaign landing shortcuts (add as needed)
+/soligo         /#portfolio     301
+/toro           /#portfolio     301
+
+# www → non-www
+https://www.vynstudio.com/*   https://vynstudio.com/:splat   301!
+
+# Force HTTPS
+http://vynstudio.com/*        https://vynstudio.com/:splat   301!
