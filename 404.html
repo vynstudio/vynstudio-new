@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 — Page Not Found | Vyn Studio</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231A1A1A'/><text y='78' x='8' font-size='72' font-family='serif' font-weight='900' fill='%23FAFAF8'>V</text></svg>" />
+  <style>
+    :root {
+      --ink: #FAFAF8;
+      --off: #F2F0EB;
+      --card: #FFFFFF;
+      --border: #E0DDD6;
+      --muted: #999690;
+      --light: #666360;
+      --accent: #1A1A1A;
+      --ff-display: 'Bebas Neue', sans-serif;
+      --ff-body: 'DM Sans', sans-serif;
+      --ff-italic: 'Playfair Display', serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+
+    body {
+      background: var(--ink);
+      color: var(--accent);
+      font-family: var(--ff-body);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Top accent bar */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    /* Oversized 404 letterform background */
+    .bg-text {
+      position: absolute;
+      font-family: var(--ff-display);
+      font-size: clamp(280px, 45vw, 560px);
+      line-height: 1;
+      color: rgba(26,26,26,0.05);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -52%);
+      letter-spacing: -0.04em;
+      user-select: none;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    /* Dot grid — fades in from right */
+    .dot-grid {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(26,26,26,0.12) 1.5px, transparent 1.5px);
+      background-size: 22px 22px;
+      -webkit-mask-image: linear-gradient(to right, transparent 20%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.8) 100%);
+      mask-image: linear-gradient(to right, transparent 20%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.8) 100%);
+      pointer-events: none;
+    }
+
+    /* Content */
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px 24px;
+      max-width: 560px;
+    }
+
+    .label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.1s forwards;
+    }
+    .label::before, .label::after {
+      content: '';
+      display: block;
+      width: 24px; height: 1px;
+      background: var(--border);
+    }
+
+    .error-code {
+      font-family: var(--ff-display);
+      font-size: clamp(5rem, 18vw, 10rem);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+      margin-bottom: 8px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.2s forwards;
+    }
+
+    .error-italic {
+      font-family: var(--ff-italic);
+      font-style: italic;
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      color: var(--muted);
+      margin-bottom: 24px;
+      display: block;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.35s forwards;
+    }
+
+    .error-desc {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--light);
+      line-height: 1.7;
+      max-width: 380px;
+      margin: 0 auto 44px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.5s forwards;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.65s forwards;
+    }
+
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: var(--ink);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+    .btn-home:hover {
+      background: var(--light);
+      transform: translateY(-2px);
+    }
+
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      color: var(--light);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+    .btn-contact:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Footer brand */
+    .footer-brand {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      color: var(--border);
+      opacity: 0;
+      animation: fadeIn 1s 1s forwards;
+      white-space: nowrap;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @media (max-width: 480px) {
+      .actions { flex-direction: column; align-items: center; }
+      .btn-home, .btn-contact { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-text" aria-hidden="true">404</div>
+  <div class="dot-grid" aria-hidden="true"></div>
+
+  <div class="content">
+    <div class="label">Error · Page Not Found</div>
+    <div class="error-code">404</div>
+    <span class="error-italic">lost in the funnel.</span>
+    <p class="error-desc">The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+    <div class="actions">
+      <a class="btn-home" href="/">← Back to Home</a>
+      <a class="btn-contact" href="/#contact">Start a Project</a>
+    </div>
+  </div>
+
+  <div class="footer-brand">VYN STUDIO · ORLANDO, FL</div>
+
+</body>
+</html>
