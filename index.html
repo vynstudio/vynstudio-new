@@ -727,6 +727,107 @@
     }
     .social-btn:hover { border-color: var(--accent); color: var(--accent); }
 
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--ink); overflow: hidden; position: relative; }
+    #testimonials::before {
+      content: '"';
+      position: absolute;
+      font-family: var(--ff-italic);
+      font-size: 40rem;
+      line-height: 1;
+      color: rgba(26,26,26,0.04);
+      top: -80px;
+      left: -40px;
+      pointer-events: none;
+      user-select: none;
+    }
+    .testimonials-track {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .testi-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 36px 32px;
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+    }
+    .testi-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .testi-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 20px;
+    }
+    .testi-star {
+      width: 12px; height: 12px;
+      background: var(--accent);
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+    .testi-quote {
+      font-size: 0.95rem;
+      color: var(--light);
+      line-height: 1.75;
+      font-weight: 300;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+    /* TODO: replace placeholder quotes with real client testimonials */
+    .testi-placeholder-tag {
+      display: inline-block;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: #fff8e1;
+      color: #b8860b;
+      border: 1px solid #f0d060;
+      border-radius: 2px;
+      padding: 2px 7px;
+      margin-bottom: 16px;
+    }
+    .testi-divider {
+      width: 32px; height: 1px;
+      background: var(--border);
+      margin-bottom: 20px;
+    }
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .testi-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--off);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .testi-name {
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      line-height: 1.1;
+    }
+    .testi-role {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+    @media (max-width: 992px) {
+      .testimonials-track { grid-template-columns: 1fr; }
+    }
+
     /* ── CLIENTS ── */
     #clients {
       background: var(--ink);
@@ -976,6 +1077,7 @@
         <li class="nav-item"><a class="nav-link-item" href="#portfolio">Work</a></li>
         <li class="nav-item"><a class="nav-link-item" href="#about">Story</a></li>
         <li class="nav-item"><a class="nav-link-item" href="#team">Team</a></li>
+        <li class="nav-item"><a class="nav-link-item" href="#testimonials">Reviews</a></li>
         <li class="nav-item ms-2"><a class="nav-link-item nav-cta" href="#contact">Start a Project</a></li>
       </ul>
     </div>
@@ -1344,6 +1446,75 @@
           <span class="client-name-text">+ More</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <div class="section-label">What Clients Say</div>
+        <h2 class="section-title">REAL<br>RESULTS</h2>
+      </div>
+      <div class="col-lg-5 offset-lg-1 d-flex align-items-end">
+        <p class="section-sub">We measure success by our clients' growth — not vanity metrics.</p>
+      </div>
+    </div>
+    <div class="testimonials-track">
+
+      <!-- Testimonial 1 — Soligo Air -->
+      <div class="testi-card">
+        <span class="testi-placeholder-tag">Placeholder — swap with real quote</span>
+        <div class="testi-stars">
+          <div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div>
+        </div>
+        <p class="testi-quote">"Vyn Studio completely transformed how we generate leads. Our phones started ringing within the first week of the Meta campaign — we had to hire another technician to keep up with demand."</p>
+        <div class="testi-divider"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">SA</div>
+          <div>
+            <div class="testi-name">Soligo Air</div>
+            <div class="testi-role">HVAC · Orlando, FL</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 — Toro Movers -->
+      <div class="testi-card">
+        <span class="testi-placeholder-tag">Placeholder — swap with real quote</span>
+        <div class="testi-stars">
+          <div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div>
+        </div>
+        <p class="testi-quote">"The branding they built for Toro Movers is exactly what we needed — professional, clean, and different from every other moving company out there. The ads have been bringing in consistent leads every week."</p>
+        <div class="testi-divider"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">TM</div>
+          <div>
+            <div class="testi-name">Toro Movers</div>
+            <div class="testi-role">Moving Co. · Central FL</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 — Stael Fogarty -->
+      <div class="testi-card">
+        <span class="testi-placeholder-tag">Placeholder — swap with real quote</span>
+        <div class="testi-stars">
+          <div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div>
+        </div>
+        <p class="testi-quote">"My website and Instagram presence went from zero to fully professional in no time. Clients now find me online and book directly — the calendar integration alone has saved me hours every week."</p>
+        <div class="testi-divider"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">SF</div>
+          <div>
+            <div class="testi-name">Stael Fogarty</div>
+            <div class="testi-role">Interpreter · Language Coach</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
