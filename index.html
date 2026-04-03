@@ -1,817 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Metas -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vyn Studio — Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:#fafaf8; color:#1a1a1a; font-family:'Montserrat',sans-serif; overflow-x:hidden; }
+::-webkit-scrollbar { width:3px; }
+::-webkit-scrollbar-thumb { background:#1a1a1a; }
 
-  <!-- SEO -->
-  <title>Vyn Studio — Digital Marketing & Creative Agency | Orlando, FL</title>
-  <meta name="description" content="Vyn Studio is a digital marketing and creative agency based in Orlando, Florida. We run Meta & Google Ads, build high-converting websites, design brands, and automate lead generation." />
-  <meta name="keywords" content="digital marketing agency Orlando, Meta ads Orlando, Google ads Florida, brand design Orlando, web development, CRM automation, Vyn Studio" />
-  <meta name="author" content="Vyn Studio" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://vynstudio.com/" />
+/* NAV */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:24px 60px;
+  display:flex; align-items:center; justify-content:space-between;
+  transition:all 0.3s;
+}
+nav.scrolled { background:rgba(250,250,248,0.96); backdrop-filter:blur(12px); border-bottom:1px solid #e5e5e5; padding:16px 60px; }
+.nav-logo { font-size:1.3rem; font-weight:900; letter-spacing:0.2em; color:#1a1a1a; text-decoration:none; }
+.nav-logo span { color:#aaa; }
+.nav-links { display:flex; gap:32px; align-items:center; }
+.nav-link { font-size:0.7rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#888; text-decoration:none; transition:color 0.2s; }
+.nav-link:hover { color:#1a1a1a; }
+.nav-cta { background:#1a1a1a; color:#fafaf8 !important; padding:10px 24px; border-radius:2px; }
+.nav-cta:hover { background:#333 !important; }
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://vynstudio.com/" />
-  <meta property="og:title" content="Vyn Studio — Digital Marketing & Creative Agency" />
-  <meta property="og:description" content="We build brands that win. Meta & Google Ads, web development, brand design, and CRM automation for growing businesses." />
-  <meta property="og:image" content="https://vynstudio.com/og-image.jpg" />
-  <meta property="og:site_name" content="Vyn Studio" />
+/* HERO */
+#hero {
+  min-height:100vh; display:flex; align-items:center;
+  position:relative; overflow:hidden; padding:0 60px; padding-top:100px;
+}
+.hero-dot-grid {
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle,rgba(0,0,0,0.08) 1.5px,transparent 1.5px);
+  background-size:28px 28px;
+  -webkit-mask-image:linear-gradient(to right,transparent 30%,rgba(0,0,0,0.6) 65%,rgba(0,0,0,0.9) 100%);
+  mask-image:linear-gradient(to right,transparent 30%,rgba(0,0,0,0.6) 65%,rgba(0,0,0,0.9) 100%);
+}
+.hero-bg-letter {
+  position:absolute; font-size:clamp(300px,45vw,600px); font-weight:900;
+  color:rgba(0,0,0,0.04); right:-40px; bottom:-60px;
+  letter-spacing:-0.05em; line-height:1; user-select:none;
+}
+.hero-top-bar { position:absolute; top:0; left:0; right:0; height:3px; background:#1a1a1a; }
+.hero-content { position:relative; z-index:1; max-width:800px; }
+.hero-label {
+  font-size:0.68rem; font-weight:700; letter-spacing:0.3em; text-transform:uppercase;
+  color:#aaa; display:flex; align-items:center; gap:12px; margin-bottom:36px;
+  opacity:0; animation:fadeUp 0.7s 0.2s forwards;
+}
+.hero-label::before { content:''; display:block; width:28px; height:1px; background:#ccc; }
+.hero-headline {
+  font-size:clamp(4rem,9vw,8rem); font-weight:900; line-height:0.92;
+  letter-spacing:-0.03em; color:#1a1a1a; text-transform:uppercase;
+  margin-bottom:16px;
+  opacity:0; animation:fadeUp 0.8s 0.4s forwards;
+}
+.hero-italic {
+  font-family:'Playfair Display',serif; font-style:italic;
+  font-size:clamp(3.2rem,7.5vw,6.8rem); font-weight:400;
+  color:#aaa; line-height:1; margin-bottom:48px;
+  opacity:0; animation:fadeUp 0.8s 0.55s forwards;
+}
+.hero-sub {
+  font-size:1rem; font-weight:400; color:#888; line-height:1.7;
+  max-width:520px; margin-bottom:56px;
+  opacity:0; animation:fadeUp 0.8s 0.7s forwards;
+}
+.hero-btns { display:flex; gap:16px; flex-wrap:wrap; opacity:0; animation:fadeUp 0.8s 0.85s forwards; }
+.btn-primary { background:#1a1a1a; color:#fafaf8; font-size:0.72rem; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; padding:16px 40px; border-radius:2px; text-decoration:none; transition:all 0.2s; }
+.btn-primary:hover { background:#333; transform:translateY(-2px); }
+.btn-ghost { border:1px solid #ccc; color:#888; font-size:0.72rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; padding:16px 40px; border-radius:2px; text-decoration:none; transition:all 0.2s; }
+.btn-ghost:hover { border-color:#1a1a1a; color:#1a1a1a; }
+.hero-stats {
+  display:flex; gap:48px; margin-top:80px; padding-top:40px;
+  border-top:1px solid #e5e5e5;
+  opacity:0; animation:fadeUp 0.8s 1s forwards;
+}
+.stat-num { font-size:2.4rem; font-weight:900; color:#1a1a1a; line-height:1; letter-spacing:-0.02em; }
+.stat-num span { color:#bbb; }
+.stat-label { font-size:0.62rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#bbb; margin-top:4px; }
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Vyn Studio — Digital Marketing & Creative Agency" />
-  <meta name="twitter:description" content="We build brands that win. Meta & Google Ads, web development, brand design, and CRM automation." />
-  <meta name="twitter:image" content="https://vynstudio.com/og-image.jpg" />
+/* TICKER */
+.ticker-wrap { background:#1a1a1a; overflow:hidden; padding:13px 0; }
+.ticker-track { display:flex; white-space:nowrap; animation:ticker 24s linear infinite; }
+.ticker-item { font-size:0.68rem; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:#555; padding:0 40px; display:flex; align-items:center; gap:40px; }
+.ticker-dot { width:4px; height:4px; background:#333; border-radius:50%; }
 
-  <!-- Schema -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"MarketingAgency","name":"Vyn Studio","url":"https://vynstudio.com","description":"Digital marketing and creative agency in Orlando, FL.","address":{"@type":"PostalAddress","addressLocality":"Orlando","addressRegion":"FL","addressCountry":"US"},"foundingDate":"2022","serviceType":["Meta Advertising","Google Ads","Web Development","Brand Design","SEO","CRM Automation"]}
-  </script>
+/* SECTION BASE */
+.section { padding:120px 60px; }
+.section-label { font-size:0.62rem; font-weight:800; letter-spacing:0.35em; text-transform:uppercase; color:#aaa; display:flex; align-items:center; gap:10px; margin-bottom:20px; }
+.section-label::before { content:''; display:block; width:24px; height:1px; background:#ccc; }
+.section-title { font-size:clamp(2.5rem,5vw,4.5rem); font-weight:900; line-height:0.95; color:#1a1a1a; letter-spacing:-0.02em; text-transform:uppercase; }
+.section-sub { font-size:0.95rem; color:#888; font-weight:400; max-width:440px; line-height:1.7; margin-top:16px; }
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231A1A1A'/><text y='78' x='8' font-size='72' font-family='serif' font-weight='900' fill='%23FAFAF8'>V</text></svg>" />
-  <meta name="theme-color" content="#0f0f0f" />
+/* ABOUT */
+#about { background:#fafaf8; }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; margin-top:80px; }
+.about-img { position:relative; }
+.about-img img { width:100%; border-radius:2px; display:block; }
+.about-img-deco { position:absolute; bottom:-20px; right:-20px; width:55%; height:55%; border:2px solid #e5e5e5; border-radius:2px; z-index:-1; }
+.about-content {}
+.about-badge { display:inline-block; background:#1a1a1a; color:#fafaf8; font-size:0.62rem; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; padding:7px 16px; border-radius:2px; margin-bottom:24px; }
+.about-headline { font-size:clamp(2rem,4vw,3.2rem); font-weight:900; line-height:1.05; color:#1a1a1a; margin-bottom:24px; text-transform:uppercase; letter-spacing:-0.02em; }
+.about-headline em { font-family:'Playfair Display',serif; font-style:italic; font-weight:400; color:#aaa; text-transform:none; }
+.about-text { font-size:0.9rem; color:#777; line-height:1.8; margin-bottom:16px; }
+.about-name { font-size:1.1rem; font-weight:900; letter-spacing:0.05em; color:#1a1a1a; margin-top:32px; }
+.about-title { font-size:0.65rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#aaa; margin-top:4px; }
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+/* SERVICES */
+#services { background:#f2f0eb; }
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:60px; }
+.svc-card { background:#fafaf8; padding:44px 36px; position:relative; transition:all 0.3s; }
+.svc-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:transparent; transition:background 0.3s; }
+.svc-card:hover::before { background:#1a1a1a; }
+.svc-card:hover { background:#fff; transform:translateY(-4px); box-shadow:0 20px 50px rgba(0,0,0,0.07); }
+.svc-num { font-size:3rem; font-weight:900; color:#e5e5e5; line-height:1; margin-bottom:20px; letter-spacing:-0.02em; transition:color 0.3s; }
+.svc-card:hover .svc-num { color:#1a1a1a; }
+.svc-name { font-size:1.1rem; font-weight:900; letter-spacing:0.03em; text-transform:uppercase; color:#1a1a1a; margin-bottom:12px; }
+.svc-desc { font-size:0.83rem; color:#999; line-height:1.7; }
 
-  <!-- Plugins CSS -->
-  <link rel="stylesheet" href="css/plugins.css" />
-  <!-- Core Style -->
-  <link rel="stylesheet" href="css/style.css" />
+/* PORTFOLIO */
+#portfolio { background:#fafaf8; }
+.portfolio-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:60px; }
+.port-item { aspect-ratio:1; background:#f2f0eb; position:relative; overflow:hidden; cursor:pointer; }
+.port-inner { width:100%; height:100%; display:flex; align-items:flex-end; padding:24px; position:relative; transition:all 0.4s; }
+.port-bg { position:absolute; inset:0; background:#e5e5e5; display:flex; align-items:center; justify-content:center; font-size:5rem; font-weight:900; color:#d5d5d5; transition:all 0.4s; }
+.port-item:hover .port-bg { font-size:8rem; color:#ccc; }
+.port-overlay { position:absolute; inset:0; background:rgba(26,26,26,0.88); display:flex; flex-direction:column; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s; }
+.port-item:hover .port-overlay { opacity:1; }
+.port-caption { position:relative; z-index:1; transition:opacity 0.3s; }
+.port-item:hover .port-caption { opacity:0; }
+.port-title { font-size:1rem; font-weight:900; color:#1a1a1a; letter-spacing:0.04em; text-transform:uppercase; }
+.port-cat { font-size:0.6rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#aaa; margin-top:2px; }
+.port-hover-title { font-size:1.1rem; font-weight:900; color:#fff; text-align:center; letter-spacing:0.04em; text-transform:uppercase; margin-bottom:6px; }
+.port-hover-cat { font-size:0.6rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#888; }
 
-  <style>
-    /* ── Vyn Studio Brand Overrides — Monochrome ── */
-    :root {
-      --vyn-black: #0f0f0f;
-      --vyn-white: #f5f3ee;
-      --vyn-accent: #ffffff;
-      --vyn-gray: #9a9a9a;
-      --vyn-border: #333;
-    }
+/* CONTACT */
+#contact { background:#f2f0eb; }
+.contact-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:80px; margin-top:60px; align-items:start; }
+.contact-info-block { margin-bottom:32px; }
+.ci-label { font-size:0.6rem; font-weight:800; letter-spacing:0.25em; text-transform:uppercase; color:#aaa; margin-bottom:6px; }
+.ci-value { font-size:1rem; font-weight:900; color:#1a1a1a; letter-spacing:0.02em; }
+.form-input { width:100%; border:none; border-bottom:1px solid #ccc; background:transparent; color:#1a1a1a; font-family:'Montserrat',sans-serif; font-size:0.88rem; font-weight:500; padding:14px 0; margin-bottom:20px; outline:none; transition:border-color 0.2s; }
+.form-input:focus { border-bottom-color:#1a1a1a; }
+.form-input::placeholder { color:#bbb; }
+.form-select { width:100%; border:none; border-bottom:1px solid #ccc; background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 4px center; color:#bbb; font-family:'Montserrat',sans-serif; font-size:0.88rem; font-weight:500; padding:14px 0; margin-bottom:20px; outline:none; cursor:pointer; appearance:none; -webkit-appearance:none; transition:border-color 0.2s; }
+.form-select:focus { border-bottom-color:#1a1a1a; color:#1a1a1a; }
+.form-select option { color:#1a1a1a; }
+textarea.form-input { min-height:100px; resize:vertical; }
+.btn-submit { background:#1a1a1a; color:#fafaf8; font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; padding:18px 40px; border:none; border-radius:2px; cursor:pointer; width:100%; transition:background 0.2s; margin-top:8px; }
+.btn-submit:hover { background:#333; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+#form-success { display:none; padding:14px 18px; background:#f0f0f0; border:1px solid #ddd; border-radius:2px; margin-bottom:16px; font-size:0.82rem; font-weight:700; color:#1a1a1a; }
+#form-error { display:none; padding:14px 18px; background:#fdf2f2; border:1px solid #f0b8b8; border-radius:2px; margin-bottom:16px; font-size:0.82rem; font-weight:700; color:#8b2020; }
 
-    /* Navbar brand */
-    .navbar .logo {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 900;
-      letter-spacing: 0.2em;
-      color: #fff !important;
-    }
-    .navbar .logo span { color: #9a9a9a; }
+/* FOOTER */
+footer { background:#1a1a1a; padding:60px; }
+.footer-inner { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; }
+.footer-logo { font-size:1.4rem; font-weight:900; letter-spacing:0.2em; color:#fff; }
+.footer-logo span { color:#444; }
+.footer-copy { font-size:0.65rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#444; }
+.footer-links { display:flex; gap:24px; }
+.footer-link { font-size:0.65rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#444; text-decoration:none; transition:color 0.2s; }
+.footer-link:hover { color:#fff; }
 
-    /* Active link */
-    .navbar .nav-link.active,
-    .navbar .nav-link:hover { color: #ffffff !important; }
+/* ANIMATIONS */
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes ticker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
 
-    /* Hero headline */
-    .header .cd-headline { font-weight: 800; letter-spacing: 0.04em; }
-    .header .cd-words-wrapper b { color: #ffffff; }
-    .header p.sub { font-size: 13px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 16px; }
-
-    /* Hero CTA buttons */
-    .header-btns { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn-vyn-primary {
-      display: inline-block;
-      background: #ffffff;
-      color: #0f0f0f !important;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 14px 32px;
-      border-radius: 2px;
-      transition: all 0.25s;
-    }
-    .btn-vyn-primary:hover { background: #cccccc; transform: translateY(-2px); }
-    .btn-vyn-ghost {
-      display: inline-block;
-      border: 1px solid rgba(255,255,255,0.35);
-      color: rgba(255,255,255,0.7) !important;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 14px 32px;
-      border-radius: 2px;
-      transition: all 0.25s;
-    }
-    .btn-vyn-ghost:hover { border-color: #fff; color: #fff !important; }
-
-    /* Stats strip */
-    .stats-strip {
-      background: #1a1a1a;
-      border-top: 1px solid #2a2a2a;
-      border-bottom: 1px solid #2a2a2a;
-      padding: 20px 0;
-    }
-    .stats-strip .stat { text-align: center; }
-    .stats-strip .stat-num {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #ffffff;
-      line-height: 1;
-      letter-spacing: -0.02em;
-    }
-    .stats-strip .stat-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #555;
-      margin-top: 4px;
-    }
-
-    /* About section */
-    .about-text h3 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-    .about-text p { font-size: 14px; line-height: 1.8; margin-bottom: 16px; }
-    .about-badge {
-      display: inline-block;
-      background: #1a1a1a;
-      color: #fff;
-      border: 1px solid #333;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 2px;
-      margin-bottom: 20px;
-    }
-    .about-img-wrap { position: relative; }
-    .about-img-wrap img { border-radius: 2px; }
-    .about-img-deco {
-      position: absolute;
-      bottom: -16px; right: -16px;
-      width: 60%; height: 60%;
-      border: 2px solid #333;
-      border-radius: 2px;
-      z-index: -1;
-    }
-
-    /* Skills bar accent */
-    .skills-progress span { background: #1a1a1a !important; }
-
-    /* Services icons accent */
-    .services .item .icon i { color: #1a1a1a !important; }
-    .services .item:hover { border-top-color: #1a1a1a !important; }
-
-    /* Portfolio filter active */
-    .portfolio .filtering span.active { color: #1a1a1a; border-color: #1a1a1a; }
-    .portfolio .filtering span:hover { color: #1a1a1a; }
-
-    /* Testimonials */
-    .testimonials { background: #0f0f0f; padding: 100px 0; }
-    .testimonials .section-head h4 { color: #fff; }
-    .testimonials .section-head h6 { color: #555; }
-    .testimonials .section-head h6:before,
-    .testimonials .section-head h6:after { background-color: #333; }
-    .testi-card {
-      background: #1a1a1a;
-      border: 1px solid #252525;
-      border-radius: 4px;
-      padding: 36px 32px;
-      height: 100%;
-      transition: border-color 0.3s;
-    }
-    .testi-card:hover { border-color: #555; }
-    .testi-stars { display: flex; gap: 4px; margin-bottom: 20px; }
-    .testi-star {
-      width: 12px; height: 12px;
-      background: #ffffff;
-      clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
-    }
-    .testi-quote {
-      font-size: 13px;
-      color: #666;
-      line-height: 1.8;
-      font-style: italic;
-      margin-bottom: 24px;
-      font-weight: 400;
-    }
-    .testi-divider { width: 32px; height: 1px; background: #2a2a2a; margin-bottom: 20px; }
-    .testi-author { display: flex; align-items: center; gap: 12px; }
-    .testi-avatar {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: #222;
-      border: 1px solid #333;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 13px;
-      font-weight: 700;
-      color: #fff;
-      flex-shrink: 0;
-    }
-    .testi-name { font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.05em; }
-    .testi-role { font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: #555; margin-top: 2px; }
-    .testi-placeholder {
-      display: inline-block;
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      background: #222;
-      color: #666;
-      border: 1px solid #333;
-      border-radius: 2px;
-      padding: 2px 7px;
-      margin-bottom: 14px;
-    }
-
-    /* Contact */
-    .contact .form input,
-    .contact .form textarea { border-radius: 2px; font-size: 13px; }
-    .contact .butn.butn-bg {
-      background: #1a1a1a !important;
-      color: #fff !important;
-      border-color: #1a1a1a !important;
-    }
-    .contact .butn.butn-bg:hover { background: #333 !important; border-color: #333 !important; }
-    .contact-info-item { margin-bottom: 28px; }
-    .contact-info-label { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #aaa; margin-bottom: 4px; }
-    .contact-info-value { font-size: 15px; font-weight: 600; color: #1a1a1a; }
-
-    /* Form feedback */
-    #form-success { display:none; padding:16px 20px; background:#f5f5f5; border:1px solid #ccc; border-radius:4px; margin-bottom:20px; font-size:13px; color:#1a1a1a; }
-    #form-error   { display:none; padding:16px 20px; background:#fdf2f2; border:1px solid #f0b8b8; border-radius:4px; margin-bottom:20px; font-size:13px; color:#8b2020; }
-
-    /* Footer */
-    footer .social a:hover { color: #fff !important; }
-    footer .logo { color: #fff !important; font-weight: 900; letter-spacing: 0.2em; }
-    footer .logo span { color: #555; }
-
-    /* Ticker */
-    .ticker-wrap { background: #1a1a1a; border-top: 1px solid #2a2a2a; border-bottom: 1px solid #2a2a2a; overflow: hidden; padding: 12px 0; }
-    .ticker-track { display: flex; white-space: nowrap; animation: ticker 22s linear infinite; }
-    .ticker-item { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #555; padding: 0 36px; display: flex; align-items: center; gap: 36px; }
-    .ticker-dot { width: 5px; height: 5px; background: #333; border-radius: 50%; }
-    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  </style>
+/* RESPONSIVE */
+@media (max-width:992px) {
+  nav { padding:20px 32px; }
+  nav.scrolled { padding:14px 32px; }
+  .nav-links { display:none; }
+  .section { padding:80px 32px; }
+  #hero { padding:0 32px; padding-top:100px; }
+  .hero-stats { gap:28px; flex-wrap:wrap; }
+  .about-grid { grid-template-columns:1fr; }
+  .services-grid { grid-template-columns:1fr 1fr; }
+  .portfolio-grid { grid-template-columns:1fr 1fr; }
+  .contact-grid { grid-template-columns:1fr; }
+  .form-row { grid-template-columns:1fr; }
+  footer { padding:40px 32px; }
+  .footer-inner { flex-direction:column; align-items:flex-start; }
+}
+@media (max-width:576px) {
+  .services-grid { grid-template-columns:1fr; }
+  .portfolio-grid { grid-template-columns:1fr; }
+  .hero-btns { flex-direction:column; }
+}
+</style>
 </head>
-
 <body>
 
-  <!-- Loading -->
-  <div class="loading">
-    <div class="text-center middle">
-      <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-    </div>
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" style="display:inline-block;line-height:0;"><img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAB8aADAAQAAAABAAAAhQAAAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/8AAEQgAhQHxAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/bAEMAAQEBAQEBAgEBAgMCAgIDBAMDAwMEBgQEBAQEBgcGBgYGBgYHBwcHBwcHBwgICAgICAkJCQkJCwsLCwsLCwsLC//bAEMBAgICAwMDBQMDBQsIBggLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLC//dAAQAIP/aAAwDAQACEQMRAD8A/wA/+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//9D/AD/6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//0f8AP/ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//S/wA/+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//9P/AD/6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//1P8AP/ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//V/wA/+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//9b/AD/6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//1/8AP/ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//Z" alt="Vyn Studio" style="height:32px;width:auto;display:block;"></a>
+  <div class="nav-links">
+    <a class="nav-link" href="#about">About</a>
+    <a class="nav-link" href="#services">Services</a>
+    <a class="nav-link" href="#portfolio">Work</a>
+    <a class="nav-link nav-cta" href="#contact">Start a Project</a>
   </div>
+</nav>
 
-  <!-- ── NAVBAR ── -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="logo" href="#">VYN<span>.</span></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="icon-bar"><i class="fas fa-bars"></i></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link active" href="#" data-scroll-nav="0">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="1">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="2">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="3">Work</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="4">Contact</a></li>
-        </ul>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-dot-grid"></div>
+  <div class="hero-bg-letter">V</div>
+  <div class="hero-top-bar"></div>
+  <div class="hero-content">
+    <div class="hero-label">Orlando, FL · Est. 2021</div>
+    <h1 class="hero-headline">WE BUILD<br>BRANDS</h1>
+    <div class="hero-italic">that win.</div>
+    <p class="hero-sub">We partner with businesses across industries to build brands, drive growth, and create meaningful digital presence — in the US and worldwide.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#portfolio">See Our Work</a>
+      <a class="btn-ghost" href="#contact">Start a Project</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">10<span>+</span></div>
+        <div class="stat-label">Industries Served</div>
       </div>
-    </div>
-  </nav>
-
-  <!-- ── HEADER / HERO ── -->
-  <header class="header valign bg-img" data-scroll-index="0" data-overlay-dark="7" data-background="img/bg.jpg" data-stellar-background-ratio="0.5">
-    <div class="svg">
-      <svg x="0px" y="0px" viewBox="0 186.5 1920 113.5">
-        <polygon points="-30,300 355.167,210.5 1432.5,290 1920,198.5 1920,300"></polygon>
-      </svg>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="full-width text-center caption mt-30">
-          <h1 class="cd-headline clip">
-            <span>We Build </span>
-            <span class="cd-words-wrapper">
-              <b class="is-visible">Brands.</b>
-              <b>Campaigns.</b>
-              <b>Websites.</b>
-              <b>Results.</b>
-            </span>
-          </h1>
-          <p class="sub">Digital Marketing & Creative Agency · Orlando, FL</p>
-          <div class="header-btns">
-            <a class="btn-vyn-primary" href="#" data-scroll-nav="3">See Our Work</a>
-            <a class="btn-vyn-ghost" href="#" data-scroll-nav="5">Start a Project</a>
-          </div>
-        </div>
+      <div>
+        <div class="stat-num">5</div>
+        <div class="stat-label">Countries</div>
       </div>
-    </div>
-    <div class="arrow bounce" data-scroll-nav="1">
-      <img src="img/down-chevron.svg" alt="scroll down">
-    </div>
-  </header>
-
-  <!-- ── STATS TICKER ── -->
-  <div class="ticker-wrap">
-    <div class="ticker-track">
-      <div class="ticker-item">META ADS <span class="ticker-dot"></span></div>
-      <div class="ticker-item">GOOGLE ADS <span class="ticker-dot"></span></div>
-      <div class="ticker-item">WEB DEVELOPMENT <span class="ticker-dot"></span></div>
-      <div class="ticker-item">BRAND DESIGN <span class="ticker-dot"></span></div>
-      <div class="ticker-item">SEO <span class="ticker-dot"></span></div>
-      <div class="ticker-item">CRM AUTOMATION <span class="ticker-dot"></span></div>
-      <div class="ticker-item">AD CREATIVE <span class="ticker-dot"></span></div>
-      <div class="ticker-item">META ADS <span class="ticker-dot"></span></div>
-      <div class="ticker-item">GOOGLE ADS <span class="ticker-dot"></span></div>
-      <div class="ticker-item">WEB DEVELOPMENT <span class="ticker-dot"></span></div>
-      <div class="ticker-item">BRAND DESIGN <span class="ticker-dot"></span></div>
-      <div class="ticker-item">SEO <span class="ticker-dot"></span></div>
-      <div class="ticker-item">CRM AUTOMATION <span class="ticker-dot"></span></div>
-      <div class="ticker-item">AD CREATIVE <span class="ticker-dot"></span></div>
-    </div>
-  </div>
-
-  <!-- ── STATS STRIP ── -->
-  <div class="stats-strip">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-4 stat">
-          <div class="stat-num">45K+</div>
-          <div class="stat-label">Social Reach</div>
-        </div>
-        <div class="col-4 stat">
-          <div class="stat-num">6+</div>
-          <div class="stat-label">Active Clients</div>
-        </div>
-        <div class="col-4 stat">
-          <div class="stat-num">3</div>
-          <div class="stat-label">Countries</div>
-        </div>
+      <div>
+        <div class="stat-num">3<span>+</span></div>
+        <div class="stat-label">Years Running</div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- ── ABOUT ── -->
-  <section class="hero section-padding" data-scroll-index="1">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-5 mb-5 mb-lg-0">
-          <div class="about-img-wrap">
-            <img src="img/hero.jpg" alt="Vyn Studio" style="border-radius:2px;">
-            <div class="about-img-deco"></div>
-          </div>
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <div class="ticker-item">META ADS <span class="ticker-dot"></span></div>
+    <div class="ticker-item">GOOGLE ADS <span class="ticker-dot"></span></div>
+    <div class="ticker-item">WEB DEVELOPMENT <span class="ticker-dot"></span></div>
+    <div class="ticker-item">BRAND DESIGN <span class="ticker-dot"></span></div>
+    <div class="ticker-item">SEO <span class="ticker-dot"></span></div>
+    <div class="ticker-item">CRM AUTOMATION <span class="ticker-dot"></span></div>
+    <div class="ticker-item">AD CREATIVE <span class="ticker-dot"></span></div>
+    <div class="ticker-item">META ADS <span class="ticker-dot"></span></div>
+    <div class="ticker-item">GOOGLE ADS <span class="ticker-dot"></span></div>
+    <div class="ticker-item">WEB DEVELOPMENT <span class="ticker-dot"></span></div>
+    <div class="ticker-item">BRAND DESIGN <span class="ticker-dot"></span></div>
+    <div class="ticker-item">SEO <span class="ticker-dot"></span></div>
+    <div class="ticker-item">CRM AUTOMATION <span class="ticker-dot"></span></div>
+    <div class="ticker-item">AD CREATIVE <span class="ticker-dot"></span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-label">The Story</div>
+  <h2 class="section-title">MEET THE<br>FOUNDER</h2>
+  <div class="about-grid">
+    <div class="about-img">
+      <img src="img/hero.jpg" alt="Diler Tabora — Founder, Vyn Studio" onerror="this.style.background='#e5e5e5';this.style.height='500px';">
+      <div class="about-img-deco"></div>
+    </div>
+    <div class="about-content">
+      <span class="about-badge">Honduras → Orlando, FL · 2021</span>
+      <h3 class="about-headline">Built from<br><em>scratch.</em></h3>
+      <p class="about-text">Diler Tabora is a Honduran entrepreneur who arrived in the United States in 2021 with a clear vision: to bridge the gap between ambitious businesses and the digital tools they need to grow.</p>
+      <p class="about-text">Coming from a background in retail sales and business development, Diler built Vyn Studio from the ground up — starting with a single client and growing into a full-service agency serving businesses across the USA, Spain, Honduras, and beyond.</p>
+      <p class="about-text">His approach is rooted in one belief: every business, regardless of industry or size, deserves access to effective, results-driven digital solutions. From paid advertising to brand identity and web development, Vyn Studio is built to integrate seamlessly into any business operation and deliver measurable impact.</p>
+      <div class="about-name">Diler Tabora</div>
+      <div class="about-title">Founder & Creative Director — Vyn Studio</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-label">What We Do</div>
+  <h2 class="section-title">FULL-SERVICE<br>SOLUTIONS</h2>
+  <p class="section-sub">From strategy to execution — we handle every layer of your digital presence.</p>
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-num">01</div>
+      <div class="svc-name">Paid Advertising</div>
+      <p class="svc-desc">Meta and Google Ads campaigns built to convert. Every dollar tracked, optimized, and accounted for.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">02</div>
+      <div class="svc-name">Ad Creative</div>
+      <p class="svc-desc">Thumb-stopping visuals engineered to perform across every platform and format.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">03</div>
+      <div class="svc-name">Web Development</div>
+      <p class="svc-desc">Fast, conversion-focused websites and landing pages — built clean and integrated with your stack.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">04</div>
+      <div class="svc-name">Brand Design</div>
+      <p class="svc-desc">Identity systems that hold up everywhere — colors, typography, and tone locked in with a full guide.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">05</div>
+      <div class="svc-name">SEO</div>
+      <p class="svc-desc">On-page optimization, schema markup, and content strategy that compounds over time.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">06</div>
+      <div class="svc-name">CRM & Automation</div>
+      <p class="svc-desc">GHL pipelines, SMS capture, webhooks, and follow-up sequences. Your leads never go cold.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+  <div class="section-label">Selected Work</div>
+  <h2 class="section-title">OUR<br>PROJECTS</h2>
+  <div class="portfolio-grid">
+    <div class="port-item">
+      <div class="port-inner">
+        <div class="port-bg">SA</div>
+        <div class="port-overlay">
+          <div class="port-hover-title">Soligo Air</div>
+          <div class="port-hover-cat">Full Brand · Meta Ads · Web</div>
         </div>
-        <div class="col-lg-6 offset-lg-1 about-text">
-          <span class="about-badge">Orlando, FL · Est. 2022</span>
-          <h3>We build brands<br>that <em style="font-family:'Playfair Display',serif;font-style:italic;color:#9a9a9a;">win.</em></h3>
-          <p>Vyn Studio is a full-service digital marketing and creative agency. We handle everything from Meta & Google ad campaigns to brand identity, web development, and CRM automation — so your business can grow without the guesswork.</p>
-          <p>We've built brands and campaigns for HVAC companies, moving companies, interpreters, law firms, and restaurants across the USA, Spain, and Honduras.</p>
-
-          <div class="skills mt-50">
-            <div class="skill-item">
-              <h6>Paid Advertising <span>95%</span></h6>
-              <div class="skills-progress"><span data-value="95%"></span></div>
-            </div>
-            <div class="skill-item">
-              <h6>Brand Design <span>90%</span></h6>
-              <div class="skills-progress"><span data-value="90%"></span></div>
-            </div>
-            <div class="skill-item">
-              <h6>Web Development <span>85%</span></h6>
-              <div class="skills-progress"><span data-value="85%"></span></div>
-            </div>
-            <div class="skill-item">
-              <h6>CRM & Automation <span>88%</span></h6>
-              <div class="skills-progress"><span data-value="88%"></span></div>
-            </div>
-          </div>
+        <div class="port-caption">
+          <div class="port-title">Soligo Air</div>
+          <div class="port-cat">HVAC · Orlando, FL</div>
         </div>
       </div>
     </div>
-    <div class="se-tring se-tring-gray">
-      <span class="left"></span>
-      <span class="right"></span>
-    </div>
-  </section>
-
-  <!-- ── SERVICES ── -->
-  <section class="services section-padding bg-gray" data-scroll-index="2">
-    <div class="container">
-      <div class="row">
-        <div class="section-head text-center col-sm-12">
-          <h4>Our Services</h4>
-          <h6>What We Do</h6>
+    <div class="port-item">
+      <div class="port-inner">
+        <div class="port-bg">TM</div>
+        <div class="port-overlay">
+          <div class="port-hover-title">Toro Movers</div>
+          <div class="port-hover-cat">Brand Design · Meta Ads</div>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <span class="icon"><i class="icon-megaphone"></i></span>
-            <h6>Paid Advertising</h6>
-            <p>Meta and Google Ads built to convert. From creative to targeting to continuous optimization — every dollar accounted for.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <span class="icon"><i class="icon-layers"></i></span>
-            <h6>Ad Creative</h6>
-            <p>Thumb-stopping visuals engineered to perform. Photo ads, carousels, and editorial formats for any platform.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <span class="icon"><i class="icon-laptop"></i></span>
-            <h6>Web Development</h6>
-            <p>Fast, conversion-focused landing pages and full websites. Built clean, deployed to Netlify, integrated with your stack.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <span class="icon"><i class="icon-circle-compass"></i></span>
-            <h6>Brand Design</h6>
-            <p>Identity systems that hold up everywhere — from ads to signage. Colors, typography, and tone locked in with a full guide.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <span class="icon"><i class="icon-briefcase"></i></span>
-            <h6>SEO</h6>
-            <p>On-page optimization, schema markup, and content strategy. Organic presence that compounds over time.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="item">
-            <span class="icon"><i class="icon-mobile"></i></span>
-            <h6>CRM & Automation</h6>
-            <p>GHL pipelines, SMS lead capture, webhook flows, and automated follow-up sequences. Your leads never go cold again.</p>
-          </div>
+        <div class="port-caption">
+          <div class="port-title">Toro Movers</div>
+          <div class="port-cat">Moving Co. · Central FL</div>
         </div>
       </div>
     </div>
-    <div class="se-tring se-tring-rev">
-      <span class="left"></span>
-      <span class="right"></span>
-    </div>
-  </section>
-
-  <!-- ── PORTFOLIO ── -->
-  <section class="portfolio section-padding" data-scroll-index="3">
-    <div class="container">
-      <div class="row">
-        <div class="section-head text-center col-sm-12">
-          <h4>Our Work</h4>
-          <h6>Selected Projects</h6>
+    <div class="port-item">
+      <div class="port-inner">
+        <div class="port-bg">SF</div>
+        <div class="port-overlay">
+          <div class="port-hover-title">Stael Fogarty</div>
+          <div class="port-hover-cat">Web · Instagram Ads</div>
         </div>
-        <div class="filtering text-center mb-30 col-sm-12">
-          <span data-filter='*' class="active">All</span>
-          <span data-filter='.ads'>Paid Ads</span>
-          <span data-filter='.brand'>Brand</span>
-          <span data-filter='.web'>Web</span>
-        </div>
-        <div class="clearfix"></div>
-        <div class="gallery text-center full-width">
-          <div class="col-md-6 col-lg-4 items ads brand web">
-            <div class="item-img">
-              <img src="img/portfolio/1.jpg" alt="Soligo Air">
-              <div class="item-img-overlay valign">
-                <div class="overlay-info full-width vertical-center">
-                  <h6>Soligo Air</h6>
-                  <p>Full Brand · Meta Ads · Web</p>
-                </div>
-                <a href="img/portfolio/1.jpg" class="popimg"><i class="fas fa-images"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 items ads brand">
-            <div class="item-img">
-              <img src="img/portfolio/2.jpg" alt="Toro Movers">
-              <div class="item-img-overlay valign">
-                <div class="overlay-info full-width vertical-center">
-                  <h6>Toro Movers</h6>
-                  <p>Brand Design · Meta Ads</p>
-                </div>
-                <a href="img/portfolio/2.jpg" class="popimg"><i class="fas fa-images"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 items web ads">
-            <div class="item-img">
-              <img src="img/portfolio/3.jpg" alt="Stael Fogarty">
-              <div class="item-img-overlay valign">
-                <div class="overlay-info full-width vertical-center">
-                  <h6>Stael Fogarty</h6>
-                  <p>Web · Instagram Ads</p>
-                </div>
-                <a href="img/portfolio/3.jpg" class="popimg"><i class="fas fa-images"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 items brand">
-            <div class="item-img">
-              <img src="img/portfolio/4.jpg" alt="De Cero a Cliente">
-              <div class="item-img-overlay valign">
-                <div class="overlay-info full-width vertical-center">
-                  <h6>De Cero a Cliente</h6>
-                  <p>Digital Course · $37</p>
-                </div>
-                <a href="img/portfolio/4.jpg" class="popimg"><i class="fas fa-images"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 items web">
-            <div class="item-img">
-              <img src="img/portfolio/5.jpg" alt="Immigration Law">
-              <div class="item-img-overlay valign">
-                <div class="overlay-info full-width vertical-center">
-                  <h6>Immigration Law</h6>
-                  <p>Web · SEO</p>
-                </div>
-                <a href="img/portfolio/5.jpg" class="popimg"><i class="fas fa-images"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 items ads">
-            <div class="item-img">
-              <img src="img/portfolio/6.jpg" alt="Restaurant Group">
-              <div class="item-img-overlay valign">
-                <div class="overlay-info full-width vertical-center">
-                  <h6>Restaurant Group</h6>
-                  <p>Social · Creative · Spain</p>
-                </div>
-                <a href="img/portfolio/6.jpg" class="popimg"><i class="fas fa-images"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="clear-fix"></div>
+        <div class="port-caption">
+          <div class="port-title">Stael Fogarty</div>
+          <div class="port-cat">Interpreter · Bilingual</div>
         </div>
       </div>
     </div>
-    <div class="se-tring se-tring-gray">
-      <span class="left"></span>
-      <span class="right"></span>
-    </div>
-  </section>
-
-  <!-- ── TESTIMONIALS ── -->
-  <!-- ── CONTACT ── -->
-  <section class="contact section-padding" data-scroll-index="5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head text-center col-sm-12">
-          <h4>Contact Us</h4>
-          <h6>Start a Project</h6>
+    <div class="port-item">
+      <div class="port-inner">
+        <div class="port-bg">DC</div>
+        <div class="port-overlay">
+          <div class="port-hover-title">De Cero a Cliente</div>
+          <div class="port-hover-cat">Digital Course</div>
         </div>
-
-        <!-- Info -->
-        <div class="col-lg-4 mb-5 mb-lg-0">
-          <div class="contact-info-item">
-            <div class="contact-info-label">Location</div>
-            <div class="contact-info-value">Orlando, Florida</div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-label">Email</div>
-            <div class="contact-info-value">hello@vynstudio.com</div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-label">Services</div>
-            <div class="contact-info-value" style="font-size:13px;font-weight:400;color:#9a9a9a;line-height:1.7">Meta & Google Ads · Web Dev<br>Brand Design · SEO · CRM</div>
-          </div>
-          <div class="contact-info-item" style="margin-top:32px;padding:20px;background:#f7f7f7;border-radius:2px;">
-            <div class="contact-info-label">Response Time</div>
-            <div class="contact-info-value">Under 24 Hours</div>
-            <div style="font-size:12px;color:#aaa;margin-top:4px;">We review every inquiry personally.</div>
-          </div>
+        <div class="port-caption">
+          <div class="port-title">De Cero a Cliente</div>
+          <div class="port-cat">Course · Spanish Market</div>
         </div>
-
-        <!-- Form -->
-        <div class="col-lg-8">
-          <div id="form-success" style="display:none;padding:16px 20px;background:#f5f5f5;border:1px solid #ccc;border-radius:4px;margin-bottom:20px;font-size:13px;color:#1a1a1a;">✓ Message sent! We'll be in touch within 24 hours.</div>
-          <div id="form-error" style="display:none;padding:16px 20px;background:#fdf2f2;border:1px solid #f0b8b8;border-radius:4px;margin-bottom:20px;font-size:13px;color:#8b2020;">Something went wrong. Email hello@vynstudio.com directly.</div>
-          <div class="form">
-            <div class="controls">
-              <div class="row">
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input id="f-name" type="text" placeholder="Your Name *">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input id="f-email" type="email" placeholder="Your Email *">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input id="f-phone" type="tel" placeholder="Your Phone">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input id="f-date" type="date" placeholder="Preferred Call Date" title="Preferred Discovery Call Date">
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select id="f-service" class="contact-select">
-                      <option value="" disabled selected>Service Needed *</option>
-                      <option>Meta Ads</option>
-                      <option>Google Ads</option>
-                      <option>Web Development</option>
-                      <option>Brand Design</option>
-                      <option>SEO</option>
-                      <option>CRM / Automation</option>
-                      <option>Ad Creative</option>
-                      <option>Full Package</option>
-                      <option>Not sure yet</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select id="f-project-type" class="contact-select">
-                      <option value="" disabled selected>Project Type *</option>
-                      <option>New Business</option>
-                      <option>Existing Business</option>
-                      <option>Rebrand</option>
-                      <option>Scale Up</option>
-                      <option>One-time Project</option>
-                      <option>Ongoing Retainer</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select id="f-adspend" class="contact-select">
-                      <option value="" disabled selected>Current Monthly Ad Spend</option>
-                      <option>$0 — Not running ads yet</option>
-                      <option>Under $500/mo</option>
-                      <option>$500 – $1,500/mo</option>
-                      <option>$1,500 – $5,000/mo</option>
-                      <option>$5,000+/mo</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select id="f-source" class="contact-select">
-                      <option value="" disabled selected>How did you hear about us?</option>
-                      <option>Instagram</option>
-                      <option>Facebook</option>
-                      <option>Google Search</option>
-                      <option>Referral</option>
-                      <option>LinkedIn</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <textarea id="f-message" placeholder="Tell us about your project, goals, or any questions..." rows="5"></textarea>
-                  </div>
-                </div>
-
-                <div class="col-md-12">
-                  <button id="f-submit" type="button" class="butn butn-bg" onclick="submitContactForm()"><span>Send Message</span></button>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
-  </section>
-
-  <style>
-    .contact-select {
-      width: 100%;
-      border: none;
-      border-bottom: 1px solid #eee;
-      padding: 12px 0;
-      font-size: 13px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 500;
-      color: #9a9a9a;
-      background: transparent;
-      outline: none;
-      cursor: pointer;
-      appearance: none;
-      -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 4px center;
-      padding-right: 24px;
-      transition: border-color 0.2s;
-    }
-    .contact-select:focus { border-bottom-color: #1a1a1a; color: #1a1a1a; }
-    .contact-select option { color: #1a1a1a; }
-    input[type="date"].contact-select-date {
-      color: #9a9a9a;
-    }
-  </style>
-
-  <!-- ── FOOTER ── -->
-  <footer class="text-center">
-    <div class="container">
-      <a class="logo" href="#">VYN<span>.</span></a>
-      <div class="social">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
+    <div class="port-item">
+      <div class="port-inner">
+        <div class="port-bg">IA</div>
+        <div class="port-overlay">
+          <div class="port-hover-title">Immigration Law</div>
+          <div class="port-hover-cat">Web · SEO</div>
+        </div>
+        <div class="port-caption">
+          <div class="port-title">Immigration Law</div>
+          <div class="port-cat">Legal · USA</div>
+        </div>
       </div>
-      <p>&copy; 2025 Vyn Studio · Orlando, FL · All Rights Reserved.</p>
     </div>
-  </footer>
+    <div class="port-item">
+      <div class="port-inner">
+        <div class="port-bg">RE</div>
+        <div class="port-overlay">
+          <div class="port-hover-title">Restaurant Group</div>
+          <div class="port-hover-cat">Social · Creative · Spain</div>
+        </div>
+        <div class="port-caption">
+          <div class="port-title">Restaurant Group</div>
+          <div class="port-cat">F&B · Spain</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- jQuery -->
-  <script src="js/jquery-3.0.0.min.js"></script>
-  <script src="js/jquery-migrate-3.0.0.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/scrollIt.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/isotope.pkgd.min.js"></script>
-  <script src="js/animated.headline.js"></script>
-  <script src="js/scripts.js"></script>
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-label">Get In Touch</div>
+  <h2 class="section-title">START A<br>PROJECT</h2>
+  <div class="contact-grid">
+    <div>
+      <div class="contact-info-block">
+        <div class="ci-label">Location</div>
+        <div class="ci-value">Orlando, Florida</div>
+      </div>
+      <div class="contact-info-block">
+        <div class="ci-label">Email</div>
+        <div class="ci-value">hello@vyn.studio</div>
+      </div>
+      <div class="contact-info-block">
+        <div class="ci-label">Website</div>
+        <div class="ci-value">vyn.studio</div>
+      </div>
+      <div class="contact-info-block">
+        <div class="ci-label">Services</div>
+        <div class="ci-value" style="font-size:0.85rem;font-weight:500;color:#888;line-height:1.7">Meta & Google Ads · Web Dev<br>Brand Design · SEO · CRM</div>
+      </div>
+      <div style="margin-top:36px;padding:24px;background:#fafaf8;border-radius:2px;border:1px solid #e5e5e5;">
+        <div class="ci-label">Response Time</div>
+        <div class="ci-value">Under 24 Hours</div>
+        <div style="font-size:0.75rem;color:#bbb;margin-top:6px;font-weight:500;">We review every inquiry personally.</div>
+      </div>
+    </div>
+    <div>
+      <div id="form-success">✓ Message sent! We'll be in touch within 24 hours.</div>
+      <div id="form-error">Something went wrong. Email hello@vyn.studio directly.</div>
+      <div class="form-row">
+        <input class="form-input" id="f-name" type="text" placeholder="Your Name *">
+        <input class="form-input" id="f-email" type="email" placeholder="Your Email *">
+      </div>
+      <div class="form-row">
+        <input class="form-input" id="f-phone" type="tel" placeholder="Your Phone">
+        <input class="form-input" id="f-date" type="date" placeholder="Preferred Call Date">
+      </div>
+      <div class="form-row">
+        <select class="form-select" id="f-service">
+          <option value="" disabled selected>Service Needed *</option>
+          <option>Meta Ads</option>
+          <option>Google Ads</option>
+          <option>Web Development</option>
+          <option>Brand Design</option>
+          <option>SEO</option>
+          <option>CRM / Automation</option>
+          <option>Ad Creative</option>
+          <option>Full Package</option>
+          <option>Not sure yet</option>
+        </select>
+        <select class="form-select" id="f-adspend">
+          <option value="" disabled selected>Current Ad Spend</option>
+          <option>$0 — Not running ads yet</option>
+          <option>Under $500/mo</option>
+          <option>$500 – $1,500/mo</option>
+          <option>$1,500 – $5,000/mo</option>
+          <option>$5,000+/mo</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <select class="form-select" id="f-type">
+          <option value="" disabled selected>Project Type *</option>
+          <option>New Business</option>
+          <option>Existing Business</option>
+          <option>Rebrand</option>
+          <option>Scale Up</option>
+          <option>One-time Project</option>
+          <option>Ongoing Retainer</option>
+        </select>
+        <select class="form-select" id="f-source">
+          <option value="" disabled selected>How did you hear about us?</option>
+          <option>Instagram</option>
+          <option>Facebook</option>
+          <option>Google Search</option>
+          <option>Referral</option>
+          <option>LinkedIn</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <textarea class="form-input" id="f-message" placeholder="Tell us about your project..."></textarea>
+      <button class="btn-submit" onclick="submitForm()">Send Message →</button>
+    </div>
+  </div>
+</section>
 
-  <script>
-    const GHL_WEBHOOK = 'https://hooks.gohighlevel.com/hooks/YOUR_WEBHOOK_ID_HERE';
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAB8aADAAQAAAABAAAAhQAAAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/8AAEQgAhQHxAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/bAEMAAQEBAQEBAgEBAgMCAgIDBAMDAwMEBgQEBAQEBgcGBgYGBgYHBwcHBwcHBwgICAgICAkJCQkJCwsLCwsLCwsLC//bAEMBAgICAwMDBQMDBQsIBggLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLC//dAAQAIP/aAAwDAQACEQMRAD8A/wA/+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//9D/AD/6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//0f8AP/ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//S/wA/+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//9P/AD/6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//1P8AP/ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//V/wA/+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//9b/AD/6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//1/8AP/ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//Z" alt="Vyn Studio" style="height:28px;width:auto;filter:invert(1);opacity:0.8;">
+    <div class="footer-copy">© 2025 Vyn Studio · Orlando, FL · All Rights Reserved</div>
+    <div class="footer-links">
+      <a class="footer-link" href="mailto:hello@vyn.studio">hello@vyn.studio</a>
+      <a class="footer-link" href="https://vyn.studio">vyn.studio</a>
+    </div>
+  </div>
+</footer>
 
-    async function submitContactForm() {
-      const name       = document.getElementById('f-name').value.trim();
-      const email      = document.getElementById('f-email').value.trim();
-      const phone      = document.getElementById('f-phone').value.trim();
-      const date       = document.getElementById('f-date').value;
-      const service    = document.getElementById('f-service').value;
-      const type       = document.getElementById('f-project-type').value;
-      const adspend    = document.getElementById('f-adspend').value;
-      const source     = document.getElementById('f-source').value;
-      const message    = document.getElementById('f-message').value.trim();
-      const success    = document.getElementById('form-success');
-      const error      = document.getElementById('form-error');
-      const btn        = document.getElementById('f-submit');
+<script>
+  // Nav scroll
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
 
-      success.style.display = 'none';
-      error.style.display   = 'none';
-
-      if (!name || !email || !service || !type) {
-        ['f-name','f-email'].forEach(id => {
-          const el = document.getElementById(id);
-          if (!el.value.trim()) el.style.borderBottomColor = '#e24b4a';
-        });
-        return;
-      }
-
-      btn.querySelector('span').textContent = 'Sending...';
-      btn.disabled = true;
-
-      try {
-        const res = await fetch(GHL_WEBHOOK, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name, email, phone,
-            service, project_type: type,
-            current_ad_spend: adspend,
-            discovery_call_date: date,
-            referral_source: source,
-            message,
-            source_page: 'vynstudio.com',
-            timestamp: new Date().toISOString()
-          })
-        });
-        if (res.ok) {
-          success.style.display = 'block';
-          ['f-name','f-email','f-phone','f-message'].forEach(id => document.getElementById(id).value = '');
-          ['f-service','f-project-type','f-adspend','f-source'].forEach(id => document.getElementById(id).selectedIndex = 0);
-          document.getElementById('f-date').value = '';
-          btn.querySelector('span').textContent = 'Sent ✓';
-        } else throw new Error();
-      } catch(e) {
-        error.style.display = 'block';
-        btn.querySelector('span').textContent = 'Send Message';
-        btn.disabled = false;
-      }
-    }
-
-    ['f-name','f-email'].forEach(id => {
-      document.getElementById(id)?.addEventListener('focus', function(){ this.style.borderBottomColor = ''; });
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
     });
-  </script>
+  });
 
+  // Form
+  const GHL = 'https://hooks.gohighlevel.com/hooks/YOUR_WEBHOOK_ID_HERE';
+  async function submitForm() {
+    const name = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    const date = document.getElementById('f-date').value;
+    const service = document.getElementById('f-service').value;
+    const adspend = document.getElementById('f-adspend').value;
+    const type = document.getElementById('f-type').value;
+    const source = document.getElementById('f-source').value;
+    const message = document.getElementById('f-message').value.trim();
+    const success = document.getElementById('form-success');
+    const error = document.getElementById('form-error');
+    const btn = document.querySelector('.btn-submit');
+    success.style.display = error.style.display = 'none';
+    if (!name || !email) return;
+    btn.textContent = 'Sending...'; btn.disabled = true;
+    try {
+      const res = await fetch(GHL, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ name, email, phone, service, project_type: type, current_ad_spend: adspend, discovery_call_date: date, referral_source: source, message, source_page:'vyn.studio', timestamp: new Date().toISOString() }) });
+      if (res.ok) { success.style.display = 'block'; btn.textContent = 'Sent ✓'; }
+      else throw new Error();
+    } catch(e) { error.style.display = 'block'; btn.textContent = 'Send Message →'; btn.disabled = false; }
+  }
+</script>
 </body>
 </html>
