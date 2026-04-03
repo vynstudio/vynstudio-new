@@ -624,171 +624,202 @@
   </section>
 
   <!-- ── CONTACT ── -->
-  <section class="contact section-padding" data-scroll-index="5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head text-center col-sm-12">
-          <h4>Contact Us</h4>
-          <h6>Start a Project</h6>
-        </div>
-
-        <!-- Info -->
-        <div class="col-lg-4 mb-5 mb-lg-0">
-          <div class="contact-info-item">
-            <div class="contact-info-label">Location</div>
-            <div class="contact-info-value">Orlando, Florida</div>
+    <section class="contact section-padding" data-scroll-index="5">
+      <div class="container">
+        <div class="row">
+          <div class="section-head text-center col-sm-12">
+            <h4>Contact Us</h4>
+            <h6>Start a Project</h6>
           </div>
-          <div class="contact-info-item">
-            <div class="contact-info-label">Email</div>
-            <div class="contact-info-value">hello@vynstudio.com</div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-label">Services</div>
-            <div class="contact-info-value" style="font-size:13px;font-weight:400;color:#9a9a9a;line-height:1.7">Meta & Google Ads · Web Dev<br>Brand Design · SEO · CRM</div>
-          </div>
-          <div class="contact-info-item" style="margin-top:32px;padding:20px;background:#f7f7f7;border-radius:2px;">
-            <div class="contact-info-label">Response Time</div>
-            <div class="contact-info-value">Under 24 Hours</div>
-            <div style="font-size:12px;color:#aaa;margin-top:4px;">All inquiries are reviewed personally.</div>
-          </div>
-        </div>
+          <div class="col-lg-8 offset-lg-2">
 
-        <!-- Form -->
-        <div class="col-lg-8">
-          <div id="form-success" style="display:none;padding:16px 20px;background:#f5f5f5;border:1px solid #ccc;border-radius:4px;margin-bottom:20px;font-size:13px;color:#1a1a1a;">✓ Message sent! We will respond within 24 hours.</div>
-          <div id="form-error" style="display:none;padding:16px 20px;background:#fdf2f2;border:1px solid #f0b8b8;border-radius:4px;margin-bottom:20px;font-size:13px;color:#8b2020;">Something went wrong. Email hello@vynstudio.com directly.</div>
-          <form name="vyn-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="vyn-contact">
-            <p style="display:none"><input name="bot-field"></p>
-            <div class="controls">
-              <div class="row">
+            <style>
+              .vyn-prog{display:flex;gap:4px;margin-bottom:32px}
+              .vyn-prog-dot{height:2px;flex:1;background:rgba(128,128,128,.2);border-radius:2px;transition:background .3s}
+              .vyn-prog-dot.done{background:#1a1a1a}
+              .vyn-step{display:none}
+              .vyn-step.active{display:block}
+              .vyn-step-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#aaa;margin-bottom:10px}
+              .vyn-step-q{font-size:22px;font-weight:500;color:#1a1a1a;line-height:1.2;margin-bottom:24px}
+              .vyn-opts{display:flex;flex-direction:column;gap:8px}
+              .vyn-opt{padding:13px 16px;border:1px solid #e0e0e0;background:transparent;font-size:14px;color:#888;cursor:pointer;text-align:left;font-family:inherit;transition:all .15s;border-radius:2px;display:flex;justify-content:space-between;align-items:center;width:100%}
+              .vyn-opt:hover{border-color:#1a1a1a;color:#1a1a1a}
+              .vyn-opt.sel{border-color:#1a1a1a;color:#1a1a1a;background:#f7f7f7}
+              .vyn-opt .vyn-check{width:16px;height:16px;border:1px solid #e0e0e0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;transition:all .15s}
+              .vyn-opt.sel .vyn-check{background:#1a1a1a;border-color:#1a1a1a;color:#fff}
+              .vyn-nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px}
+              .vyn-back{font-size:11px;color:#aaa;cursor:pointer;background:none;border:none;font-family:inherit;letter-spacing:.05em;text-decoration:underline}
+              .vyn-next{padding:12px 28px;background:#1a1a1a;color:#fff;font-size:11px;letter-spacing:.15em;text-transform:uppercase;border:none;font-family:inherit;cursor:pointer;border-radius:2px}
+              .vyn-next:disabled{opacity:.3;cursor:not-allowed}
+              .vyn-fg{margin-bottom:18px}
+              .vyn-fg label{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#aaa;margin-bottom:6px}
+              .vyn-fg input,.vyn-fg textarea{width:100%;padding:10px 0;border:none;border-bottom:1.5px solid #e0e0e0;background:transparent;font-size:15px;color:#1a1a1a;font-family:inherit;outline:none;transition:border-color .2s}
+              .vyn-fg input:focus,.vyn-fg textarea:focus{border-bottom-color:#1a1a1a}
+              .vyn-fg input.vyn-err{border-bottom-color:#c0392b}
+              .vyn-err-msg{font-size:11px;color:#c0392b;margin-top:4px;display:none}
+              .vyn-fg textarea{resize:none;height:80px}
+              .vyn-summary{background:#f7f7f7;border-radius:2px;padding:20px;margin-bottom:24px}
+              .vyn-sum-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #ebebeb;font-size:13px}
+              .vyn-sum-row:last-child{border:none}
+              .vyn-sum-label{color:#aaa}
+              .vyn-sum-val{color:#1a1a1a;font-weight:500;text-align:right;max-width:60%}
+              .vyn-success{display:none;text-align:center;padding:48px 0}
+              .vyn-tick{width:48px;height:48px;border:1.5px solid #1a1a1a;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:18px}
+              .vyn-success h3{font-size:20px;font-weight:500;margin-bottom:8px;color:#1a1a1a}
+              .vyn-success p{font-size:13px;color:#aaa;line-height:1.7}
+            </style>
 
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input id="f-name" name="name" type="text" placeholder="Your Name *">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input id="f-email" name="email" type="email" placeholder="Your Email *">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input id="f-phone" name="phone" type="tel" placeholder="Your Phone">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="f-date" style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:8px;">Preferred Discovery Call Date</label>
-                    <input id="f-date" name="preferred_date" type="date" placeholder="Preferred Call Date" title="Preferred Discovery Call Date">
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select id="f-service" name="service" class="contact-select">
-                      <option value="" disabled selected>Service Needed *</option>
-                      <option>Meta Ads</option>
-                      <option>Google Ads</option>
-                      <option>Web Development</option>
-                      <option>Brand Design</option>
-                      <option>SEO</option>
-                      <option>CRM / Automation</option>
-                      <option>Ad Creative</option>
-                      <option>Full Package</option>
-                      <option>Not sure yet</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select id="f-project-type" name="project_type" class="contact-select">
-                      <option value="" disabled selected>Project Type *</option>
-                      <option>New Business</option>
-                      <option>Existing Business</option>
-                      <option>Rebrand</option>
-                      <option>Scale Up</option>
-                      <option>One-time Project</option>
-                      <option>Ongoing Retainer</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select id="f-adspend" name="ad_spend" class="contact-select">
-                      <option value="" disabled selected>Current Monthly Ad Spend</option>
-                      <option>$0 — Not running ads yet</option>
-                      <option>Under $500/mo</option>
-                      <option>$500 – $1,500/mo</option>
-                      <option>$1,500 – $5,000/mo</option>
-                      <option>$5,000+/mo</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select id="f-source" name="source" class="contact-select">
-                      <option value="" disabled selected>How did you hear about us?</option>
-                      <option>Instagram</option>
-                      <option>Facebook</option>
-                      <option>Google Search</option>
-                      <option>Referral</option>
-                      <option>LinkedIn</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <textarea id="f-message" name="message" placeholder="Describe your project scope, objectives, and any relevant context." rows="5"></textarea>
-                  </div>
-                </div>
-
-                <div class="col-md-12">
-                  <button id="f-submit" type="submit" class="butn butn-bg"><span>Send Message</span></button>
-                </div>
-
-              </div>
+            <div class="vyn-prog" id="vyn-prog">
+              <div class="vyn-prog-dot done"></div>
+              <div class="vyn-prog-dot"></div>
+              <div class="vyn-prog-dot"></div>
+              <div class="vyn-prog-dot"></div>
+              <div class="vyn-prog-dot"></div>
             </div>
-          </form>
+
+            <form name="vyn-contact" netlify data-netlify="true" netlify-honeypot="bot-field" id="vyn-form" style="display:block">
+              <input type="hidden" name="form-name" value="vyn-contact">
+              <p style="display:none"><input name="bot-field"></p>
+              <input type="hidden" name="service" id="h-service">
+              <input type="hidden" name="engagement" id="h-engagement">
+              <input type="hidden" name="ad_spend" id="h-spend">
+              <input type="hidden" name="source" id="h-source">
+
+              <!-- Step 1 -->
+              <div class="vyn-step active" id="vs1">
+                <div class="vyn-step-label">Step 1 of 5</div>
+                <div class="vyn-step-q">What service do you need?</div>
+                <div class="vyn-opts" id="vopts1">
+                  <button type="button" class="vyn-opt" data-val="Meta Ads" onclick="vynPick(1,this)"><span>Meta Ads</span><span class="vyn-check"></span></button>
+                  <button type="button" class="vyn-opt" data-val="Google Ads" onclick="vynPick(1,this)"><span>Google Ads</span><span class="vyn-check"></span></button>
+                  <button type="button" class="vyn-opt" data-val="Web Development" onclick="vynPick(1,this)"><span>Web Development</span><span class="vyn-check"></span></button>
+                  <button type="button" class="vyn-opt" data-val="Brand Design" onclick="vynPick(1,this)"><span>Brand Design</span><span class="vyn-check"></span></button>
+                  <button type="button" class="vyn-opt" data-val="SEO" onclick="vynPick(1,this)"><span>SEO</span><span class="vyn-check"></span></button>
+                  <button type="button" class="vyn-opt" data-val="CRM / Automation" onclick="vynPick(1,this)"><span>CRM / Automation</span><span class="vyn-check"></span></button>
+                  <button type="button" class="vyn-opt" data-val="Full Service Package" onclick="vynPick(1,this)"><span>Full Service Package</span><span class="vyn-check"></span></button>
+                </div>
+                <div class="vyn-nav"><span></span><button type="button" class="vyn-next" id="vn1" disabled onclick="vynGo(2)">Next &rarr;</button></div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="vyn-step" id="vs2">
+                <div class="vyn-step-label">Step 2 of 5</div>
+                <div class="vyn-step-q">What type of engagement?</div>
+                <div class="vyn-opts" id="vopts2">
+                  <button type="button" class="vyn-opt" data-val="New Business" onclick="vynPick(2,this)"><span>New Business</span><span class="vyn-check"></span></button>
+                  <button type="button" class="vyn-opt" data-val="Existing Business" onclick="vynPick(2,this)"><span>Existing Business</span><span class="vyn-check"></span></button>
+                  <button type="button" class="vyn-opt" data-val="Rebrand" onclick="vynPick(2,this)"><span>Rebrand</span><span class="vyn-check"></span></button>
+                  <button type="button" class="vyn-opt" data-val="Scale Up" onclick="vynPick(2,this)"><span>Scale Up</span><span class="vyn-check"></span></button>
+                  <button type="button" class="vyn-opt" data-val="One-time Project" onclick="vynPick(2,this)"><span>One-time Project</span><span class="vyn-check"></span></button>
+                  <button type="button" class="vyn-opt" data-val="Ongoing Retainer" onclick="vynPick(2,this)"><span>Ongoing Retainer</span><span class="vyn-check"></span></button>
+                </div>
+                <div class="vyn-nav"><button type="button" class="vyn-back" onclick="vynGo(1)">&larr; Back</button><button type="button" class="vyn-next" id="vn2" disabled onclick="vynGo(3)">Next &rarr;</button></div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="vyn-step" id="vs3">
+                <div class="vyn-step-label">Step 3 of 5</div>
+                <div class="vyn-step-q">Current monthly ad spend?</div>
+                <div class="vyn-opts" id="vopts3">
+                  <button type="button" class="vyn-opt" data-val="Not running ads yet" onclick="vynPick(3,this)"><span>Not running ads yet</span><span class="vyn-check"></span></button>
+                  <button type="button" class="vyn-opt" data-val="Under $500/mo" onclick="vynPick(3,this)"><span>Under $500/mo</span><span class="vyn-check"></span></button>
+                  <button type="button" class="vyn-opt" data-val="$500 &ndash; $1,500/mo" onclick="vynPick(3,this)"><span>$500 &ndash; $1,500/mo</span><span class="vyn-check"></span></button>
+                  <button type="button" class="vyn-opt" data-val="$1,500 &ndash; $5,000/mo" onclick="vynPick(3,this)"><span>$1,500 &ndash; $5,000/mo</span><span class="vyn-check"></span></button>
+                  <button type="button" class="vyn-opt" data-val="$5,000+/mo" onclick="vynPick(3,this)"><span>$5,000+/mo</span><span class="vyn-check"></span></button>
+                </div>
+                <div class="vyn-nav"><button type="button" class="vyn-back" onclick="vynGo(2)">&larr; Back</button><button type="button" class="vyn-next" id="vn3" disabled onclick="vynGo(4)">Next &rarr;</button></div>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="vyn-step" id="vs4">
+                <div class="vyn-step-label">Step 4 of 5</div>
+                <div class="vyn-step-q">Your contact details</div>
+                <div class="vyn-fg"><label>Full Name *</label><input type="text" name="name" id="vf-name" placeholder="Jane Smith"></div>
+                <div class="vyn-fg"><label>Email Address *</label><input type="email" name="email" id="vf-email" placeholder="jane@company.com"><div class="vyn-err-msg" id="verr-email">Please enter a valid email address.</div></div>
+                <div class="vyn-fg"><label>Phone Number *</label><input type="tel" name="phone" id="vf-phone" placeholder="+1 (000) 000-0000"><div class="vyn-err-msg" id="verr-phone">Phone number is required.</div></div>
+                <div class="vyn-fg"><label>Preferred Discovery Call Date</label><input type="date" name="preferred_date" id="vf-date"></div>
+                <div class="vyn-nav"><button type="button" class="vyn-back" onclick="vynGo(3)">&larr; Back</button><button type="button" class="vyn-next" onclick="vynValidateContact()">Next &rarr;</button></div>
+              </div>
+
+              <!-- Step 5 -->
+              <div class="vyn-step" id="vs5">
+                <div class="vyn-step-label">Step 5 of 5</div>
+                <div class="vyn-step-q">Project brief</div>
+                <div class="vyn-fg"><label>Describe your goals, scope, and any relevant context</label><textarea name="message" id="vf-msg" placeholder="Optional &mdash; but helpful."></textarea></div>
+                <div class="vyn-summary" id="vyn-summary"></div>
+                <div class="vyn-nav"><button type="button" class="vyn-back" onclick="vynGo(4)">&larr; Back</button><button type="submit" class="vyn-next" onclick="vynSubmit(event)">Submit Inquiry &rarr;</button></div>
+              </div>
+
+            </form>
+
+            <div class="vyn-success" id="vyn-success">
+              <div class="vyn-tick">&#10003;</div>
+              <h3>Inquiry received.</h3>
+              <p>We will respond to <strong id="vyn-confirm-email"></strong><br>within 24 hours.</p>
+            </div>
+
+            <script>
+            var vynState={service:'',engagement:'',spend:'',source:'',name:'',email:'',phone:'',date:''};
+            function vynPick(step,btn){
+              var keys=['','service','engagement','spend','source'];
+              var opts=document.getElementById('vopts'+step).querySelectorAll('.vyn-opt');
+              opts.forEach(function(o){o.classList.remove('sel');o.querySelector('.vyn-check').textContent='';});
+              btn.classList.add('sel');btn.querySelector('.vyn-check').textContent='✓';
+              vynState[keys[step]]=btn.getAttribute('data-val');
+              var nb=document.getElementById('vn'+step);
+              if(nb)nb.disabled=false;
+              setTimeout(function(){vynGo(step+1);},320);
+            }
+            function vynGo(step){
+              for(var i=1;i<=5;i++){var s=document.getElementById('vs'+i);if(s)s.classList.remove('active');}
+              var t=document.getElementById('vs'+step);if(t)t.classList.add('active');
+              document.querySelectorAll('.vyn-prog-dot').forEach(function(d,i){d.classList.toggle('done',i<step);});
+              if(step===5)vynBuildSummary();
+            }
+            function vynValidateContact(){
+              var n=document.getElementById('vf-name'),e=document.getElementById('vf-email'),p=document.getElementById('vf-phone');
+              var ee=document.getElementById('verr-email'),pe=document.getElementById('verr-phone');
+              var ok=true;
+              [n,e,p].forEach(function(el){el.classList.remove('vyn-err');});
+              ee.style.display='none';pe.style.display='none';
+              if(!n.value.trim()){n.classList.add('vyn-err');ok=false;}
+              if(!e.value.trim()||!/\S+@\S+\.\S+/.test(e.value)){e.classList.add('vyn-err');ee.style.display='block';ok=false;}
+              if(!p.value.trim()){p.classList.add('vyn-err');pe.style.display='block';ok=false;}
+              if(!ok)return;
+              vynState.name=n.value;vynState.email=e.value;vynState.phone=p.value;
+              vynState.date=document.getElementById('vf-date').value;
+              document.getElementById('h-service').value=vynState.service;
+              document.getElementById('h-engagement').value=vynState.engagement;
+              document.getElementById('h-spend').value=vynState.spend;
+              vynGo(5);
+            }
+            function vynBuildSummary(){
+              var rows=[['Service',vynState.service],['Engagement',vynState.engagement],['Ad Spend',vynState.spend],['Name',vynState.name],['Email',vynState.email],['Phone',vynState.phone],['Call Date',vynState.date||'&mdash;']];
+              document.getElementById('vyn-summary').innerHTML=rows.map(function(r){return'<div class="vyn-sum-row"><span class="vyn-sum-label">'+r[0]+'</span><span class="vyn-sum-val">'+r[1]+'</span></div>';}).join('');
+            }
+            function vynSubmit(e){
+              e.preventDefault();
+              var form=document.getElementById('vyn-form');
+              document.getElementById('vf-msg').name='message';
+              var data=new FormData(form);
+              fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()})
+                .then(function(r){
+                  if(r.ok){
+                    form.style.display='none';
+                    document.getElementById('vyn-prog').style.display='none';
+                    document.getElementById('vyn-success').style.display='block';
+                    document.getElementById('vyn-confirm-email').textContent=vynState.email;
+                  }
+                }).catch(function(){alert('Submission failed. Please email hello@vynstudio.com directly.');});
+            }
+            </script>
+
+          </div>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <style>
-    .contact-select {
-      width: 100%;
-      border: none;
-      border-bottom: 1px solid #eee;
-      padding: 12px 0;
-      font-size: 13px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 500;
-      color: #9a9a9a;
-      background: transparent;
-      outline: none;
-      cursor: pointer;
-      appearance: none;
-      -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='https://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 4px center;
-      padding-right: 24px;
-      transition: border-color 0.2s;
-    }
-    .contact-select:focus { border-bottom-color: #1a1a1a; color: #1a1a1a; }
-    .contact-select option { color: #1a1a1a; }
-    input[type="date"].contact-select-date {
-      color: #9a9a9a;
-    }
-  </style>
-
-  <!-- ── FOOTER ── -->
+    <!-- ── FOOTER ── -->
   <footer class="text-center">
     <div class="container">
       <a class="logo" href="#">VYN<span>.</span></a>
@@ -813,70 +844,6 @@
   <script src="js/animated.headline.js"></script>
   <script src="js/scripts.js"></script>
 
-  <script>
-    const GHL_WEBHOOK = 'https://hooks.gohighlevel.com/hooks/YOUR_WEBHOOK_ID_HERE';
-
-    async function submitContactForm() {
-      const name       = document.getElementById('f-name').value.trim();
-      const email      = document.getElementById('f-email').value.trim();
-      const phone      = document.getElementById('f-phone').value.trim();
-      const date       = document.getElementById('f-date').value;
-      const service    = document.getElementById('f-service').value;
-      const type       = document.getElementById('f-project-type').value;
-      const adspend    = document.getElementById('f-adspend').value;
-      const source     = document.getElementById('f-source').value;
-      const message    = document.getElementById('f-message').value.trim();
-      const success    = document.getElementById('form-success');
-      const error      = document.getElementById('form-error');
-      const btn        = document.getElementById('f-submit');
-
-      success.style.display = 'none';
-      error.style.display   = 'none';
-
-      if (!name || !email || !service || !type) {
-        ['f-name','f-email'].forEach(id => {
-          const el = document.getElementById(id);
-          if (!el.value.trim()) el.style.borderBottomColor = '#e24b4a';
-        });
-        return;
-      }
-
-      btn.querySelector('span').textContent = 'Sending...';
-      btn.disabled = true;
-
-      try {
-        const res = await fetch(GHL_WEBHOOK, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name, email, phone,
-            service, project_type: type,
-            current_ad_spend: adspend,
-            discovery_call_date: date,
-            referral_source: source,
-            message,
-            source_page: 'vynstudio.com',
-            timestamp: new Date().toISOString()
-          })
-        });
-        if (res.ok) {
-          success.style.display = 'block';
-          ['f-name','f-email','f-phone','f-message'].forEach(id => document.getElementById(id).value = '');
-          ['f-service','f-project-type','f-adspend','f-source'].forEach(id => document.getElementById(id).selectedIndex = 0);
-          document.getElementById('f-date').value = '';
-          btn.querySelector('span').textContent = 'Sent ✓';
-        } else throw new Error();
-      } catch(e) {
-        error.style.display = 'block';
-        btn.querySelector('span').textContent = 'Send Message';
-        btn.disabled = false;
-      }
-    }
-
-    ['f-name','f-email'].forEach(id => {
-      document.getElementById(id)?.addEventListener('focus', function(){ this.style.borderBottomColor = ''; });
-    });
-  </script>
 
 </body>
 </html>
