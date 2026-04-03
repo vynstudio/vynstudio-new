@@ -283,8 +283,7 @@
           <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="1">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="2">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="3">Work</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="4">Reviews</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="5">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="4">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -562,62 +561,6 @@
   </section>
 
   <!-- ── TESTIMONIALS ── -->
-  <section class="testimonials" data-scroll-index="4">
-    <div class="container">
-      <div class="row">
-        <div class="section-head text-center col-sm-12">
-          <h4>Client Reviews</h4>
-          <h6>What They Say</h6>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="testi-card">
-            <span class="testi-placeholder">Placeholder — swap with real quote</span>
-            <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
-            <p class="testi-quote">"Vyn Studio completely transformed how we generate leads. Our phones started ringing within the first week of the Meta campaign — we had to hire another technician to keep up."</p>
-            <div class="testi-divider"></div>
-            <div class="testi-author">
-              <div class="testi-avatar">SA</div>
-              <div>
-                <div class="testi-name">Soligo Air</div>
-                <div class="testi-role">HVAC · Orlando, FL</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="testi-card">
-            <span class="testi-placeholder">Placeholder — swap with real quote</span>
-            <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
-            <p class="testi-quote">"The branding they built for Toro Movers is exactly what we needed — professional, clean, and different from every other moving company out there. Consistent leads every week."</p>
-            <div class="testi-divider"></div>
-            <div class="testi-author">
-              <div class="testi-avatar">TM</div>
-              <div>
-                <div class="testi-name">Toro Movers</div>
-                <div class="testi-role">Moving Co. · Central FL</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="testi-card">
-            <span class="testi-placeholder">Placeholder — swap with real quote</span>
-            <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
-            <p class="testi-quote">"My website and Instagram went from zero to fully professional fast. Clients find me online and book directly — the calendar integration alone saves me hours every week."</p>
-            <div class="testi-divider"></div>
-            <div class="testi-author">
-              <div class="testi-avatar">SF</div>
-              <div>
-                <div class="testi-name">Stael Fogarty</div>
-                <div class="testi-role">Interpreter · Language Coach</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ── CONTACT ── -->
   <section class="contact section-padding" data-scroll-index="5">
     <div class="container">
@@ -650,11 +593,12 @@
 
         <!-- Form -->
         <div class="col-lg-8">
-          <div id="form-success">Message sent! We'll be in touch within 24 hours.</div>
-          <div id="form-error">Something went wrong. Please email hello@vynstudio.com directly.</div>
+          <div id="form-success" style="display:none;padding:16px 20px;background:#f5f5f5;border:1px solid #ccc;border-radius:4px;margin-bottom:20px;font-size:13px;color:#1a1a1a;">✓ Message sent! We'll be in touch within 24 hours.</div>
+          <div id="form-error" style="display:none;padding:16px 20px;background:#fdf2f2;border:1px solid #f0b8b8;border-radius:4px;margin-bottom:20px;font-size:13px;color:#8b2020;">Something went wrong. Email hello@vynstudio.com directly.</div>
           <div class="form">
             <div class="controls">
               <div class="row">
+
                 <div class="col-md-6">
                   <div class="form-group">
                     <input id="f-name" type="text" placeholder="Your Name *">
@@ -665,19 +609,83 @@
                     <input id="f-email" type="email" placeholder="Your Email *">
                   </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
                   <div class="form-group">
                     <input id="f-phone" type="tel" placeholder="Your Phone">
                   </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
                   <div class="form-group">
-                    <textarea id="f-message" placeholder="Tell us about your project *" rows="5"></textarea>
+                    <input id="f-date" type="date" placeholder="Preferred Call Date" title="Preferred Discovery Call Date">
                   </div>
                 </div>
-                <div class="col-md-12">
-                  <button id="f-submit" type="button" class="butn butn-bg" onclick="submitForm()"><span>Send Message</span></button>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select id="f-service" class="contact-select">
+                      <option value="" disabled selected>Service Needed *</option>
+                      <option>Meta Ads</option>
+                      <option>Google Ads</option>
+                      <option>Web Development</option>
+                      <option>Brand Design</option>
+                      <option>SEO</option>
+                      <option>CRM / Automation</option>
+                      <option>Ad Creative</option>
+                      <option>Full Package</option>
+                      <option>Not sure yet</option>
+                    </select>
+                  </div>
                 </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select id="f-project-type" class="contact-select">
+                      <option value="" disabled selected>Project Type *</option>
+                      <option>New Business</option>
+                      <option>Existing Business</option>
+                      <option>Rebrand</option>
+                      <option>Scale Up</option>
+                      <option>One-time Project</option>
+                      <option>Ongoing Retainer</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select id="f-adspend" class="contact-select">
+                      <option value="" disabled selected>Current Monthly Ad Spend</option>
+                      <option>$0 — Not running ads yet</option>
+                      <option>Under $500/mo</option>
+                      <option>$500 – $1,500/mo</option>
+                      <option>$1,500 – $5,000/mo</option>
+                      <option>$5,000+/mo</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select id="f-source" class="contact-select">
+                      <option value="" disabled selected>How did you hear about us?</option>
+                      <option>Instagram</option>
+                      <option>Facebook</option>
+                      <option>Google Search</option>
+                      <option>Referral</option>
+                      <option>LinkedIn</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <textarea id="f-message" placeholder="Tell us about your project, goals, or any questions..." rows="5"></textarea>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <button id="f-submit" type="button" class="butn butn-bg" onclick="submitContactForm()"><span>Send Message</span></button>
+                </div>
+
               </div>
             </div>
           </div>
@@ -686,6 +694,34 @@
       </div>
     </div>
   </section>
+
+  <style>
+    .contact-select {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #eee;
+      padding: 12px 0;
+      font-size: 13px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      color: #9a9a9a;
+      background: transparent;
+      outline: none;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 4px center;
+      padding-right: 24px;
+      transition: border-color 0.2s;
+    }
+    .contact-select:focus { border-bottom-color: #1a1a1a; color: #1a1a1a; }
+    .contact-select option { color: #1a1a1a; }
+    input[type="date"].contact-select-date {
+      color: #9a9a9a;
+    }
+  </style>
 
   <!-- ── FOOTER ── -->
   <footer class="text-center">
@@ -713,25 +749,29 @@
   <script src="js/scripts.js"></script>
 
   <script>
-    /* ── GHL Webhook — swap URL when ready ── */
     const GHL_WEBHOOK = 'https://hooks.gohighlevel.com/hooks/YOUR_WEBHOOK_ID_HERE';
 
-    async function submitForm() {
-      const name    = document.getElementById('f-name').value.trim();
-      const email   = document.getElementById('f-email').value.trim();
-      const phone   = document.getElementById('f-phone').value.trim();
-      const message = document.getElementById('f-message').value.trim();
-      const success = document.getElementById('form-success');
-      const error   = document.getElementById('form-error');
-      const btn     = document.getElementById('f-submit');
+    async function submitContactForm() {
+      const name       = document.getElementById('f-name').value.trim();
+      const email      = document.getElementById('f-email').value.trim();
+      const phone      = document.getElementById('f-phone').value.trim();
+      const date       = document.getElementById('f-date').value;
+      const service    = document.getElementById('f-service').value;
+      const type       = document.getElementById('f-project-type').value;
+      const adspend    = document.getElementById('f-adspend').value;
+      const source     = document.getElementById('f-source').value;
+      const message    = document.getElementById('f-message').value.trim();
+      const success    = document.getElementById('form-success');
+      const error      = document.getElementById('form-error');
+      const btn        = document.getElementById('f-submit');
 
       success.style.display = 'none';
       error.style.display   = 'none';
 
-      if (!name || !email || !message) {
-        ['f-name','f-email','f-message'].forEach(id => {
+      if (!name || !email || !service || !type) {
+        ['f-name','f-email'].forEach(id => {
           const el = document.getElementById(id);
-          if (!el.value.trim()) el.style.borderColor = '#e24b4a';
+          if (!el.value.trim()) el.style.borderBottomColor = '#e24b4a';
         });
         return;
       }
@@ -743,13 +783,24 @@
         const res = await fetch(GHL_WEBHOOK, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, email, phone, message, source: 'vynstudio.com', timestamp: new Date().toISOString() })
+          body: JSON.stringify({
+            name, email, phone,
+            service, project_type: type,
+            current_ad_spend: adspend,
+            discovery_call_date: date,
+            referral_source: source,
+            message,
+            source_page: 'vynstudio.com',
+            timestamp: new Date().toISOString()
+          })
         });
         if (res.ok) {
           success.style.display = 'block';
           ['f-name','f-email','f-phone','f-message'].forEach(id => document.getElementById(id).value = '');
+          ['f-service','f-project-type','f-adspend','f-source'].forEach(id => document.getElementById(id).selectedIndex = 0);
+          document.getElementById('f-date').value = '';
           btn.querySelector('span').textContent = 'Sent ✓';
-        } else { throw new Error(); }
+        } else throw new Error();
       } catch(e) {
         error.style.display = 'block';
         btn.querySelector('span').textContent = 'Send Message';
@@ -757,9 +808,8 @@
       }
     }
 
-    /* Clear red border on focus */
-    ['f-name','f-email','f-message'].forEach(id => {
-      document.getElementById(id).addEventListener('focus', function(){ this.style.borderColor = ''; });
+    ['f-name','f-email'].forEach(id => {
+      document.getElementById(id)?.addEventListener('focus', function(){ this.style.borderBottomColor = ''; });
     });
   </script>
 
