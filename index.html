@@ -171,6 +171,32 @@
     /* Services icons accent */
     .services .item .icon i { color: #1a1a1a !important; }
     .services .item:hover { border-top-color: #1a1a1a !important; }
+    .services .item {
+      padding: 32px 24px;
+      border: 1px solid #ebebeb;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+      position: relative;
+    }
+    .services .item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+      border-color: #1a1a1a;
+    }
+    .services .item .arrow-indicator {
+      display: inline-block;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity .2s ease, transform .2s ease;
+      font-size: 13px;
+      margin-left: 6px;
+      color: #1a1a1a;
+    }
+    .services .item:hover .arrow-indicator {
+      opacity: 1;
+      transform: translateX(0);
+    }
 
     /* Portfolio filter active */
     .portfolio .filtering span.active { color: #1a1a1a; border-color: #1a1a1a; }
@@ -373,46 +399,58 @@
           <h6>What We Do</h6>
         </div>
         <div class="col-lg-4 col-md-6">
+          <a href="paid-advertising.html" style="text-decoration:none;color:inherit;display:block;">
           <div class="item">
             <span class="icon"><i class="icon-megaphone"></i></span>
-            <h6><a href="paid-advertising.html" style="text-decoration:none;color:inherit;">Paid Advertising</a></h6>
+            <h6>Paid Advertising<span class="arrow-indicator">&rarr;</span></h6>
             <p>Performance campaigns on Meta and Google Ads, managed end-to-end. Strategic targeting, creative production, and ongoing optimization to maximize return on ad spend.</p>
           </div>
+          </a>
         </div>
         <div class="col-lg-4 col-md-6">
+          <a href="ad-creative.html" style="text-decoration:none;color:inherit;display:block;">
           <div class="item">
             <span class="icon"><i class="icon-layers"></i></span>
-            <h6><a href="ad-creative.html" style="text-decoration:none;color:inherit;">Ad Creative</a></h6>
+            <h6>Ad Creative<span class="arrow-indicator">&rarr;</span></h6>
             <p>High-converting ad creatives produced for every major platform. Photo ads, carousels, and editorial formats developed to drive measurable engagement and conversion.</p>
           </div>
+          </a>
         </div>
         <div class="col-lg-4 col-md-6">
+          <a href="web-development.html" style="text-decoration:none;color:inherit;display:block;">
           <div class="item">
             <span class="icon"><i class="icon-laptop"></i></span>
-            <h6><a href="web-development.html" style="text-decoration:none;color:inherit;">Web Development</a></h6>
+            <h6>Web Development<span class="arrow-indicator">&rarr;</span></h6>
             <p>Conversion-optimized landing pages and full websites, built to professional standards and integrated with your existing technology stack.</p>
           </div>
+          </a>
         </div>
         <div class="col-lg-4 col-md-6">
+          <a href="brand-design.html" style="text-decoration:none;color:inherit;display:block;">
           <div class="item">
             <span class="icon"><i class="icon-circle-compass"></i></span>
-            <h6><a href="brand-design.html" style="text-decoration:none;color:inherit;">Brand Design</a></h6>
+            <h6>Brand Design<span class="arrow-indicator">&rarr;</span></h6>
             <p>Comprehensive brand identity systems covering visual language, typography, color, and tone — documented for consistent application across all channels.</p>
           </div>
+          </a>
         </div>
         <div class="col-lg-4 col-md-6">
+          <a href="seo.html" style="text-decoration:none;color:inherit;display:block;">
           <div class="item">
             <span class="icon"><i class="icon-briefcase"></i></span>
-            <h6><a href="seo.html" style="text-decoration:none;color:inherit;">SEO</a></h6>
+            <h6>SEO<span class="arrow-indicator">&rarr;</span></h6>
             <p>Technical SEO implementation, structured data markup, and content strategy designed to build sustainable organic visibility and long-term search authority.</p>
           </div>
+          </a>
         </div>
         <div class="col-lg-4 col-md-6">
+          <a href="crm-automation.html" style="text-decoration:none;color:inherit;display:block;">
           <div class="item">
             <span class="icon"><i class="icon-mobile"></i></span>
-            <h6><a href="crm-automation.html" style="text-decoration:none;color:inherit;">CRM & Automation</a></h6>
+            <h6>CRM &amp; Automation<span class="arrow-indicator">&rarr;</span></h6>
             <p>End-to-end CRM configuration, lead capture workflows, and automated follow-up sequences built on GoHighLevel — ensuring no prospect goes uncontacted.</p>
           </div>
+          </a>
         </div>
       </div>
     </div>
