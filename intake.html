@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Project Intake — Vyn Studio</title>
+<link rel="canonical" href="https://vynstudio.com/intake">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231A1A1A'/><text y='78' x='8' font-size='72' font-family='serif' font-weight='900' fill='%23FAFAF8'>V</text></svg>">
+
+<style>
+  :root {
+    --bg: #0f0f0f;
+    --bg-2: #161616;
+    --surface: #1a1a1a;
+    --surface-2: #222;
+    --border: #2a2a2a;
+    --border-strong: #333;
+    --text: #f5f3ee;
+    --muted: #9a9a9a;
+    --faint: #555;
+    --accent: #ffffff;
+    --error: #ce7373;
+    --success: #6fcf97;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'Montserrat', sans-serif; font-size: 14px; line-height: 1.6; min-height: 100dvh; }
+  a { color: inherit; }
+  img { max-width: 100%; }
+  button { font: inherit; cursor: pointer; background: none; border: none; color: inherit; }
+  ::selection { background: rgba(255,255,255,0.2); color: var(--text); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 96px; }
+
+  /* Header */
+  .top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 56px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  .logo { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 900; letter-spacing: 0.2em; color: #fff; text-decoration: none; }
+  .logo span { color: var(--muted); }
+  .badge { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 6px 14px; border: 1px solid var(--border-strong); border-radius: 2px; color: var(--muted); }
+
+  /* Hero */
+  .hero { margin-bottom: 56px; }
+  .hero__eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; display: inline-flex; align-items: center; gap: 12px; }
+  .hero__eyebrow::before { content: ""; display: inline-block; width: 36px; height: 1px; background: var(--muted); }
+  .hero__title { font-family: 'Montserrat', sans-serif; font-weight: 800; letter-spacing: 0.02em; line-height: 1.05; font-size: clamp(2.5rem, 6vw, 4.25rem); margin-bottom: 18px; color: var(--text); }
+  .hero__title em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; color: var(--accent); letter-spacing: -0.01em; }
+  .hero__desc { font-size: 15px; color: var(--muted); max-width: 56ch; line-height: 1.7; }
+
+  /* Progress */
+  .progress { position: sticky; top: 0; z-index: 5; background: rgba(15,15,15,0.9); backdrop-filter: blur(12px); padding: 14px 0; margin: -48px -24px 32px; padding-inline: 24px; border-bottom: 1px solid var(--border); }
+  .progress__bar { height: 2px; background: var(--surface); overflow: hidden; }
+  .progress__fill { height: 100%; background: var(--accent); width: 0; transition: width .3s ease; }
+
+  /* Sections */
+  .section { margin-bottom: 56px; }
+  .section__num { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: var(--faint); margin-bottom: 6px; }
+  .section__title { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; font-weight: 800; letter-spacing: 0.02em; margin-bottom: 6px; }
+  .section__hint { font-size: 13px; color: var(--muted); margin-bottom: 28px; max-width: 60ch; }
+
+  /* Fields */
+  .field { margin-bottom: 22px; }
+  .field label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text); margin-bottom: 10px; }
+  .field .help { font-size: 12px; color: var(--muted); margin-bottom: 10px; font-weight: 400; text-transform: none; letter-spacing: 0; line-height: 1.55; }
+  .req { color: var(--accent); }
+
+  input[type=text], input[type=email], input[type=tel], input[type=url], input[type=number], select, textarea {
+    width: 100%; padding: 14px 16px;
+    background: var(--bg-2); border: 1px solid var(--border-strong); border-radius: 2px;
+    color: var(--text); font: inherit;
+    transition: border-color .2s, background .2s;
+  }
+  textarea { min-height: 110px; resize: vertical; line-height: 1.55; }
+  input::placeholder, textarea::placeholder { color: var(--faint); }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); background: var(--surface); }
+
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 600px) { .row { grid-template-columns: 1fr; } }
+
+  /* Pill checkboxes */
+  .pill-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill { cursor: pointer; user-select: none; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; padding: 10px 16px; background: var(--bg-2); border: 1px solid var(--border-strong); border-radius: 2px; color: var(--muted); transition: all .2s; }
+  .pill:hover { border-color: var(--accent); color: var(--text); }
+  .pill input { display: none; }
+  .pill.active { background: var(--accent); color: #0f0f0f; border-color: var(--accent); }
+
+  /* Submit */
+  .submit { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .btn-vyn-primary {
+    display: inline-block; background: var(--accent); color: #0f0f0f !important;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 16px 40px; border-radius: 2px; transition: all .25s; border: none; cursor: pointer;
+  }
+  .btn-vyn-primary:hover { background: #cccccc; transform: translateY(-2px); }
+  .btn-vyn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  .feedback { font-size: 12px; color: var(--muted); text-align: center; min-height: 1.4em; letter-spacing: 0.05em; }
+  .feedback.error { color: var(--error); }
+
+  /* Success state */
+  .success { display: none; text-align: center; padding: 80px 0; }
+  .success.show { display: block; }
+  .success__icon { font-size: 48px; margin-bottom: 20px; }
+  .success h2 { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; letter-spacing: 0.04em; margin-bottom: 16px; }
+  .success h2 em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; }
+  .success p { color: var(--muted); max-width: 50ch; margin: 0 auto 28px; line-height: 1.7; }
+</style>
+</head>
+<body>
+
+<div class="wrap" id="formWrap">
+
+  <header class="top">
+    <a href="/" class="logo">VYN<span>STUDIO</span></a>
+    <span class="badge">Project intake</span>
+  </header>
+
+  <div class="progress"><div class="progress__bar"><div class="progress__fill" id="progressFill"></div></div></div>
+
+  <section class="hero">
+    <p class="hero__eyebrow">Hablemos de tu proyecto</p>
+    <h1 class="hero__title">Cuéntanos sobre tu <em>negocio</em>.</h1>
+    <p class="hero__desc">Este formulario nos da el contexto suficiente para enviarte una propuesta concreta — no una llamada de descubrimiento. Tarda 5–8 minutos. Cuanto más detalle, mejor enfoque.</p>
+  </section>
+
+  <form id="intakeForm" novalidate>
+
+    <!-- 01 CONTACT -->
+    <section class="section">
+      <p class="section__num">01</p>
+      <h2 class="section__title">Sobre ti</h2>
+      <p class="section__hint">Datos básicos para devolverte una propuesta.</p>
+
+      <div class="row">
+        <div class="field">
+          <label>Nombre completo <span class="req">*</span></label>
+          <input type="text" name="fullName" required>
+        </div>
+        <div class="field">
+          <label>Cargo en la empresa</label>
+          <input type="text" name="role" placeholder="Founder · Marketing Manager · Owner">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="field">
+          <label>Teléfono / WhatsApp</label>
+          <input type="tel" name="phone">
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 BUSINESS -->
+    <section class="section">
+      <p class="section__num">02</p>
+      <h2 class="section__title">Sobre tu negocio</h2>
+      <p class="section__hint">Para entender el contexto antes de proponer nada.</p>
+
+      <div class="field">
+        <label>Nombre de la empresa <span class="req">*</span></label>
+        <input type="text" name="businessName" required>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>Sector / Industria <span class="req">*</span></label>
+          <input type="text" name="industry" required placeholder="Restauración · Mudanzas · Estética · SaaS · etc.">
+        </div>
+        <div class="field">
+          <label>Ubicación principal</label>
+          <input type="text" name="location" placeholder="Ciudad, país · A nivel nacional · Online">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>Web actual</label>
+          <input type="url" name="website" placeholder="https://...">
+        </div>
+        <div class="field">
+          <label>Instagram / red principal</label>
+          <input type="text" name="instagram" placeholder="@usuario">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Tamaño del equipo</label>
+        <div class="pill-grid" data-name="teamSize">
+          <label class="pill"><input type="radio" name="teamSize" value="Solo (1)">Solo (1)</label>
+          <label class="pill"><input type="radio" name="teamSize" value="2–5">2–5</label>
+          <label class="pill"><input type="radio" name="teamSize" value="6–20">6–20</label>
+          <label class="pill"><input type="radio" name="teamSize" value="21–50">21–50</label>
+          <label class="pill"><input type="radio" name="teamSize" value="50+">50+</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 GOALS -->
+    <section class="section">
+      <p class="section__num">03</p>
+      <h2 class="section__title">Objetivos</h2>
+      <p class="section__hint">Qué quieres conseguir en los próximos 6–12 meses.</p>
+
+      <div class="field">
+        <label>Objetivos principales <span class="req">*</span></label>
+        <p class="help">Selecciona todos los que apliquen.</p>
+        <div class="pill-grid" data-name="goals">
+          <label class="pill"><input type="checkbox" name="goals" value="Más leads">Más leads</label>
+          <label class="pill"><input type="checkbox" name="goals" value="Más ventas">Más ventas</label>
+          <label class="pill"><input type="checkbox" name="goals" value="Rebranding">Rebranding</label>
+          <label class="pill"><input type="checkbox" name="goals" value="Web nueva">Web nueva</label>
+          <label class="pill"><input type="checkbox" name="goals" value="Escalar ads">Escalar ads</label>
+          <label class="pill"><input type="checkbox" name="goals" value="Posicionamiento SEO">SEO</label>
+          <label class="pill"><input type="checkbox" name="goals" value="Automatizar procesos">Automatización / CRM</label>
+          <label class="pill"><input type="checkbox" name="goals" value="Reputación online">Reputación online</label>
+          <label class="pill"><input type="checkbox" name="goals" value="Lanzar producto">Lanzar producto</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Servicios que te interesan <span class="req">*</span></label>
+        <div class="pill-grid" data-name="services">
+          <label class="pill"><input type="checkbox" name="services" value="Meta Ads">Meta Ads</label>
+          <label class="pill"><input type="checkbox" name="services" value="Google Ads">Google Ads</label>
+          <label class="pill"><input type="checkbox" name="services" value="Web development">Web development</label>
+          <label class="pill"><input type="checkbox" name="services" value="Brand design">Brand design</label>
+          <label class="pill"><input type="checkbox" name="services" value="Content / Ad creative">Ad creative</label>
+          <label class="pill"><input type="checkbox" name="services" value="SEO">SEO</label>
+          <label class="pill"><input type="checkbox" name="services" value="CRM automation">CRM / automation</label>
+          <label class="pill"><input type="checkbox" name="services" value="Consultoría">Consultoría</label>
+          <label class="pill"><input type="checkbox" name="services" value="Aún no lo sé">Aún no lo sé</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>Plazo / urgencia</label>
+          <select name="timeline">
+            <option value="">— Selecciona —</option>
+            <option>Ya, lo necesitamos ayer</option>
+            <option>En las próximas 2–4 semanas</option>
+            <option>En 1–3 meses</option>
+            <option>Estamos planificando para 3+ meses</option>
+            <option>Aún explorando</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Presupuesto mensual aprox.</label>
+          <select name="budget">
+            <option value="">— Selecciona —</option>
+            <option>< 500 €/mes</option>
+            <option>500 – 1.500 €/mes</option>
+            <option>1.500 – 3.000 €/mes</option>
+            <option>3.000 – 5.000 €/mes</option>
+            <option>5.000 – 10.000 €/mes</option>
+            <option>10.000+ €/mes</option>
+            <option>Proyecto único (no mensual)</option>
+            <option>Aún no definido</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 STATUS -->
+    <section class="section">
+      <p class="section__num">04</p>
+      <h2 class="section__title">Estado actual</h2>
+      <p class="section__hint">Qué tienes ya en marcha y qué te frena.</p>
+
+      <div class="row">
+        <div class="field">
+          <label>¿Tienes web?</label>
+          <select name="hasWebsite">
+            <option value="">— Selecciona —</option>
+            <option>Sí, y funciona bien</option>
+            <option>Sí, pero está obsoleta</option>
+            <option>Sí, pero no convierte</option>
+            <option>No tengo web</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>¿Estás invirtiendo en publicidad?</label>
+          <select name="runningAds">
+            <option value="">— Selecciona —</option>
+            <option>Sí, en Meta Ads</option>
+            <option>Sí, en Google Ads</option>
+            <option>Sí, en ambos</option>
+            <option>Lo intenté, no funcionó</option>
+            <option>Nunca he hecho ads</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>¿Qué está funcionando ahora mismo?</label>
+        <textarea name="whatsWorking" rows="3" placeholder="Lo que te trae clientes hoy: boca a boca, IG orgánico, Google, ferias, etc."></textarea>
+      </div>
+
+      <div class="field">
+        <label>¿Qué NO está funcionando?</label>
+        <textarea name="whatsNotWorking" rows="3" placeholder="El cuello de botella: pocos leads, mala calidad, web no convierte, no llegan a la web, etc."></textarea>
+      </div>
+
+      <div class="field">
+        <label>Competencia / referencias que admiras</label>
+        <p class="help">Webs, marcas, agencias. Nos sirve para entender el estilo y nivel que buscas.</p>
+        <textarea name="competitors" rows="3" placeholder="https://... · @usuario · nombres de marca"></textarea>
+      </div>
+    </section>
+
+    <!-- 05 EXTRA -->
+    <section class="section">
+      <p class="section__num">05</p>
+      <h2 class="section__title">Cuéntanos más</h2>
+      <p class="section__hint">El espacio libre. Cuanto más nos cuentes, mejor.</p>
+
+      <div class="field">
+        <label>Cuéntanos sobre el proyecto <span class="req">*</span></label>
+        <p class="help">¿Qué quieres construir? ¿Por qué ahora? ¿Cómo se vería el éxito en 6 meses?</p>
+        <textarea name="projectDetails" rows="6" required></textarea>
+      </div>
+
+      <div class="field">
+        <label>¿Algo más que debamos saber?</label>
+        <textarea name="extra" rows="3" placeholder="Restricciones, deadlines, sensibilidades del sector, etc."></textarea>
+      </div>
+
+      <div class="field">
+        <label>¿Cómo nos conociste?</label>
+        <input type="text" name="source" placeholder="Instagram · Recomendación · Google · LinkedIn · Otro">
+      </div>
+    </section>
+
+    <div class="submit">
+      <button type="submit" class="btn-vyn-primary" id="submitBtn">Enviar brief</button>
+      <p class="feedback" id="feedback"></p>
+    </div>
+
+  </form>
+
+  <div class="success" id="successScreen">
+    <div class="success__icon">✓</div>
+    <h2>Brief <em>recibido</em>.</h2>
+    <p>Gracias. Lo revisamos en menos de 24h y te escribimos por email o WhatsApp con la siguiente conversación — sea propuesta concreta, preguntas para afinar, o una recomendación honesta.</p>
+    <a href="/" class="btn-vyn-primary">Volver al inicio</a>
+  </div>
+
+</div>
+
+<script>
+  // Pills (radio + checkbox visual state)
+  document.querySelectorAll('.pill input').forEach(input => {
+    const sync = () => {
+      const label = input.closest('.pill');
+      if (input.type === 'radio') {
+        const group = document.querySelectorAll(`.pill input[name="${input.name}"]`);
+        group.forEach(i => i.closest('.pill').classList.toggle('active', i.checked));
+      } else {
+        label.classList.toggle('active', input.checked);
+      }
+      updateProgress();
+    };
+    input.addEventListener('change', sync);
+    input.closest('.pill').addEventListener('click', e => {
+      // Let label's native behavior toggle, then sync visually
+      setTimeout(sync, 0);
+    });
+  });
+
+  // Progress bar
+  const progressFill = document.getElementById('progressFill');
+  function updateProgress() {
+    const inputs = document.querySelectorAll('#intakeForm input[type=text],#intakeForm input[type=email],#intakeForm input[type=tel],#intakeForm input[type=url],#intakeForm textarea,#intakeForm select');
+    const checks = document.querySelectorAll('#intakeForm input[type=checkbox],#intakeForm input[type=radio]');
+    const filledInputs = [...inputs].filter(el => el.value && el.value.trim()).length;
+    const checkedGroups = new Set();
+    [...checks].forEach(c => { if (c.checked) checkedGroups.add(c.name); });
+    const total = inputs.length + 4; // weight pill groups
+    const filled = filledInputs + checkedGroups.size;
+    progressFill.style.width = Math.min(100, Math.round((filled / total) * 100)) + '%';
+  }
+  document.addEventListener('input', updateProgress);
+  updateProgress();
+
+  // Submit
+  document.getElementById('intakeForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const fb  = document.getElementById('feedback');
+    fb.className = 'feedback'; fb.textContent = '';
+
+    const required = ['fullName','email','businessName','industry','projectDetails'];
+    for (const name of required) {
+      const el = document.querySelector(`[name="${name}"]`);
+      if (!el || !el.value.trim()) {
+        fb.textContent = 'Falta un campo obligatorio.';
+        fb.className = 'feedback error';
+        el?.focus();
+        return;
+      }
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+
+    const fd = new FormData(e.currentTarget);
+    const data = {};
+    for (const [k, v] of fd.entries()) {
+      if (data[k] === undefined) data[k] = v;
+      else if (Array.isArray(data[k])) data[k].push(v);
+      else data[k] = [data[k], v];
+    }
+    data.submittedAt = new Date().toISOString();
+    data.userAgent   = navigator.userAgent;
+
+    try {
+      const res = await fetch('/.netlify/functions/intake-submit', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) {
+        const txt = await res.text();
+        throw new Error(txt || ('HTTP ' + res.status));
+      }
+      document.getElementById('intakeForm').style.display = 'none';
+      document.querySelector('.hero').style.display = 'none';
+      document.querySelector('.progress').style.display = 'none';
+      document.getElementById('successScreen').classList.add('show');
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    } catch (err) {
+      console.error(err);
+      fb.textContent = 'No se pudo enviar — inténtalo de nuevo o escríbenos a hola@vyn.studio. (' + err.message + ')';
+      fb.className = 'feedback error';
+      btn.disabled = false;
+      btn.textContent = 'Enviar brief';
+    }
+  });
+</script>
+</body>
+</html>
